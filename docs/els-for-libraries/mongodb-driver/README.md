@@ -6,22 +6,21 @@ Endless Lifecycle Support (ELS) for MongoDB driver from TuxCare provides securit
 
 * MongoDB Driver 2.2.36
 
-## Connection to ELS for MongoDB Driver
+## Installation
 
-This guide outlines the steps needed to integrate the TuxCare ELS for the MongoDB Driver.
+<ELSPrerequisites>
 
-## Step 1: Get Token
+* **npm** package manager installed
+* TuxCare registry token — contact [sales@tuxcare.com](mailto:sales@tuxcare.com)
+* To browse available artifacts, visit TuxCare [Nexus](https://nexus.repo.tuxcare.com/#browse/browse:els_js) and click Sign in in the top right corner. You may need to refresh the page after logging in.
 
-You need a token in order to use TuxCare ELS MongoDB driver. Anonymous access is disabled. To receive the token, please contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
+</ELSPrerequisites>
 
-## Step 2: Set Up ELS for MongoDB Driver
+<ELSSteps>
 
-TuxCare provides ELS for MongoDB driver as an NPM package, hosted on a secure internal registry. Follow the steps below to add it to your project and get started.
+1. **Navigate to the project root directory**
 
-1. Navigate to the root directory of your MongoDB project.
-2. Create a `.npmrc` file or update it if it already exists.
-
-   **Example:**
+   Example structure:
 
    ```text
    my-mongodb-project/
@@ -31,7 +30,9 @@ TuxCare provides ELS for MongoDB driver as an NPM package, hosted on a secure in
    └── package-lock.json
    ```
 
-3. Use an editor of your choice (e.g., VS Code) to add the following registry address line:
+2. **Configure the npm registry**
+
+   Create or update the `.npmrc` file in your project root:
 
    ```text
    registry=https://registry.npmjs.org/
@@ -40,10 +41,12 @@ TuxCare provides ELS for MongoDB driver as an NPM package, hosted on a secure in
    ```
 
    :::warning
-   Replace ${TOKEN} with the token you received from [sales@tuxcare.com](mailto:sales@tuxcare.com).
+   Replace `${TOKEN}` with the token you received from [sales@tuxcare.com](mailto:sales@tuxcare.com).
    :::
 
-4. Update your `package.json` file to replace your MongoDB dependencies with the TuxCare packages. You can do this in two ways:
+3. **Update dependencies**
+
+   Update your `package.json` file to replace MongoDB driver dependencies with TuxCare-maintained packages. You can do this in two ways:
 
    * **Option 1: Manual update**
 
@@ -86,61 +89,44 @@ TuxCare provides ELS for MongoDB driver as an NPM package, hosted on a secure in
      }
      ```
 
-5. You need to remove the `node_modules` directory and the `package-lock.json` file, and also clear the `npm cache` before installing the patched packages. Use the following commands:
+4. **Clean and install**
+
+   Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
    ```text
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
-6. Run the following command to install the ELS version of the MongoDB driver (token for the TuxCare repository will be automatically picked up from your `.npmrc` file):
+   Install dependencies:
 
    ```text
    npm install
    ```
 
-## Step 3: Verify Installation
+   The token for the TuxCare repository is automatically picked up from your `.npmrc` file.
 
-1. To confirm the TuxCare MongoDB driver is set up correctly, use npm to list the project's dependencies:
+5. **Verify the setup**
+
+   Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
    ```text
    npm list
    ```
 
-2. After reviewing the dependencies, run your application to ensure everything works correctly.
+   After reviewing the dependencies, run your application to ensure everything works correctly. The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS for MongoDB repository.
 
-The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS for MongoDB repository.
+</ELSSteps>
 
-## Vulnerability Exploitability eXchange (VEX) 
+## What's Next?
 
-VEX is a machine-readable format that tells you if a known vulnerability is actually exploitable in your product. It reduces false positives, helps prioritize real risks.
+<WhatsNext hide-title>
 
-TuxCare provides VEX for MongoDB ELS versions: [security.tuxcare.com/vex/cyclonedx/els_lang_javascript/mongodb/](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/mongodb/).
+* ![](/images/eye.webp) [CVE tracker](https://tuxcare.com/cve-tracker/) — Track vulnerability fixes and updates
+* ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes) — Patched versions and changelogs
+* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/products) — Full list of product parts covered by ELS
+* ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/mongodb/) — Vulnerability Exploitability eXchange feed
+* ![](/images/unlock-alt.webp) [SBOM](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:mongodb-driver) — Software Bill of Materials (Nexus, credentials required)
+* ![](/images/wrench.webp) [Managing the ELS repository](/els-for-libraries/managing-els-repository/) — Update to newer versions
 
-## Software Bill of Materials (SBOM)
+</WhatsNext>
 
-For each published ELS package and version, TuxCare generates SBOM files. Those artifacts are published to TuxCare Nexus.
-
-You can browse SBOM files for MongoDB Driver here:
-
-[https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:mongodb-driver](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:mongodb-driver)
-
-Use the credentials you received for TuxCare ELS ([Step 1: Get Token](#step-1:-get-token)) to access Nexus.
-
-## How to Upgrade to a Newer Version of TuxCare Packages
-
-If you have already installed a package with a `tuxcare.1` suffix and want to upgrade to a newer release (for example, `tuxcare.3`), remove node_modules, clear the npm cache to avoid conflicts, and then run the installation command:
-
-  ```text
-  rm -rf node_modules package-lock.json && npm cache clean --force
-  npm install
-  ```
-
-## Resolved CVEs
-
-Fixes for the following vulnerabilities are available in ELS for MongoDB from TuxCare versions:
-
-| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :------: |:--------:|:------------------:| :----------------: |
-| GHSA-mh5c-679w-hh4r | Direct   | High     | mongodb           | < 3.1.13          |
-
-If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).

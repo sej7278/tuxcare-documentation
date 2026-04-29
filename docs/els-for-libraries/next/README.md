@@ -6,22 +6,21 @@ Endless Lifecycle Support (ELS) for Next.js from TuxCare provides security fixes
 
 * Next.js 12.3.7, 13.5.11, 14.2.35, 16.0.6
 
-## Connection to ELS for Next.js Library
+## Installation
 
-This guide outlines the steps needed to integrate the TuxCare ELS for the Next.js library.
+<ELSPrerequisites>
 
-## Step 1: Get Token
+* **npm** package manager installed
+* TuxCare registry token — contact [sales@tuxcare.com](mailto:sales@tuxcare.com)
+* To browse available artifacts, visit TuxCare [Nexus](https://nexus.repo.tuxcare.com/#browse/browse:els_js) and click Sign in in the top right corner. You may need to refresh the page after logging in.
 
-You need a token in order to use TuxCare ELS Next.js library. Anonymous access is disabled. To receive the token, please contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
+</ELSPrerequisites>
 
-## Step 2: Set Up ELS for Next.js
+<ELSSteps>
 
-TuxCare provides ELS for Next.js as an NPM package, hosted on a secure internal registry. Follow the steps below to add it to your project and get started.
+1. **Navigate to the project root directory**
 
-1. Navigate to the root directory of your Next.js project.
-2. Create a `.npmrc` file or update it if it already exists.
-
-   **Example:**
+   Example structure:
 
    ```text
    my-nextjs-project/
@@ -31,7 +30,9 @@ TuxCare provides ELS for Next.js as an NPM package, hosted on a secure internal 
    └── package-lock.json
    ```
 
-3. Use an editor of your choice (e.g., VS Code) to add the following registry address line:
+2. **Configure the npm registry**
+
+   Create or update the `.npmrc` file in your project root:
 
    ```text
    registry=https://registry.npmjs.org/
@@ -40,10 +41,12 @@ TuxCare provides ELS for Next.js as an NPM package, hosted on a secure internal 
    ```
 
    :::warning
-   Replace ${TOKEN} with the token you received from [sales@tuxcare.com](mailto:sales@tuxcare.com).
+   Replace `${TOKEN}` with the token you received from [sales@tuxcare.com](mailto:sales@tuxcare.com).
    :::
 
-4. Update your `package.json` file to replace your Next.js dependencies with the TuxCare packages. Choose your Next.js version below and add the `dependencies` and `overrides` entries shown.
+3. **Update dependencies**
+
+   Update your `package.json` file to replace Next.js dependencies with TuxCare-maintained packages. Choose your Next.js version below and add the `dependencies` and `overrides` entries shown.
 
     <TableTabs label="Choose Next.js version: " >
 
@@ -101,127 +104,44 @@ TuxCare provides ELS for Next.js as an NPM package, hosted on a secure internal 
 
    </TableTabs>
 
-5. You need to remove the `node_modules` directory and the `package-lock.json` file, and also clear the `npm cache` before installing the patched packages. Use the following commands:
+4. **Clean and install**
+
+   Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
    ```text
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
-6. Run the following command to install the ELS version of the Next.js library (token for the TuxCare repository will be automatically picked up from your `.npmrc` file):
+   Install dependencies:
 
    ```text
    npm install
    ```
 
-## Step 3: Verify Installation
+   The token for the TuxCare repository is automatically picked up from your `.npmrc` file.
 
-1. To confirm the TuxCare Next.js library is set up correctly, use npm to list the project's dependencies:
+5. **Verify the setup**
+
+   Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
    ```text
    npm list
    ```
 
-2. After reviewing the dependencies, run your application to ensure everything works correctly.
+   After reviewing the dependencies, run your application to ensure everything works correctly. The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS for Next.js repository.
 
-The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS for Next.js repository.
+</ELSSteps>
 
-## Vulnerability Exploitability eXchange (VEX)
+## What's Next?
 
-VEX is a machine-readable format that tells you if a known vulnerability is actually exploitable in your product. It reduces false positives, helps prioritize real risks.
+<WhatsNext hide-title>
 
-TuxCare provides VEX for Next.js ELS versions: [security.tuxcare.com/vex/cyclonedx/els_lang_javascript/next/](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/next/).
+* ![](/images/eye.webp) [CVE tracker](https://tuxcare.com/cve-tracker/?product=Next.js) — Track vulnerability fixes and updates
+* ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?product=Next.js) — Patched versions and changelogs
+* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/products?product=Next.js) — Full list of product parts covered by ELS
+* ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/next/) — Vulnerability Exploitability eXchange feed
+* ![](/images/unlock-alt.webp) [SBOM](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:next) — Software Bill of Materials (Nexus, credentials required)
+* ![](/images/wrench.webp) [Managing the ELS repository](/els-for-libraries/managing-els-repository/) — Update to newer versions
 
-## Software Bill of Materials (SBOM)
+</WhatsNext>
 
-For each published ELS package and version, TuxCare generates SBOM files. Those artifacts are published to TuxCare Nexus.
-
-You can browse SBOM files for Next.js here:
-
-[https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:next](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:next)
-
-Use the credentials you received for TuxCare ELS ([Step 1: Get Token](#step-1:-get-token)) to access Nexus.
-
-## How to Upgrade to a Newer Version of TuxCare Packages
-
-If you have already installed a package with a `tuxcare.1` suffix and want to upgrade to a newer release (for example, `tuxcare.3`), remove node_modules, clear the npm cache to avoid conflicts, and then run the installation command:
-
-  ```text
-  rm -rf node_modules package-lock.json && npm cache clean --force
-  npm install
-  ```
-
-## Resolved CVEs
-
-Fixes for the following vulnerabilities are available in ELS for Next.js from TuxCare versions:
-
-<TableTabs label="Choose Next.js version: " >
-
-<template #next_12.3.7>
-
-|     CVE ID     | CVE Type | Severity | Affected Libraries |      Vulnerable Versions       |
-|:--------------:| :------: |:--------:|:------------------:|:------------------------------:|
-| CVE-2025-57822 | Direct   | High     |        next        | < 14.2.32, >= 15.0.0, < 15.4.7 |
-| CVE-2024-51479 | Direct   | High     |        next        |      >= 9.5.5, < 14.2.15       |
-| CVE-2024-47831 | Direct   | High     |        next        |      >= 10.0.0, < 14.2.7       |
-| CVE-2024-34351 | Direct   | High     |        next        |      >= 13.4.0, < 14.1.1       |
-| CVE-2023-46298 | Direct   | High     |        next        |            < 13.4.20           |
-| CVE-2025-57752 | Direct   | Medium   |        next        | < 14.2.31, >= 15.0.0 < 15.4.5 |
-| CVE-2025-55173 | Direct   | Medium   |        next        | < 14.2.31, >= 15.0.0 < 15.4.5 |
-| CVE-2025-48068 | Direct   | Low      |        next        | >= 13.0.0 < 14.2.30, >= 15.0.0 < 15.2.2 |
-| CVE-2025-32421 | Direct   | Low      |        next        | < 14.2.24, >= 15.0.0 < 15.1.6 |
-| CVE-2026-29057 | Direct   | Medium   |        next        | >= 9.5.0 < 15.5.13, >= 16.0.0 < 16.1.7 |
-| CVE-2026-27980 | Direct   | High     |        next        | >= 10.0.0 < 16.1.7 |
-
-  </template>
-
-<template #next_13.5.11>
-
-|     CVE ID     | CVE Type | Severity | Affected Libraries |      Vulnerable Versions       |
-|:--------------:| :------: |:--------:|:------------------:|:------------------------------:|
-| CVE-2025-57822 | Direct   | High     |        next        | < 14.2.32, >= 15.0.0, < 15.4.7 |
-| CVE-2024-51479 | Direct   | High     |        next        |      >= 9.5.5, < 14.2.15       |
-| CVE-2024-47831 | Direct   | High     |        next        |      >= 10.0.0, < 14.2.7       |
-| CVE-2024-34351 | Direct   | High     |        next        |      >= 13.4.0, < 14.1.1       |
-| CVE-2025-55184 | Transitive | High   |        React       |      >= 13.3.0 < 14.2.35       |
-| CVE-2025-67779 | Transitive | High   |        React       |      >= 13.3.0 < 14.2.35       |
-| CVE-2025-57752 | Direct   | Medium   |        next        | < 14.2.31, >= 15.0.0 < 15.4.5 |
-| CVE-2025-55173 | Direct   | Medium   |        next        | < 14.2.31, >= 15.0.0 < 15.4.5 |
-| CVE-2025-48068 | Direct   | Low      |        next        | >= 13.0.0 < 14.2.30, >= 15.0.0 < 15.2.2 |
-| CVE-2025-32421 | Direct   | Low      |        next        | < 14.2.24, >= 15.0.0 < 15.1.6 |
-| CVE-2026-29057 | Direct   | Medium   |        next        | >= 9.5.0 < 15.5.13, >= 16.0.0 < 16.1.7 |
-| CVE-2026-27980 | Direct   | High     |        next        | >= 10.0.0 < 16.1.7 |
-
-  </template>
-
-<template #next_14.2.35>
-
-|     CVE ID     | CVE Type | Severity | Affected Libraries |      Vulnerable Versions       |
-|:--------------:| :------: |:--------:|:------------------:|:------------------------------:|
-| CVE-2025-57822 | Direct   | High     |        next        | < 14.2.32, >= 15.0.0, < 15.4.7 |
-| CVE-2024-51479 | Direct   | High     |        next        |      >= 9.5.5, < 14.2.15       |
-| CVE-2024-47831 | Direct   | High     |        next        |      >= 10.0.0, < 14.2.7       |
-| CVE-2024-34351 | Direct   | High     |        next        |      >= 13.4.0, < 14.1.1       |
-| CVE-2025-55184 | Transitive | High   |        React       |      >= 13.3.0 < 14.2.35       |
-| CVE-2025-67779 | Transitive | High   |        React       |      >= 13.3.0 < 14.2.35       |
-| CVE-2025-57752 | Direct   | Medium   |        next        | < 14.2.31, >= 15.0.0 < 15.4.5 |
-| CVE-2025-55173 | Direct   | Medium   |        next        | < 14.2.31, >= 15.0.0 < 15.4.5 |
-| CVE-2025-48068 | Direct   | Low      |        next        | >= 13.0.0 < 14.2.30, >= 15.0.0 < 15.2.2 |
-| CVE-2025-32421 | Direct   | Low      |        next        | < 14.2.24, >= 15.0.0 < 15.1.6 |
-| CVE-2026-29057 | Direct   | Medium   |        next        | >= 9.5.0 < 15.5.13, >= 16.0.0 < 16.1.7 |
-| CVE-2026-27980 | Direct   | High     |        next        | >= 10.0.0 < 16.1.7 |
-
-  </template>
-
-<template #next_16.0.6>
-
-|     CVE ID     | CVE Type | Severity | Affected Libraries |      Vulnerable Versions       |
-|:--------------:| :------: |:--------:|:------------------:|:------------------------------:|
-| CVE-2025-55182 | Direct   | Critical |        next        |      >= 16.0.0 <= 16.0.7       |
-| CVE-2026-29057 | Direct   | Medium   |        next        | >= 9.5.0 < 15.5.13, >= 16.0.0 < 16.1.7 |
-| CVE-2026-27980 | Direct   | High     |        next        | >= 10.0.0 < 16.1.7 |
-
-  </template>
-
-</TableTabs>
-
-If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).

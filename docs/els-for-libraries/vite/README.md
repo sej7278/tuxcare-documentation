@@ -6,22 +6,21 @@ Endless Lifecycle Support (ELS) for Vite from TuxCare provides security fixes fo
 
 * Vite 4.5.5, 5.4.14
 
-## Connection to ELS for Vite Library
+## Installation
 
-This guide outlines the steps needed to integrate the TuxCare ELS for the Vite library.
+<ELSPrerequisites>
 
-## Step 1: Get Token
+* **npm** package manager installed
+* TuxCare registry token — contact [sales@tuxcare.com](mailto:sales@tuxcare.com)
+* To browse available artifacts, visit TuxCare [Nexus](https://nexus.repo.tuxcare.com/#browse/browse:els-vue) and click Sign in in the top right corner. You may need to refresh the page after logging in.
 
-You need a token in order to use TuxCare ELS Vite library. Anonymous access is disabled. To receive the token, please contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
+</ELSPrerequisites>
 
-## Step 2: Set Up ELS for Vite
+<ELSSteps>
 
-TuxCare provides ELS for Vite as an NPM package, hosted on a secure internal registry. Follow the steps below to add it to your project and get started.
+1. **Navigate to the project root directory**
 
-1. Navigate to the root directory of your Vite project.
-2. Create a `.npmrc` file or update it if it already exists.
-
-   **Example:**
+   Example structure:
 
    ```text
    my-vite-project/
@@ -31,7 +30,9 @@ TuxCare provides ELS for Vite as an NPM package, hosted on a secure internal reg
    └── package-lock.json
    ```
 
-3. Use an editor of your choice (e.g., VS Code) to add the following registry address line:
+2. **Configure the npm registry**
+
+   Create or update the `.npmrc` file in your project root:
 
    ```text
    registry=https://registry.npmjs.org/
@@ -40,10 +41,12 @@ TuxCare provides ELS for Vite as an NPM package, hosted on a secure internal reg
    ```
 
    :::warning
-   Replace ${TOKEN} with the token you received from [sales@tuxcare.com](mailto:sales@tuxcare.com).
+   Replace `${TOKEN}` with the token you received from [sales@tuxcare.com](mailto:sales@tuxcare.com).
    :::
 
-4. Update your `package.json` file to replace your Vite dependencies with the TuxCare packages. You can do this in two ways:
+3. **Update dependencies**
+
+   Update your `package.json` file to replace Vite dependencies with TuxCare-maintained packages. You can do this in two ways:
 
    * **Option 1: Manual update**
 
@@ -86,69 +89,44 @@ TuxCare provides ELS for Vite as an NPM package, hosted on a secure internal reg
      }
      ```
 
-5. You need to remove the `node_modules` directory and the `package-lock.json` file, and also clear the `npm cache` before installing the patched packages. Use the following commands:
+4. **Clean and install**
+
+   Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
    ```text
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
-6. Run the following command to install the ELS version of the Vite library (token for the TuxCare repository will be automatically picked up from your `.npmrc` file):
+   Install dependencies:
 
    ```text
    npm install
    ```
 
-## Step 3: Verify Installation
+   The token for the TuxCare repository is automatically picked up from your `.npmrc` file.
 
-1. To confirm the TuxCare Vite library is set up correctly, use npm to list the project's dependencies:
+5. **Verify the setup**
+
+   Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
    ```text
    npm list
    ```
 
-2. After reviewing the dependencies, run your application to ensure everything works correctly.
+   After reviewing the dependencies, run your application to ensure everything works correctly. The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS for Vite repository.
 
-The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS for Vite repository.
+</ELSSteps>
 
-## Vulnerability Exploitability eXchange (VEX) 
+## What's Next?
 
-VEX is a machine-readable format that tells you if a known vulnerability is actually exploitable in your product. It reduces false positives, helps prioritize real risks.
+<WhatsNext hide-title>
 
-TuxCare provides VEX for Vite ELS versions: [security.tuxcare.com/vex/cyclonedx/els_lang_javascript/vite/](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/vite/).
+* ![](/images/eye.webp) [CVE tracker](https://tuxcare.com/cve-tracker/?q=vite) — Track vulnerability fixes and updates
+* ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?product=Vite) — Patched versions and changelogs
+* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/products?product=Vite) — Full list of product parts covered by ELS
+* ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/vite/) — Vulnerability Exploitability eXchange feed
+* ![](/images/unlock-alt.webp) [SBOM](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:vite) — Software Bill of Materials (Nexus, credentials required)
+* ![](/images/wrench.webp) [Managing the ELS repository](/els-for-libraries/managing-els-repository/) — Update to newer versions
 
-## Software Bill of Materials (SBOM)
-
-For each published ELS package and version, TuxCare generates SBOM files. Those artifacts are published to TuxCare Nexus.
-
-You can browse SBOM files for Vite here:
-
-[https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:vite](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:vite)
-
-Use the credentials you received for TuxCare ELS ([Step 1: Get Token](#step-1:-get-token)) to access Nexus.
-
-## How to Upgrade to a Newer Version of TuxCare Packages
-
-If you have already installed a package with a `tuxcare.1` suffix and want to upgrade to a newer release (for example, `tuxcare.3`), remove node_modules, clear the npm cache to avoid conflicts, and then run the installation command:
-
-  ```text
-  rm -rf node_modules package-lock.json && npm cache clean --force
-  npm install
-  ```
-
-## Resolved CVEs
-
-Fixes for the following vulnerabilities are available in ELS for Vite from TuxCare versions:
-
-| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
-| :------------: | :------: |:--------:|:------------------:| :----------------: |
-| CVE-2025-24010 | Direct   | Medium   | vite               | < 4.5.5, >= 5.0.0 < 5.4.12, >= 6.0.0 < 6.0.9 |
-| CVE-2025-31125 | Direct   | High     | vite               | < 4.5.11, >= 5.0.0 < 5.4.16, >= 6.0.0 < 6.0.13, >= 6.1.0 < 6.1.3, >= 6.2.0 < 6.2.4 |
-| CVE-2025-30208 | Direct   | High     | vite               | < 4.5.10, >= 5.0.0 < 5.4.15, >= 6.0.0 < 6.0.12, >= 6.1.0 < 6.1.2, >= 6.2.0 < 6.2.3 |
-| CVE-2025-32395 | Direct   | Medium   | vite               | < 6.2.6, < 6.1.5, < 6.0.15, < 5.4.18, < 4.5.13 |
-| CVE-2025-46565 | Direct   | Medium   | vite               | < 4.5.14, >= 5.0.0 < 5.4.19, >= 6.0.0 < 6.1.6, >= 6.2.0 < 6.2.7, >= 6.3.0 < 6.3.4 |
-| CVE-2025-31486 | Direct   | Medium   | vite               | > 6.0.0 |
-| CVE-2025-58751 | Direct   | Low      | vite               | < 5.4.20, >= 6.0.0 < 6.3.6, >= 7.0.0 < 7.0.7, >= 7.1.0 < 7.1.5 |
-| CVE-2025-58752 | Direct   | Low      | vite               | < 5.4.20, >= 6.0.0 < 6.3.6, >= 7.0.0 < 7.0.7, >= 7.1.0 < 7.1.5 |
-
-If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
+</WhatsNext>
 
