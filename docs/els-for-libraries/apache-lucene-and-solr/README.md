@@ -65,9 +65,9 @@ TuxCare's Endless Lifecycle Support (ELS) for Apache Lucene® and Apache Solr pr
    * To fully switch from the official Apache Lucene® / Apache Solr repository, replace it with the TuxCare repository.
    * To keep both, add TuxCare after the official one.
 
-   Example Maven and Gradle projects are available on GitHub. Remember to set the required environment variables.
-   * [Maven](https://github.com/cloudlinux/securechain-java/tree/main/examples/maven)
-   * [Gradle](https://github.com/cloudlinux/securechain-java/tree/main/examples/gradle)
+   :::tip
+   Example **[Maven](https://github.com/cloudlinux/securechain-java/tree/main/examples/maven)** and **[Gradle](https://github.com/cloudlinux/securechain-java/tree/main/examples/gradle)** projects are available on GitHub. Ensure the required environment variables are set.
+   :::
 
 4. **Update dependencies**
 
@@ -95,18 +95,16 @@ TuxCare's Endless Lifecycle Support (ELS) for Apache Lucene® and Apache Solr pr
 
    </TableTabs>
 
-5. **Verify the setup**
+5. **Verify and build**
 
-   Use your build tool to list the project's dependencies and confirm TuxCare packages are resolved correctly.
+   Verify the setup:
 
    <CodeTabs :tabs="[
      { title: 'Maven', content: `mvn dependency:tree -Dverbose` },
      { title: 'Gradle', content: `./gradlew dependencies --configuration runtimeClasspath` }
    ]" />
 
-6. **Build the project**
-
-   Include any library from the repository and run a build.
+   Build the project:
 
    <CodeTabs :tabs="[
      { title: 'Maven', content: `mvn clean install` },
@@ -124,7 +122,7 @@ TuxCare's Endless Lifecycle Support (ELS) for Apache Lucene® and Apache Solr pr
   <ResolvedCveTable project="apache-lucene" />
 </ClientOnly>
 
-## What's next?
+## What's Next?
 
 <WhatsNext hide-title>
 
