@@ -71,6 +71,15 @@ Other versions upon request.
 
    </template>
 
+   <template #Laravel_8>
+
+   <CodeTabs :tabs="[
+     { title: 'Composer CLI', content: `composer require laravel/framework:8.12.3-p1+tuxcare` },
+     { title: 'composer.json', content: laravel8json }
+   ]" />
+
+   </template>
+
    <template #Illuminate>
 
    <CodeTabs :tabs="[
@@ -307,6 +316,13 @@ const laraveljson =
 `{
     "require": {
         "laravel/framework": "10.48.28-p1+tuxcare"
+    }
+}`
+
+const laravel8json =
+`{
+    "require": {
+        "laravel/framework": "8.12.3-p1+tuxcare"
     }
 }`
 

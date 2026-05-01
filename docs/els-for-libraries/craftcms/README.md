@@ -60,7 +60,7 @@ Other versions upon request.
    Install the TuxCare-maintained CraftCMS release that matches your project:
 
    <CodeTabs :tabs="[
-     { title: 'Composer CLI', content: `composer require craftcms/cms:3.9.15-p1+tuxcare` },
+     { title: 'Composer CLI', content: `composer require craftcms/cms:3.9.15-p3+tuxcare` },
      { title: 'composer.json', content: packagejson }
    ]" />
 
@@ -163,7 +163,7 @@ const cli =
 const packagejson =
 `{
     "require": {
-        "craftcms/cms": "3.9.15-p1+tuxcare"
+        "craftcms/cms": "3.9.15-p3+tuxcare"
     }
 }`
 
