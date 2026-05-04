@@ -1,10 +1,16 @@
 # Managing the ELS repository
 
-This page provides instructions for upgrading to newer TuxCare-patched library versions delivered through the ELS for Libraries repository.
+This page provides instructions for upgrading to newer TuxCare package versions and accessing source code for ELS-patched libraries.
 
 ## How to Upgrade to a Newer Version
 
 <TableTabs label="Choose the Ecosystem: " >
+
+<template #Java>
+
+If you have already installed a package with a `tuxcare.1` suffix and want to upgrade to a newer release (for example, `tuxcare.3`), update the version string in your Maven or Gradle build file with the version listed in your TuxCare Nexus account.
+
+</template>
 
 <template #PHP>
 
@@ -34,4 +40,31 @@ If you have already installed a TuxCare-patched package and want to upgrade to a
 
 </template>
 
+<template #Python>
+
+To upgrade to a newer TuxCare release (for example, from `version.post1+tuxcare` to `version.post2+tuxcare`), use the same installation method you used during setup and specify the newer package version listed in your TuxCare Nexus account.
+
+</template>
+
+<template #JavaScript>
+
+To upgrade to a newer TuxCare release (for example, from `tuxcare.1` to `tuxcare.3`), remove `node_modules`, clear the npm cache to avoid conflicts, and then run the installation command:
+
+```text
+rm -rf node_modules package-lock.json && npm cache clean --force
+npm install
+```
+
+</template>
+
 </TableTabs>
+
+## Source code
+
+Source code is currently available for TuxCare-patched **Java** libraries. Source JARs follow the standard Maven naming convention with a `-sources` classifier and are published to the [Nexus repository](https://nexus.repo.tuxcare.com/#browse/browse:els_java).
+
+For example: [https://nexus.repo.tuxcare.com/repository/els_java/commons-lang/commons-lang/2.6-tuxcare.1/commons-lang-2.6-tuxcare.1-sources.jar](https://nexus.repo.tuxcare.com/repository/els_java/commons-lang/commons-lang/2.6-tuxcare.1/commons-lang-2.6-tuxcare.1-sources.jar).
+
+:::tip
+If a source JAR is not available for a specific package, please contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
+:::

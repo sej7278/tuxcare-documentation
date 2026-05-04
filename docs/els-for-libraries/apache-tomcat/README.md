@@ -15,17 +15,19 @@ Apache Tomcat® is also available for installation as a standalone server. You c
 
 * Apache Tomcat® 8.5.100, 9.0.46, 9.0.50, 9.0.75, 9.0.83, 9.0.87, 9.0.90, 9.0.100, 10.1.18, 10.1.42
 
-## Connection to ELS for Apache Tomcat® Repository
+## Installation
 
-This guide outlines the steps needed to integrate the TuxCare ELS for Apache Tomcat® repository into your Java application. The repository provides trusted Java libraries that can be easily integrated into your **Maven** and **Gradle** projects.
+<ELSPrerequisites>
 
-### Step 1: Get user credentials
+* **Maven** or **Gradle** build tool installed
+* Nexus repository access credentials (username and password) — contact [sales@tuxcare.com](mailto:sales@tuxcare.com) 
+* To browse available artifacts, visit TuxCare [Nexus](https://nexus.repo.tuxcare.com/#browse/browse:els_java) and click Sign in in the top right corner. You may need to refresh the page after logging in.
 
-You need a username and password in order to use the TuxCare ELS Apache Tomcat® repository. Anonymous access is disabled. To receive a username and password please contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
+</ELSPrerequisites>
 
-### Step 2: Configure Registry
+<ELSSteps>
 
-1. Navigate to the directory depending on your operating system.
+1. **Navigate to the build tool directory**
    * Windows
    ```text
    Maven: C:\Users\{username}\.m2
@@ -42,7 +44,7 @@ You need a username and password in order to use the TuxCare ELS Apache Tomcat®
    Gradle: /home/{username}/.gradle
    ```
 
-2. Add the TuxCare repository and plugin repository to your build configuration.
+2. **Configure credentials**
 
    :::tip
    For Maven, you may choose any valid `<id>` value instead of `tuxcare-tomcat-registry`, but the same value must be used in both `settings.xml` and `pom.xml`.
@@ -53,82 +55,66 @@ You need a username and password in order to use the TuxCare ELS Apache Tomcat®
      { title: 'Gradle (~/.gradle/gradle.properties)', content: gradlecreds }
    ]" />
 
-Here `USERNAME` and `PASSWORD` are your credentials mentioned in [Step 1](#step-1-get-user-credentials).
+   Here `USERNAME` and `PASSWORD` are your Tuxcare credentials.
 
-### Step 3: Update Build Configuration
+3. **Add the TuxCare repository**
 
-Add the TuxCare Apache Tomcat® repository and plugins to your build configuration:
+   Add the TuxCare Apache Tomcat® repository and plugins to your build configuration.
 
-<CodeTabs :tabs="[
-  { title: 'Maven (pom.xml)', content: mavenrepo },
-  { title: 'Gradle (build.gradle)', content: gradlerepo }
-]" />
+   <CodeTabs :tabs="[
+     { title: 'Maven (pom.xml)', content: mavenrepo },
+     { title: 'Gradle (build.gradle)', content: gradlerepo }
+   ]" />
 
-* To fully switch from the official Apache Tomcat® repository, replace it with the TuxCare repository.
-* To keep both, add TuxCare after the official one.
+   * To fully switch from the official Apache Tomcat® repository, replace it with the TuxCare repository.
+   * To keep both, add TuxCare after the official one.
 
-Example Maven and Gradle projects are available on GitHub. Remember to set the required environment variables.
-* [Maven](https://github.com/cloudlinux/securechain-java/tree/main/examples/maven)
-* [Gradle](https://github.com/cloudlinux/securechain-java/tree/main/examples/gradle)
+   :::tip
+   Example **[Maven](https://github.com/cloudlinux/securechain-java/tree/main/examples/maven)** and **[Gradle](https://github.com/cloudlinux/securechain-java/tree/main/examples/gradle)** projects are available on GitHub. Ensure the required environment variables are set.
+   :::
 
-### Step 4: Update Dependencies
+4. **Update dependencies**
 
-Replace the Apache Tomcat® dependencies in your build file with the TuxCare-maintained versions to cover both direct and transitive dependencies.
+   Replace Apache Tomcat® dependencies with TuxCare-maintained versions. You can find artifact versions on [Nexus](https://nexus.repo.tuxcare.com/#browse/browse:els_java) — sign in with your TuxCare credentials.
 
-You can find a specific artifact version in your TuxCare account on [Nexus](https://nexus.repo.tuxcare.com/#browse/browse:els_java). Click **Sign In** in the top right corner to authenticate with your TuxCare credentials. After logging in, you may need to refresh or reopen the link to browse artifacts due to Nexus routing behavior.
+   <CodeTabs :tabs="[
+     { title: 'Maven (pom.xml)', content: mavendeps },
+     { title: 'Gradle (build.gradle)', content: gradledeps }
+   ]" />
 
-<CodeTabs :tabs="[
-  { title: 'Maven (pom.xml)', content: mavendeps },
-  { title: 'Gradle (build.gradle)', content: gradledeps }
-]" />
+5. **Verify and build**
 
-### Step 5: Verify and Build
-
-1. To confirm the TuxCare Apache Tomcat® repository is set up correctly, use your build tool to list the project's dependencies. It shows both direct and transitive dependencies in the classpath.
+   Verify the setup:
 
    <CodeTabs :tabs="[
      { title: 'Maven', content: `mvn dependency:tree -Dverbose` },
      { title: 'Gradle', content: `./gradlew dependencies --configuration runtimeClasspath` }
    ]" />
 
-2. After reviewing the dependencies, include any library from the repository into your project and then run a build:
+   Build the project:
 
    <CodeTabs :tabs="[
-    { title: 'Maven', content: `mvn clean install` },
-    { title: 'Gradle', content: `./gradlew build` }
+     { title: 'Maven', content: `mvn clean install` },
+     { title: 'Gradle', content: `./gradlew build` }
    ]" />
 
-The build tool you're using should be able to identify and resolve dependencies from the TuxCare ELS for Apache Tomcat® repository.
+   The build tool should be able to identify and resolve dependencies from the TuxCare ELS for Apache Tomcat® repository.
 
-### Conclusion
+</ELSSteps>
 
-You've successfully integrated the TuxCare ELS for Apache Tomcat® repository into your project. You can now benefit from the secure and vetted Apache Tomcat® libraries it provides.
 
-## Vulnerability Exploitability eXchange (VEX)
+## What's Next?
 
-VEX is a machine-readable format that tells you if a known vulnerability is actually exploitable in your product. It reduces false positives and helps prioritize real risks.
+<WhatsNext hide-title>
 
-TuxCare provides VEX for Apache Tomcat® ELS versions: [security.tuxcare.com/vex/cyclonedx/els_lang_java/](https://security.tuxcare.com/vex/cyclonedx/els_lang_java/).
+* ![](/images/eye.webp) [CVE tracker](https://tuxcare.com/cve-tracker/?product=Apache+Tomcat) — Track vulnerability fixes and updates
+* ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?product=Apache+Tomcat) — Patched versions and changelogs
+* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/products?product=Apache+Tomcat) — Full list of product parts covered by ELS
+* ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_java/) — Vulnerability Exploitability eXchange feed
+* ![](/images/unlock-alt.webp) [Source code](https://nexus.repo.tuxcare.com/#browse/browse:els_java:org) — Nexus repository (credentials required)
+* ![](/images/wrench.webp) [Managing the ELS repository](/els-for-libraries/managing-els-repository/) — Update to newer versions
 
-## How to Upgrade to a Newer Version of TuxCare Packages
-
-If you have already installed a package with a `tuxcare.1` suffix and want to upgrade to a newer release (for example, `tuxcare.3`), you need to update version strings in your Maven or Gradle build file.
-
-## Source Code
-
-Source code for TuxCare-patched Apache Tomcat® libraries is available in the repository. Source JARs follow the standard Maven naming convention with a `-sources` classifier.
-
-For example: [https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat-catalina/9.0.75-tuxcare.1/tomcat-catalina-9.0.75-tuxcare.1-sources.jar](https://nexus.repo.tuxcare.com/repository/els_java/org/apache/tomcat/tomcat-catalina/9.0.75-tuxcare.1/tomcat-catalina-9.0.75-tuxcare.1-sources.jar).
-
-:::tip
-If a source JAR is not available for a specific package, please contact [sales@tuxcare.com](mailto:sales@tuxcare.com) to report the issue.
-:::
-
-## Resolved CVEs in ELS for Apache Tomcat®
-
-<ClientOnly>
-  <ResolvedCveTable project="apache-tomcat" />
-</ClientOnly>
+</WhatsNext>
 
 <!-- data for Apache Tomcat instructions used in code blocks -->
 
