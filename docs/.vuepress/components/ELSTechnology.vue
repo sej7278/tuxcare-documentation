@@ -1358,6 +1358,16 @@ const techData = [
         link: "./python-libraries/",
       },
       {
+        name: "langchain-core",
+        versions: "0.3.83",
+        link: "./python-libraries/",
+      },
+      {
+        name: "LightGBM",
+        versions: "3.3.5",
+        link: "./python-libraries/",
+      },
+      {
         name: "MLflow",
         versions: "2.9.1 | 2.22.4",
         link: "./python-libraries/",
@@ -1399,7 +1409,7 @@ const techData = [
       },
       {
         name: "Pillow",
-        versions: "8.4.0 | 9.4.0 | 9.5.0 | 11.2.1",
+        versions: "8.4.0 | 9.4.0 | 9.5.0 | 10.4.0 | 11.2.1 | 11.3.0",
         link: "./python-libraries/",
       },
       {
@@ -1425,6 +1435,11 @@ const techData = [
       {
         name: "pymysql",
         versions: "0.10.1",
+        link: "./python-libraries/",
+      },
+      {
+        name: "pyOpenSSL",
+        versions: "23.3.0 | 24.3.0 | 25.3.0",
         link: "./python-libraries/",
       },
       {
@@ -1464,7 +1479,7 @@ const techData = [
       },
       {
         name: "setuptools",
-        versions: "65.5.1 | 68.0.0 | 70.3.0 | 75.0.0 | 75.8.0",
+        versions: "59.8.0 | 65.5.1 | 68.0.0 | 70.3.0 | 75.0.0 | 75.8.0",
         link: "./python-libraries/",
       },
       {
@@ -1479,7 +1494,7 @@ const techData = [
       },
       {
         name: "tornado",
-        versions: "6.1.0",
+        versions: "5.1.1 | 6.1.0",
         link: "./python-libraries/",
       },
       {
