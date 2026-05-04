@@ -274,7 +274,7 @@ export default {
                 },
                 {
                     path: '/els-for-libraries/doctrine-orm/',
-                    icon: '/images/php-logo.webp',
+                    icon: '/images/orm.webp',
                 },
                 {
                     path: '/els-for-libraries/drupal/',
