@@ -7,17 +7,20 @@ NuGet is the standard package manager for .NET, used to deliver the reusable com
 ## Supported NuGet packages
 
 * .NET 6, 8, 10
-* Microsoft.Owin 3.1.0
-* Microsoft.Owin.Security.Cookies 3.1.0
-* log4net 1.2.15
+* AutoMapper 2.2.2, 3.3.2, 4.2.2, 5.2.1, 6.2.3, 7.0.2, 8.1.2, 9.0.1, 10.1.2, 11.0.2, 12.0.2, 13.0.2, 14.0.1
+* log4net 1.2.15, 1.2.16
 * Microsoft.Azure.Storage.DataMovement 1.2.0, 1.2.1
 * Microsoft.Data.SqlClient 1.1.4, 1.1.5
+* Microsoft.Owin family 3.1.0, 3.1.1
 * MimeKit 3.6.1, 3.6.2
 * Newtonsoft.Json 4.5.11, 4.5.12, 6.0.8, 6.0.9, 8.0.3, 8.0.4, 9.0.1, 9.0.2, 10.0.3, 10.0.4, 11.0.2, 11.0.3, 12.0.3, 12.0.4
 * NHibernate 4.1.2.4001
-* Refit 6.3.2
-* RestSharp 108.0.3, 110.2.0, 111.4.1
+* Refit 6.3.2, 6.3.3
+* RestSharp 108.0.3, 108.0.4, 110.2.0, 110.2.1, 111.4.1, 111.4.2
 * SharpZipLib 0.86.0, 0.86.1
+* SixLabors.ImageSharp 1.0.5
+* System.Formats.Asn1 5.0.1, 7.0.1
+* System.Text.Json 7.0.5
 
 Other versions upon request.
 
@@ -219,6 +222,14 @@ dotnet nuget add source "https://nexus.repo.tuxcare.com/repository/<els_dotnet_c
   --password <NEW_PASSWORD>
 ```
 
+
+## Vulnerability Exploitability eXchange (VEX)
+
+VEX is a machine-readable format that tells you if a known vulnerability is actually exploitable in your product. It reduces false positives, helps prioritize real risks.
+
+TuxCare provides VEX for .NET ELS versions: [security.tuxcare.com/vex/cyclonedx/els_lang_dotnet/](https://security.tuxcare.com/vex/cyclonedx/els_lang_dotnet/).
+
+Per-package, per-version CycloneDX VEX documents are available at `els_lang_dotnet/<package>/<version>/vex.json`, alongside a top-level aggregated `vex.json` signed via `vex.json.asc`.
 
 ## Resolved CVEs
 
