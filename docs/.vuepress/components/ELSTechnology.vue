@@ -1660,7 +1660,7 @@ const techData = [
         link: "./dotnet/",
       },
       {
-        name: "Microsoft.Owin family",
+        name: "Microsoft.Owin",
         versions: "3.1.0 | 3.1.1",
         link: "./dotnet/",
       },
