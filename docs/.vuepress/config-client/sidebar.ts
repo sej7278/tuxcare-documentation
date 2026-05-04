@@ -273,6 +273,10 @@ export default {
                     icon: '/images/feed-me.webp',
                 },
                 {
+                    path: '/els-for-libraries/doctrine-orm/',
+                    icon: '/images/php-logo.webp',
+                },
+                {
                     path: '/els-for-libraries/drupal/',
                     icon: '/images/drupal.webp',
                 },

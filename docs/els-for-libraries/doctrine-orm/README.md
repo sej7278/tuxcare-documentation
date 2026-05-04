@@ -1,10 +1,10 @@
-# Browsershot
+# Doctrine ORM
 
-Endless Lifecycle Support (ELS) for Browsershot from TuxCare provides security fixes for Browsershot package versions that have reached their end-of-life. This allows you to continue running your applications without vulnerability concerns, even after official support has ended.
+Endless Lifecycle Support (ELS) for Doctrine ORM from TuxCare provides security fixes for Doctrine ORM versions that have reached their end-of-life. This allows you to continue running your applications without vulnerability concerns, even after official support has ended.
 
-## Supported Versions and Components
+## Supported Versions
 
-* **Browsershot** 3.61.0, 4.4.0
+* **Doctrine ORM** 2.8.3
 
 Other versions upon request.
 
@@ -55,12 +55,12 @@ Other versions upon request.
      { title: 'composer.json', content: composerjson }
    ]" />
 
-4. Install Browsershot
+4. Install Doctrine ORM
 
-   Install the TuxCare-maintained Browsershot release that matches your project:
+   Install the TuxCare-maintained Doctrine ORM release that matches your project:
 
    <CodeTabs :tabs="[
-     { title: 'Composer CLI', content: `composer require spatie/browsershot:4.4.0-p2+tuxcare` },
+     { title: 'Composer CLI', content: `composer require doctrine/orm:2.8.3-p1+tuxcare` },
      { title: 'composer.json', content: pkgjson }
    ]" />
 
@@ -104,40 +104,15 @@ it usually means your project requires a package version that is not yet availab
 
 This allows Composer to fall back to Packagist for packages not available in the TuxCare repository, while still preferring TuxCare patches when available.
 
-## Resolved CVEs in Browsershot
+## Resolved CVEs in Doctrine ORM
 
-Fixes for the following vulnerabilities are available in ELS for Browsershot from TuxCare:
-
-<TableTabs label="Choose Browsershot version: " >
-
-<template #Browsershot_3.61.0 >
-
-| CVE ID         | Severity | Vulnerable versions | Fixed in version       |
-|----------------|----------|---------------------|------------------------|
-| CVE-2025-3192  | High     | 3.61.0              | 3.61.0-p2+tuxcare      |
-| CVE-2025-1026  | High     | 3.61.0              | 3.61.0-p1+tuxcare      |
-| CVE-2024-21547 | High     | 3.61.0              | 3.61.0-p1+tuxcare      |
-| CVE-2024-21549 | High     | 3.61.0              | 3.61.0-p1+tuxcare      |
-| CVE-2024-21544 | High     | 3.61.0              | 3.61.0-p1+tuxcare      |
-| CVE-2025-1022  | High     | 3.61.0              | 3.61.0-p1+tuxcare      |
-
-</template>
-
-<template #Browsershot_4.4.0 >
-
-| CVE ID         | Severity | Vulnerable versions | Fixed in version       |
-|----------------|----------|---------------------|------------------------|
-| CVE-2025-3192  | High     | 4.4.0               | 4.4.0-p1+tuxcare       |
-
-</template>
-
-</TableTabs>
+Refer to the [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_php/doctrine/orm/) and the [CVE Tracker](https://tuxcare.com/cve-tracker/) for the up-to-date list of vulnerabilities fixed in `2.8.3-p1+tuxcare`.
 
 ## What's Next?
 
 <WhatsNext hide-title>
 
-* ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_php/spatie/browsershot/) — Vulnerability Exploitability eXchange feed
+* ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_php/doctrine/orm/) — Vulnerability Exploitability eXchange feed
 * ![](/images/eye.webp) [CVE Tracker](https://tuxcare.com/cve-tracker/) — Track vulnerability fixes and updates
 * ![](/images/wrench.webp) [Managing the ELS repository](/els-for-libraries/managing-els-repository/) — Upgrade to a newer version
 
@@ -176,7 +151,7 @@ const cli =
 const pkgjson =
 `{
     "require": {
-        "spatie/browsershot": "4.4.0-p2+tuxcare"
+        "doctrine/orm": "2.8.3-p1+tuxcare"
     }
 }`
 

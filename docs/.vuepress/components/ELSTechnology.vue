@@ -1554,6 +1554,11 @@ const techData = [
         link: "./craftcms-feed-me/",
       },
       {
+        name: "Doctrine ORM",
+        versions: "2.8.3",
+        link: "./doctrine-orm/",
+      },
+      {
         name: "DomPDF",
         versions: "0.8.x | 1.2.x | 3.1.0",
         link: "./dompdf/",
