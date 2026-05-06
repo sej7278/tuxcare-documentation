@@ -334,6 +334,10 @@ export default {
                     icon: '/images/angularjs-logo.webp',
                 },
                 {
+                    path: '/els-for-libraries/astro/',
+                    icon: '/images/astro-logo.webp',
+                },
+                {
                     path: '/els-for-libraries/bootstrap/',
                     icon: '/images/bootstrap-logo.webp',
                 },

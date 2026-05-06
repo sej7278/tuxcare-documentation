@@ -552,6 +552,11 @@ const techData = [
         link: "./javascript-libraries/",
       },
       {
+        name: "Astro",
+        versions: "0.26.1 | 1.9.2 | 2.10.15",
+        link: "./astro/",
+      },
+      {
         name: "axios",
         versions: "0.18.1 | 0.27.2",
         link: "./javascript-libraries/",
