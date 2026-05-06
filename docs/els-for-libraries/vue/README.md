@@ -8,20 +8,23 @@ The versions **2.6.11**, **2.6.14**, and **2.7.16** are supported by TuxCare for
 * `@vue/server-renderer`
 * `vue-template-compiler`
 
-## Connection to ELS for Vue Repository
+## Installation
 
-This guide outlines the steps needed to integrate the TuxCare ELS for Vue repository.
+<ELSPrerequisites>
 
-## Step 1: Get Token
+* **npm** package manager installed
+* TuxCare registry token — contact [sales@tuxcare.com](mailto:sales@tuxcare.com)
+* To browse available artifacts, visit TuxCare [Nexus](https://nexus.repo.tuxcare.com/#browse/browse:els_vue) and click Sign in in the top right corner. You may need to refresh the page after logging in.
 
-You need a token in order to use the TuxCare ELS Vue repository. Anonymous access is disabled. To receive the token, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
+</ELSPrerequisites>
 
-## Step 2: Set Up ELS for Vue
+<ELSSteps>
 
-TuxCare provides ELS for Vue as npm packages, hosted on a secure internal registry. Follow the steps below to add it to your project and get started.
+1. **Create or update the .npmrc file**
 
-1. Navigate to the root directory of your Vue project.
-2. Create a `.npmrc` file (or update it if it already exists).
+   Navigate to the root directory of your Vue project and create a `.npmrc` file or update it if it already exists.
+
+   **Example:**
 
    ```text
    my-vue-project/
@@ -31,7 +34,9 @@ TuxCare provides ELS for Vue as npm packages, hosted on a secure internal regist
    └── package-lock.json
    ```
 
-3. Add the ELS Vue registry configuration to `.npmrc`:
+2. **Configure the npm registry**
+
+   Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
    ```text
    registry=https://registry.npmjs.org/
@@ -43,7 +48,9 @@ TuxCare provides ELS for Vue as npm packages, hosted on a secure internal regist
    Replace `${TOKEN}` with the token you received from [sales@tuxcare.com](mailto:sales@tuxcare.com).
    :::
 
-4. Update your `package.json` dependencies to use TuxCare packages.
+3. **Update dependencies**
+
+   Update your `package.json` dependencies to use TuxCare packages.
 
    :::tip
    For exact available patched versions, check your Nexus access first. The snippets below are examples. The `>=` range with `-tuxcare.1` resolves to the latest TuxCare build for that upstream Vue version.
@@ -104,64 +111,44 @@ TuxCare provides ELS for Vue as npm packages, hosted on a secure internal regist
 
    </TableTabs>
 
-5. Remove old dependencies and clear npm cache:
+4. **Refresh the project dependencies**
+
+   Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
    ```text
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
-6. Run the following command to install the ELS version of the Vue library (token for the TuxCare repository will be automatically picked up from your `.npmrc` file):
+   Install dependencies:
 
    ```text
    npm install
    ```
 
-## Step 3: Verify Installation
+   The token for the TuxCare repository is automatically picked up from your `.npmrc` file.
 
-1. Confirm package resolution:
+5. **Verify the setup**
+
+   Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
    ```text
    npm list
    ```
 
-2. Run your application and verify that dependency resolution works through the TuxCare repository.
+   After reviewing the dependencies, run your application to ensure everything works correctly. The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS for Vue repository.
 
-## Vulnerability Exploitability eXchange (VEX)
+</ELSSteps>
 
-VEX is a machine-readable format that tells you if a known vulnerability is actually exploitable in your product. It reduces false positives and helps prioritize real risks.
+## What's Next?
 
-TuxCare provides VEX data for Vue packages:
+<WhatsNext hide-title>
 
-* [vue](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/vue/)
-* [vue-template-compiler](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/vue-template-compiler/)
+* ![](/images/eye.webp) [CVE tracker](https://tuxcare.com/cve-tracker/?product=Vue) — Track vulnerability fixes and updates
+* ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?product=Vue) — Patched versions and changelogs
+* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/products?product=Vue) — Full list of product parts covered by ELS
+* ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/vue/) — Vulnerability Exploitability eXchange feed
+* ![](/images/unlock-alt.webp) [SBOM](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:vue) — Software Bill of Materials (Nexus, credentials required)
+* ![](/images/wrench.webp) [Managing the ELS repository](/els-for-libraries/managing-els-repository/) — Update to newer versions
 
-## Software Bill of Materials (SBOM)
+</WhatsNext>
 
-For each published ELS package and version, TuxCare generates SBOM files. Those artifacts are published to TuxCare Nexus.
-
-You can browse SBOM files for Vue here:
-
-[https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:vue](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:vue)
-
-Use the credentials you received for TuxCare ELS ([Step 1: Get Token](#step-1:-get-token)) to access Nexus.
-
-## How to Upgrade to a Newer Version of TuxCare Packages
-
-If you already use TuxCare-patched Vue packages and need to upgrade, clear local dependencies and reinstall (the `>=` range will resolve to the latest available TuxCare build):
-
-```text
-rm -rf node_modules package-lock.json && npm cache clean --force
-npm install
-```
-
-## Resolved CVEs
-
-Fixes for the following vulnerabilities are available in ELS for Vue from TuxCare versions:
-
-| CVE ID        | CVE Type | Severity | Affected Library      | Vulnerable Versions |
-| :-----------: | :------: | :------: | :-------------------: | :-----------------: |
-| CVE-2024-6783 | Direct   | Medium   | vue                   | >= 2.0.0 < 3.0.0    |
-| CVE-2024-6783 | Direct   | Medium   | vue-template-compiler | >= 2.0.0 < 3.0.0    |
-| CVE-2024-9506 | Direct   | Low      | vue                   | >= 2.0.0 < 3.0.0    |
-
-If you are interested in TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).

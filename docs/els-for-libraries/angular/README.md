@@ -6,36 +6,24 @@ Endless Lifecycle Support (ELS) for Angular from TuxCare provides security fixes
 
 Angular versions from 4 to 18 are supported.
 
-## Connection to ELS for Angular Repository
+## Installation
 
-This guide outlines the steps needed to integrate the TuxCare ELS for Angular repository.
+<ELSPrerequisites>
 
-## Prerequisites
+* **npm** version 9.6.3 or later  
+  *Check current version:* `npm --version`  
+  *Update npm:* `npm install -g npm@latest`
+* TuxCare registry token — contact [sales@tuxcare.com](mailto:sales@tuxcare.com)
+* To browse available artifacts, visit TuxCare [Nexus](https://nexus.repo.tuxcare.com/#browse/browse:els_angular) and click Sign in in the top right corner. You may need to refresh the page after logging in.
 
-Before you begin, ensure you have **npm** up to date and you use version 9.6.3 or later for security and compatibility reasons.
+</ELSPrerequisites>
 
-* To check your current versions, run:
+<ELSSteps>
 
-  ```text
-  npm --version
-  ```
 
-* To update npm globally on your system, you can run:
+1. **Create or update the .npmrc file**
 
-   ```text  
-   npm install -g npm@latest
-   ```
-
-## Step 1: Get Token
-
-You need a token in order to use TuxCare ELS Angular repository. Anonymous access is disabled. To receive the token, please contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
-
-## Step 2: Set Up ELS for Angular
-
-TuxCare provides ELS for Angular as an NPM package, hosted on a secure internal registry. Follow the steps below to add it to your project and get started.
-
-1. Navigate to the root directory of your Angular project.
-2. Create a `.npmrc` file or update it if it already exists.
+   Navigate to the root directory of your Angular project and create a `.npmrc` file or update it if it already exists.
 
    **Example:**
 
@@ -48,7 +36,9 @@ TuxCare provides ELS for Angular as an NPM package, hosted on a secure internal 
    └── tsconfig.json
    ```
 
-3. Use an editor of your choice (e.g., VS Code) to add the following registry address line:
+2. **Configure the npm registry**
+
+   Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
    ```text
    registry=https://registry.npmjs.org/
@@ -57,10 +47,12 @@ TuxCare provides ELS for Angular as an NPM package, hosted on a secure internal 
    ```
 
    :::warning
-   Replace ${TOKEN} with the token you received from [sales@tuxcare.com](mailto:sales@tuxcare.com).
+   Replace `${TOKEN}` with the token you received from [sales@tuxcare.com](mailto:sales@tuxcare.com).
    :::
 
-4. Manually update your `package.json` file by replacing your Angular dependencies with the TuxCare packages.
+3. **Update dependencies**
+
+   Manually update your `package.json` file by replacing Angular dependencies with TuxCare-maintained packages.
 
      <TableTabs label="Choose Angular version: " >
 
@@ -828,401 +820,46 @@ TuxCare provides ELS for Angular as an NPM package, hosted on a secure internal 
 
      </TableTabs>
 
-5. You need to remove the `node_modules` directory and the `package-lock.json` file, and also clear the `npm cache` before installing the patched packages. Use the following commands:
+4. **Refresh the project dependencies**
+
+   Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
    ```text
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
-6. Run the following command to install ELS for Angular dependencies (token for the TuxCare repository will be automatically picked up from your `.npmrc` file):
+   Install dependencies:
 
    ```text
    npm install
    ```
 
-## Step 3: Verify Installation
+   The token for the TuxCare repository is automatically picked up from your `.npmrc` file.
 
-1. To confirm the TuxCare Angular repository is set up correctly, use npm to list the project's dependencies:
+5. **Verify the setup**
+
+   Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
    ```text
    npm list
    ```
 
-2. After reviewing the dependencies, run your application to ensure everything works correctly.
+   After reviewing the dependencies, run your application to ensure everything works correctly. The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS for Angular repository.
 
-The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS for Angular repository.
+</ELSSteps>
 
-## Vulnerability Exploitability eXchange (VEX)
+## What's Next?
 
-VEX is a machine-readable format that tells you if a known vulnerability is actually exploitable in your product. It reduces false positives, helps prioritize real risks.
+<WhatsNext hide-title>
 
-TuxCare provides VEX for Angular ELS versions: [security.tuxcare.com/vex/cyclonedx/els_lang_javascript/](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/).
+* ![](/images/eye.webp) [CVE tracker](https://tuxcare.com/cve-tracker/?product=Angular) — Track vulnerability fixes and updates
+* ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?product=Angular) — Patched versions and changelogs
+* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/products?product=Angular) — Full list of product parts covered by ELS
+* ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/) — Vulnerability Exploitability eXchange feed
+* ![](/images/unlock-alt.webp) [SBOM](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:angular) — Software Bill of Materials (Nexus, credentials required)
+* ![](/images/wrench.webp) [Managing the ELS repository](/els-for-libraries/managing-els-repository/) — Update to newer versions
 
-## Software Bill of Materials (SBOM)
-
-For each published ELS package and version, TuxCare generates SBOM files. Those artifacts are published to TuxCare Nexus.
-
-You can browse SBOM files for Angular here:
-
-[https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:angular](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:angular)
-
-Use the credentials you received for TuxCare ELS ([Step 1: Get Token](#step-1:-get-token)) to access Nexus.
-
-## How to Upgrade to a Newer Version of TuxCare Packages
-
-If you have already installed a package with a `tuxcare.1` suffix and want to upgrade to a newer release (for example, `tuxcare.3`), remove node_modules, clear the npm cache to avoid conflicts, and then run the installation command:
-
-  ```text
-  rm -rf node_modules package-lock.json && npm cache clean --force
-  npm install
-  ```
-
-## Resolved CVEs
-
-Fixes for the following vulnerabilities are available in ELS for Angular from TuxCare versions:
-
-<TableTabs label="Choose Angular version: " >
-
-<template #Angular__18>
-
-|     CVE ID     | CVE Type | Severity |        Affected Library        |    Vulnerable Versions    |
-|:--------------:| :------: | :------: |:------------------------------:|:-------------------------:|
-| CVE-2025-66035 |   Direct   |   High   |        @angular/common         | <= 18.2.14 |
-| CVE-2025-66412 |   Direct   |   High   |       @angular/compiler        | <= 18.2.14 |
-| CVE-2026-22610 |   Direct   | Medium | @angular/common, @angular/core | <= 18.2.14 |
-| CVE-2026-27970 |   Direct   | Medium |         @angular/core          | <= 18.2.14 |
-| CVE-2026-32635 |   Direct   |   High   |         @angular/core          | <= 18.2.14 |
-| CVE-2025-59052 |   Direct   |   High   |          @angular/ssr          | = 17.0.0-next.0 < 18.2.21 |
-| CVE-2026-27739 |   Direct   | Critical |          @angular/ssr          | = 17.0.0-next.0 < 18.2.21 |
-| CVE-2026-23950 | Transitive |   High   |              tar               |        <= 7.5.2        |
-| CVE-2026-23745 | Transitive |   High   |              tar               |        <= 7.5.3        |
-| CVE-2026-24842 | Transitive |   High   |              tar               |        <= 7.5.6        |
-
-  </template>
-
-<template #Angular__17>
-
-| CVE ID         | CVE Type | Severity |     Affected Library     |    Vulnerable Versions    |
-| :------------: | :------: | :------: |:------------------------:|:-------------------------:|
-| CVE-2025-66035 |   Direct   |   High   |    @angular/common    | <= 18.2.14 |
-| CVE-2025-66412 |   Direct   |   High   |    @angular/compiler    | <= 17.3.12 |
-| CVE-2025-59052 |   Direct   |   High   | @angular/platform-server | = 16.0.0-next.0 < 18.2.14 |
-| CVE-2025-59052 |   Direct   |   High   |       @angular/ssr       | = 17.0.0-next.0 < 18.2.21 |
-| CVE-2026-22610 |   Direct   | Medium | @angular/common, @angular/core | <= 17.3.12 |
-| CVE-2026-27970 |   Direct   | Medium |    @angular/core    | <= 17.3.12 |
-| CVE-2026-32635 |   Direct   |   High   |    @angular/core    | <= 17.3.12 |
-| CVE-2026-27739 |   Direct   | Critical |    @angular/ssr     | = 17.0.0-next.0 < 18.2.21 |
-| CVE-2026-23950 | Transitive |   High   |              tar               |        <= 7.5.2        |
-| CVE-2026-23745 | Transitive |   High   |              tar               |        <= 7.5.3        |
-| CVE-2026-24842 | Transitive |   High   |              tar               |        <= 7.5.6        |
-| CVE-2025-32997 | Transitive | Moderate |  http-proxy-middleware   |       1.3.0 - 2.0.8       |
-| CVE-2025-30360 | Transitive | Moderate |    webpack-dev-server    |         <= 5.2.0          |
-| CVE-2025-30359 | Transitive | Moderate |    webpack-dev-server    |         <= 5.2.0          |
-| CVE-2025-54798 | Transitive | Low |           tmp            |         <= 0.2.3          |
-
-  </template>
-
-<template #Angular__16>
-
-| CVE ID         |  CVE Type  | Severity |     Affected Library     |    Vulnerable Versions    |
-| :------------: |:----------:|:--------:|:------------------------:|:-------------------------:|
-| CVE-2025-66035 |   Direct   |   High   |    @angular/common    | <= 18.2.14 |
-| CVE-2025-66412 |   Direct   |   High   |    @angular/compiler    | <= 16.2.12 |
-| CVE-2025-59052 |   Direct   |   High   | @angular/platform-server | = 16.0.0-next.0 < 18.2.14 |
-| CVE-2026-22610 |   Direct   | Medium | @angular/common, @angular/core | <= 16.2.12 |
-| CVE-2026-27970 |   Direct   | Medium |    @angular/core    | <= 16.2.12 |
-| CVE-2026-23950 | Transitive |   High   |              tar               |        <= 7.5.2        |
-| CVE-2026-23745 | Transitive |   High   |              tar               |        <= 7.5.3        |
-| CVE-2026-24842 | Transitive |   High   |              tar               |        <= 7.5.6        |
-| CVE-2025-27789 | Transitive | Moderate |      @babel/runtime      |         < 7.26.10         |
-| CVE-2025-32997 | Transitive | Moderate |  http-proxy-middleware   |       1.3.0 - 2.0.8       |
-| CVE-2025-30360 | Transitive | Moderate |    webpack-dev-server    |         <= 5.2.0          |
-| CVE-2025-30359 | Transitive | Moderate |    webpack-dev-server    |         <= 5.2.0          |
-| CVE-2025-54798 | Transitive |   Low    |           tmp            |         <= 0.2.3          |
-
-  </template>
-
-<template #Angular__15>
-
-| CVE ID         | CVE Type | Severity |        Affected Library        |  Vulnerable Versions   |
-| :------------: | :------: |:--------:|:------------------------------:|:----------------------:|
-| CVE-2025-66035 |   Direct   |   High   |        @angular/common         |       <= 18.2.14       |
-| CVE-2025-66412 |   Direct   |   High   |       @angular/compiler        |       <= 15.2.10       |
-| CVE-2026-22610 |   Direct   | Medium | @angular/common, @angular/core |       <= 18.2.14       |
-| CVE-2026-27970 |   Direct   |  Medium  | @angular/core |       <= 18.2.14       |
-| CVE-2026-23950 | Transitive |   High   |              tar               |        <= 7.5.2        |
-| CVE-2026-23745 | Transitive |   High   |              tar               |        <= 7.5.3        |
-| CVE-2026-24842 | Transitive |   High   |              tar               |        <= 7.5.6        |
-| CVE-2025-27789 | Transitive | Moderate |         @babel/runtime         |       < 7.26.10        |
-| CVE-2025-30360 | Transitive | Moderate |       webpack-dev-server       |        <= 5.2.0        |
-| CVE-2025-30359 | Transitive | Moderate |       webpack-dev-server       |        <= 5.2.0        |
-| CVE-2024-43788 | Transitive | Moderate |            webpack             | 5.0.0-alpha.0 - 5.93.0 |
-| CVE-2025-54798 | Transitive |   Low    |              tmp               |        <= 0.2.3        |
-
-  </template>
-
-<template #Angular__14>
-
-| CVE ID         | CVE Type | Severity |  Affected Library |  Vulnerable Versions   |
-| :------------: | :------: | :------: | :---------------: |:----------------------:|
-| CVE-2025-66035 |   Direct   |   High   |    @angular/common    | <= 18.2.14 |
-| CVE-2025-66412 |   Direct   |   High   |    @angular/compiler    | <= 14.3.0 |
-| CVE-2026-22610 |   Direct   | Medium | @angular/common, @angular/core | <= 14.3.0 |
-| CVE-2026-27970 |   Direct   | Medium |    @angular/core    | <= 14.3.0 |
-| CVE-2026-23950 | Transitive |   High   |              tar               |        <= 7.5.2        |
-| CVE-2026-23745 | Transitive |   High   |              tar               |        <= 7.5.3        |
-| CVE-2026-24842 | Transitive |   High   |              tar               |        <= 7.5.6        |
-| CVE-2024-29180 | Transitive | High | webpack-dev-middleware |        <= 5.3.3        |
-| CVE-2025-27789 | Transitive | Moderate | @babel/runtime |       < 7.26.10        |
-| CVE-2025-30360 | Transitive | Moderate | webpack-dev-server |        <= 5.2.0        |
-| CVE-2025-30359 | Transitive | Moderate | webpack-dev-server |        <= 5.2.0        |
-| CVE-2024-43788 | Transitive | Moderate | webpack | 5.0.0-alpha.0 - 5.93.0 |
-| CVE-2025-54798 | Transitive | Low | tmp |        <= 0.2.3        |
-
-  </template>
-
-<template #Angular__13>
-
-| CVE ID         | CVE Type | Severity |  Affected Library |  Vulnerable Versions   |
-| :------------: | :------: | :------: | :---------------: |:----------------------:|
-| CVE-2025-66412 |   Direct   |   High   |    @angular/compiler    | <= 13.4.0 |
-| CVE-2026-22610 |   Direct   | Medium | @angular/common, @angular/core | <= 13.4.0 |
-| CVE-2026-27970 |   Direct   | Medium |    @angular/core    | <= 13.4.0 |
-| CVE-2026-23950 | Transitive |   High   |              tar               |        <= 7.5.2        |
-| CVE-2026-23745 | Transitive |   High   |              tar               |        <= 7.5.3        |
-| CVE-2026-24842 | Transitive |   High   |              tar               |        <= 7.5.6        |
-| CVE-2024-29180 | Transitive | High | webpack-dev-middleware |        <= 5.3.3        |
-| CVE-2022-25883 | Transitive | High | semver |     7.0.0 - 7.5.1      |
-| CVE-2024-29415 | Transitive | High | ip |        <= 2.0.1        |
-| CVE-2025-27789 | Transitive | Moderate | @babel/runtime |       < 7.26.10        |
-| CVE-2025-30360 | Transitive | Moderate | webpack-dev-server |        <= 5.2.0        |
-| CVE-2025-30359 | Transitive | Moderate | webpack-dev-server |        <= 5.2.0        |
-| CVE-2024-43788 | Transitive | Moderate | webpack | 5.0.0-alpha.0 - 5.93.0 |
-| CVE-2023-44270 | Transitive | Moderate | postcss |        < 8.4.31        |
-| CVE-2025-54798 | Transitive | Low | tmp |        <= 0.2.3        |
-
-  </template>
-
-<template #Angular__12>
-
-|        CVE ID        | CVE Type | Severity |    Affected Library    |    Vulnerable Versions     |
-|:--------------------:| :------: |:--------:|:----------------------:|:--------------------------:|
-| CVE-2025-66412 |   Direct   |   High   |    @angular/compiler    |      <= 12.2.17       |
-| CVE-2026-22610 |   Direct   | Medium | @angular/common, @angular/core |      <= 12.2.17       |
-| CVE-2026-27970 |   Direct   | Medium |    @angular/core    |      <= 12.2.17       |
-|    CVE-2023-28154    | Transitive | Critical |        webpack         |     >= 5.0.0, < 5.76.0     |
-| CVE-2026-23950 | Transitive |   High   |              tar               |        <= 7.5.2        |
-| CVE-2026-23745 | Transitive |   High   |              tar               |        <= 7.5.3        |
-| CVE-2026-24842 | Transitive |   High   |              tar               |        <= 7.5.6        |
-|    CVE-2022-24771    | Transitive |   High   |       node-forge       |          < 1.3.0           |
-|    CVE-2022-24772    | Transitive |   High   |       node-forge       |          < 1.3.0           |
-|    CVE-2024-29180    | Transitive |   High   | webpack-dev-middleware |          <=5.3.3           |
-|    CVE-2022-25883    | Transitive |   High   |         semver         |       7.0.0 - 7.5.1        |
-|    CVE-2024-29415    | Transitive |   High   |           ip           |          <= 2.0.1          |
-|    CVE-2022-24773    | Transitive | Moderate |       node-forge       |          < 1.3.0           |
-|    CVE-2022-0122     | Transitive | Moderate |       node-forge       |          < 1.0.0           |
-|    CVE-2024-43788    | Transitive | Moderate |        webpack         | >= 5.0.0-alpha.0, < 5.94.0 |
-|    CVE-2025-27789    | Transitive | Moderate |     @babel/runtime     |         < 7.26.10          |
-|    CVE-2025-30360    | Transitive | Moderate |   webpack-dev-server   |          <= 5.2.0          |
-|    CVE-2025-30359    | Transitive | Moderate |   webpack-dev-server   |          <= 5.2.0          |
-|    CVE-2024-43788    | Transitive | Moderate |        webpack         |   5.0.0-alpha.0 - 5.93.0   |
-|    CVE-2023-44270    | Transitive | Moderate |        postcss         |          < 8.4.31          |
-|    CVE-2025-54798    | Transitive |   Low    |          tmp           |          <= 0.2.3          |
-| GHSA-gf8q-jrpm-jvxq  | Transitive |   Low    |       node-forge       |          < 1.0.0           |
-| GHSA-5rrq-pxf6-6jx5  | Transitive |   Low    |       node-forge       |          < 1.0.0           |
-
-  </template>
-
-<template #Angular__11>
-
-|       CVE ID        | CVE Type | Severity |    Affected Library    |                   Vulnerable Versions                   |
-|:-------------------:| :------: |:--------:|:----------------------:|:-------------------------------------------------------:|
-| CVE-2025-66412 |   Direct   |   High   |    @angular/compiler    |      <= 11.2.14       |
-| CVE-2026-22610 |   Direct   | Medium | @angular/common, @angular/core |      <= 11.2.14       |
-| CVE-2026-27970 |   Direct   | Medium |    @angular/core    |      <= 11.2.14       |
-|   CVE-2022-37601    | Transitive | Critical |      loader-utils      |               >= 2.0.0, < 2.0.3, < 1.4.1                |
-|   CVE-2025-7783    | Transitive | Critical |       form-data        |      < 2.5.4, >= 3.0.0, < 3.0.4, >= 4.0.0, < 4.0.4      |
-| CVE-2026-23950 | Transitive |   High   |              tar               |        <= 7.5.2        |
-| CVE-2026-23745 | Transitive |   High   |              tar               |        <= 7.5.3        |
-| CVE-2026-24842 | Transitive |   High   |              tar               |        <= 7.5.6        |
-|   CVE-2022-37603    | Transitive | High |      loader-utils      | >= 1.0.0, < 1.4.2, >= 2.0.0, < 2.0.4, >= 3.0.0, < 3.2.1 |
-|   CVE-2022-37599    | Transitive | High |      loader-utils      | >= 1.0.0, < 1.4.2, >= 2.0.0, < 2.0.4, >= 3.0.0, < 3.2.1 |
-|   CVE-2021-23424    | Transitive |   High   |       ansi-html        |    < 0.0.8     |
-|   CVE-2024-47068    | Transitive |   High   |         rollup         |    >= 4.0.0, < 4.22.4, >= 3.0.0, < 3.29.5, < 2.79.2     |
-|    CVE-2022-3517    | Transitive |   High   |       minimatch        |                         < 3.0.5                         |
-|   CVE-2022-25858    | Transitive |   High   |         terser         |               < 4.8.1, >= 5.0.0, < 5.14.2               |
-|   CVE-2022-24771    | Transitive |   High   |       node-forge       |                         < 1.3.0                         |
-|   CVE-2022-24772    | Transitive |   High   |       node-forge       |                         < 1.3.0                         |
-|   CVE-2022-25883    | Transitive |   High   |         semver         |                      7.0.0 - 7.5.1                      |
-|   CVE-2024-29415    | Transitive |   High   |           ip           |                        <= 2.0.1                         |
-|   CVE-2024-4068    | Transitive |   High   |         braces         |                         < 3.0.3                         |
-|   CVE-2023-44270    | Transitive | Moderate |        postcss         |                        < 8.4.31                         |
-|   CVE-2023-26136    | Transitive | Moderate |      tough-cookie      |                         < 4.1.3                         |
-|   CVE-2022-24773    | Transitive | Moderate |       node-forge       |                         < 1.3.0                         |
-|    CVE-2022-0122    | Transitive | Moderate |       node-forge       |                         < 1.0.0                         |
-|   CVE-2025-27789    | Transitive | Moderate |     @babel/runtime     |                        < 7.26.10                        |
-|   CVE-2023-44270    | Transitive | Moderate |        postcss         |                        < 8.4.31                         |
-|   CVE-2025-54798    | Transitive |   Low    |          tmp           |                        <= 0.2.3                         |
-| GHSA-gf8q-jrpm-jvxq | Transitive |   Low    |       node-forge       |                         < 1.0.0                         |
-| GHSA-5rrq-pxf6-6jx5 | Transitive |   Low    |       node-forge       |                         < 1.0.0                         |
-
-  </template>
-
-<template #Angular__10>
-
-|     CVE ID     | CVE Type | Severity |       Affected Library        |                       Vulnerable Versions                        |
-|:--------------:| :------: |:--------:|:-----------------------------:|:----------------------------------------------------------------:|
-| CVE-2025-66412 |   Direct   |   High   |    @angular/compiler    |      <= 10.2.5       |
-| CVE-2026-22610 |   Direct   | Medium | @angular/common, @angular/core |      <= 10.2.5       |
-| CVE-2026-27970 |   Direct   | Medium |    @angular/core    |      <= 10.2.5       |
-|   CVE-2022-37601    | Transitive | Critical |         loader-utils          |                    >= 2.0.0, < 2.0.3, < 1.4.1                    |
-|   CVE-2025-7783    | Transitive | Critical |           form-data           |          < 2.5.4, >= 3.0.0, < 3.0.4, >= 4.0.0, < 4.0.4           |
-| CVE-2026-23950 | Transitive |   High   |              tar               |        <= 7.5.2        |
-| CVE-2026-23745 | Transitive |   High   |              tar               |        <= 7.5.3        |
-| CVE-2026-24842 | Transitive |   High   |              tar               |        <= 7.5.6        |
-|   CVE-2022-25881    | Transitive |   High   |     http-cache-semantics      |                             < 4.1.1                              |
-|   CVE-2024-29415    | Transitive |   High   |              ip               |                             <= 2.0.1                             |
-|   CVE-2024-4068    | Transitive |   High   |         braces         |                         < 3.0.3                         |
-|   CVE-2021-23424    | Transitive |   High   |       ansi-html        |    < 0.0.8     |
-| CVE-2020-7733  | Transitive |   High   |         ua-parser-js          |                             < 0.7.22                             |
-| CVE-2020-7793  | Transitive |   High   |         ua-parser-js          |                             < 0.7.23                             |
-| CVE-2021-27292  | Transitive |   High   |         ua-parser-js          |                       >= 0.7.14, < 0.7.24                        |
-|   CVE-2021-3803    | Transitive |   High   |           nth-check           |                             < 2.0.1                              |
-|   CVE-2024-47068    | Transitive |   High   |            rollup             |         >= 4.0.0, < 4.22.4, >= 3.0.0, < 3.29.5, < 2.79.2         |
-|   CVE-2022-25858    | Transitive |   High   |            terser             |                   < 4.8.1, >= 5.0.0, < 5.14.2                    |
-|   CVE-2022-25883    | Transitive |   High   |            semver             |                          7.0.0 - 7.5.1                           |
-|   CVE-2022-24771    | Transitive |   High   |          node-forge           |                             < 1.3.0                              |
-|   CVE-2022-24772    | Transitive |   High   |          node-forge           |                             < 1.3.0                              |
-|    CVE-2022-3517    | Transitive |   High   |           minimatch           |                             < 3.0.5                              |
-|   CVE-2022-37603    | Transitive | High |         loader-utils          |     >= 1.0.0, < 1.4.2, >= 2.0.0, < 2.0.4, >= 3.0.0, < 3.2.1      |
-|   CVE-2022-37599    | Transitive | High |         loader-utils          |     >= 1.0.0, < 1.4.2, >= 2.0.0, < 2.0.4, >= 3.0.0, < 3.2.1      |
-|   CVE-2025-27789    | Transitive | Moderate |     @babel/runtime     |                        < 7.26.10                        |
-|   CVE-2024-36751    | Transitive | Moderate |           parse-uri           |                             <= 1.0.9                             |
-|   CVE-2024-28863    | Transitive | Moderate |              tar              |                             < 6.2.1                              |
-|   CVE-2023-26136    | Transitive | Moderate |         tough-cookie          |                             < 4.1.3                              |
-|   CVE-2023-44270    | Transitive | Moderate |            postcss            |                             < 8.4.31                             |
-|   CVE-2021-23382    | Transitive | Moderate |            postcss            |                   >= 8.0.0, < 8.2.13, < 7.0.36                   |
-|   CVE-2021-23368    | Transitive | Moderate |            postcss            |              >= 7.0.0, < 7.0.36, >= 8.0.0, < 8.2.10              |
-|   CVE-2022-24773    | Transitive | Moderate |          node-forge           |                             < 1.3.0                              |
-|    CVE-2022-0122    | Transitive | Moderate |          node-forge           |                             < 1.0.0                              |
-|   CVE-2025-54798    | Transitive |   Low    |              tmp              |                             <= 0.2.3                             |
-| CVE-2020-15262 | Transitive |   Low    | webpack-subresource-integrity |                             < 1.5.1                              |
-| GHSA-gf8q-jrpm-jvxq | Transitive |   Low    |          node-forge           |                             < 1.0.0                              |
-| GHSA-5rrq-pxf6-6jx5 | Transitive |   Low    |          node-forge           |                             < 1.0.0                              |
-| CVE-2017-16137 | Transitive |   Low    |             debug             | < 2.6.9, >= 3.0.0, < 3.1.0, >= 3.2.0, < 3.2.7, >= 4.0.0, < 4.3.1 |
-| CVE-2024-47764 | Transitive |   Low    |            cookie             | < 0.7.0 |
-
-  </template>
-
-<template #Angular__9>
-
-|       CVE ID        | CVE Type | Severity |       Affected Library        |                          Vulnerable Versions                           |
-|:-------------------:| :------: |:--------:|:-----------------------------:|:----------------------------------------------------------------------:|
-| CVE-2021-4231 |   Direct   |   High   |    @angular/core    |      <= 9.1.13       |
-| CVE-2025-66412 |   Direct   |   High   |    @angular/compiler    |      <= 9.1.13       |
-| CVE-2026-22610 |   Direct   | Medium | @angular/common, @angular/core |      <= 9.1.13       |
-| CVE-2026-27970 |   Direct   | Medium |    @angular/core    |      <= 9.1.13       |
-|   CVE-2022-37601    | Transitive | Critical |         loader-utils          |                       >= 2.0.0, < 2.0.3, < 1.4.1                       |
-|    CVE-2025-7783    | Transitive | Critical |           form-data           |             < 2.5.4, >= 3.0.0, < 3.0.4, >= 4.0.0, < 4.0.4              |
-|   CVE-2024-47068    | Transitive |   High   |            rollup             |            >= 4.0.0, < 4.22.4, >= 3.0.0, < 3.29.5, < 2.79.2            |
-|   CVE-2022-37603    | Transitive | High |         loader-utils          |        >= 1.0.0, < 1.4.2, >= 2.0.0, < 2.0.4, >= 3.0.0, < 3.2.1         |
-|   CVE-2022-37599    | Transitive | High |         loader-utils          |        >= 1.0.0, < 1.4.2, >= 2.0.0, < 2.0.4, >= 3.0.0, < 3.2.1         |
-|   CVE-2024-21536    | Transitive | High |     http-proxy-middleware     |                       < 2.0.7, >= 3.0.0, < 3.0.3                       |
-|   CVE-2024-29415    | Transitive |   High   |              ip               |                                <= 2.0.1                                |
-|   CVE-2022-25881    | Transitive |   High   |     http-cache-semantics      |                                < 4.1.1                                 |
-|   CVE-2021-23424    | Transitive |   High   |           ansi-html           |                                < 0.0.8                                 |
-|    CVE-2020-7733    | Transitive |   High   |         ua-parser-js          |                                < 0.7.22                                |
-|    CVE-2020-7793    | Transitive |   High   |         ua-parser-js          |                                < 0.7.23                                |
-|   CVE-2021-27292    | Transitive |   High   |         ua-parser-js          |                          >= 0.7.14, < 0.7.24                           |
-|    CVE-2024-4068    | Transitive |   High   |            braces             |                                < 3.0.3                                 |
-|    CVE-2022-3517    | Transitive |   High   |           minimatch           |                                < 3.0.5                                 |
-|   CVE-2022-24771    | Transitive |   High   |          node-forge           |                                < 1.3.0                                 |
-|   CVE-2022-24772    | Transitive |   High   |          node-forge           |                                < 1.3.0                                 |
-|    CVE-2021-3803    | Transitive |   High   |           nth-check           |                                < 2.0.1                                 |
-|   CVE-2022-25883    | Transitive |   High   |            semver             |                             7.0.0 - 7.5.1                              |
-|   CVE-2022-25858    | Transitive |   High   |            terser             |                      < 4.8.1, >= 5.0.0, < 5.14.2                       |
-|   CVE-2024-29180    | Transitive |   High   |    webpack-dev-middleware     |             >= 7.0.0, < 7.1.0, >= 6.0.0, < 6.1.2, <= 5.3.3             |
-|    CVE-2023-0842    | Transitive | Moderate |            xml2js             |                                < 0.5.0                                 |
-|   CVE-2020-7608     | Transitive | Moderate |         yargs-parser          | >= 6.0.0, < 13.1.2, >= 14.0.0, < 15.0.1, <= 5.0.0, >= 16.0.0, < 18.1.1 |
-|   CVE-2021-23495     | Transitive | Moderate |             karma             |                                < 6.3.16                                |
-|   CVE-2022-0437     | Transitive | Moderate |             karma             |                                < 6.3.14                                |
-|   CVE-2024-28863    | Transitive | Moderate |              tar              |                                < 6.2.1                                 |
-|   CVE-2022-24773    | Transitive | Moderate |          node-forge           |                                < 1.3.0                                 |
-|    CVE-2022-0122    | Transitive | Moderate |          node-forge           |                                < 1.0.0                                 |
-|   CVE-2024-36751    | Transitive | Moderate |           parse-uri           |                                <= 1.0.9                                |
-|   CVE-2023-44270    | Transitive | Moderate |            postcss            |                                < 8.4.31                                |
-|   CVE-2021-23382    | Transitive | Moderate |            postcss            |                      >= 8.0.0, < 8.2.13, < 7.0.36                      |
-|   CVE-2021-23368    | Transitive | Moderate |            postcss            |                 >= 7.0.0, < 7.0.36, >= 8.0.0, < 8.2.10                 |
-|   CVE-2023-26136    | Transitive | Moderate |         tough-cookie          |                                < 4.1.3                                 |
-|   CVE-2025-30359    | Transitive | Moderate |         webpack-dev-server          |                                < 4.1.3                                 |
-|   CVE-2024-29415    | Transitive |   Low    |              ip               |                            = 2.0.0, < 1.1.9                            |
-|   CVE-2025-54798    | Transitive |   Low    |              tmp              |                                <= 0.2.3                                |
-|   CVE-2017-16137    | Transitive |   Low    |             debug             |    < 2.6.9, >= 3.0.0, < 3.1.0, >= 3.2.0, < 3.2.7, >= 4.0.0, < 4.3.1    |
-|   CVE-2024-47764    | Transitive |   Low    |            cookie             |                                < 0.7.0                                 |
-| GHSA-gf8q-jrpm-jvxq | Transitive |   Low    |          node-forge           |                                < 1.0.0                                 |
-| GHSA-5rrq-pxf6-6jx5 | Transitive |   Low    |          node-forge           |                                < 1.0.0                                 |
-|   CVE-2020-15262    | Transitive |   Low    | webpack-subresource-integrity |                                < 1.5.1                                 |
-
-  </template>
-
-<template #Angular__8>
-
-|     CVE ID     | CVE Type | Severity |        Affected Library        | Vulnerable Versions |
-|:--------------:|:--------:|:--------:|:------------------------------:|:-------------------:|
-| CVE-2021-4231 |  Direct  |   High   |         @angular/core         |      <= 8.2.14      |
-| CVE-2026-22610 |  Direct  | Medium | @angular/common, @angular/core |      <= 8.2.14      |
-| CVE-2026-27970 |  Direct  |  Medium  |         @angular/core          |      <= 8.2.14      |
-| CVE-2025-66412 |  Direct  |   High   |       @angular/compiler        |      <= 8.2.14       |
-
-  </template>
-
-<template #Angular__7>
-
-|     CVE ID     | CVE Type | Severity |        Affected Library        | Vulnerable Versions |
-|:--------------:|:--------:|:--------:|:------------------------------:|:-------------------:|
-| CVE-2021-4231 |  Direct  |   High   |         @angular/core         |      <= 7.2.16      |
-| CVE-2026-22610 |  Direct  | Medium | @angular/common, @angular/core |      <= 7.2.16      |
-| CVE-2026-27970 |  Direct  |  Medium  |         @angular/core          |      <= 7.2.16      |
-| CVE-2025-66412 |  Direct  |   High   |       @angular/compiler        |      <= 7.2.16      |
-
-  </template>
-
-<template #Angular__6>
-
-|     CVE ID     | CVE Type | Severity |        Affected Library        | Vulnerable Versions |
-|:--------------:|:--------:|:--------:|:------------------------------:|:-------------------:|
-| CVE-2021-4231 |  Direct  |   High   |         @angular/core         |      <= 6.1.10      |
-| CVE-2026-22610 |  Direct  | Medium | @angular/common, @angular/core |      <= 6.1.10      |
-| CVE-2026-27970 |  Direct  |  Medium  |         @angular/core          |      <= 6.1.10      |
-| CVE-2025-66412 |  Direct  |   High   |       @angular/compiler        |      <= 6.1.10      |
-
-  </template>
-
-<template #Angular__5>
-
-|     CVE ID     | CVE Type | Severity |        Affected Library        | Vulnerable Versions |
-|:--------------:|:--------:|:--------:|:------------------------------:|:-------------------:|
-| CVE-2021-4231 |  Direct  |   High   |         @angular/core         |      <= 5.2.11      |
-| CVE-2026-22610 |  Direct  | Medium | @angular/common, @angular/core |      <= 5.2.11      |
-| CVE-2026-27970 |  Direct  |  Medium  |         @angular/core          |      <= 5.2.11      |
-| CVE-2025-66412 |  Direct  |   High   |       @angular/compiler        |      <= 5.2.11      |
-
-  </template>
-
-<template #Angular__4>
-
-|     CVE ID     | CVE Type | Severity |        Affected Library        | Vulnerable Versions |
-|:--------------:|:--------:|:--------:|:------------------------------:|:-------------------:|
-| CVE-2021-4231 |  Direct  |   High   |         @angular/core         |      <= 4.4.7       |
-| CVE-2026-22610 |  Direct  | Medium | @angular/common, @angular/core |      <= 4.4.7       |
-| CVE-2026-27970 |  Direct  |  Medium  |         @angular/core          |      <= 4.4.7       |
-| CVE-2025-66412 |  Direct  |   High   |       @angular/compiler        |      <= 4.4.7       |
-
-  </template>
-
-</TableTabs>
-
-If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
+</WhatsNext>
 
 <script setup>
 const Angular19WithSSR =
