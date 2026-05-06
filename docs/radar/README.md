@@ -83,6 +83,18 @@ If you are registered to the EU instance instead of the default US one, you shou
 base-url: https://eu.radar.tuxcare.com
 ```
 
+## Cloning VM's
+
+You should always ensure that you `truncate -s 0 /etc/machine-id` before cloning a Linux VM, otherwise you'll have various problems with `dbus`, `systemd` and other key subsystems.
+
+If you have failed to do so and Radar won't allow you to scan your clones, you can work around this by using the `--node-id` commandline argument or more permanently by setting the `node-id` flag in /etc/tuxcare-radar/radar.yaml like so:
+
+```text
+node-id: true
+```
+
+This will generate an ID using a different method that doesn't look at /etc/machine-id so your clones will now work.
+
 ## Tagging
 
 Tags are a powerful feature that let you easily identify and filter hosts based on tags. You can create tags to describe your environment, for example `prod`, `dev`, `staging` or the TuxCare products such as `esu`, `esa`, `kce`, or maybe location, such as `eu`, `us`, `apac`. To use tags, simply add them to /etc/tuxcare-radar/radar.yaml like so:
