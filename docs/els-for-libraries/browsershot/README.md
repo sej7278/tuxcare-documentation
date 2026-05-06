@@ -128,6 +128,11 @@ Fixes for the following vulnerabilities are available in ELS for Browsershot fro
 | CVE ID         | Severity | Vulnerable versions | Fixed in version       |
 |----------------|----------|---------------------|------------------------|
 | CVE-2025-3192  | High     | 4.4.0               | 4.4.0-p1+tuxcare       |
+| CVE-2024-21544 | High     | 4.4.0               | 4.4.0-p2+tuxcare       |
+| CVE-2024-21547 | High     | 4.4.0               | 4.4.0-p2+tuxcare       |
+| CVE-2024-21549 | High     | 4.4.0               | 4.4.0-p2+tuxcare       |
+| CVE-2025-1022  | High     | 4.4.0               | 4.4.0-p2+tuxcare       |
+| CVE-2025-1026  | High     | 4.4.0               | 4.4.0-p2+tuxcare       |
 
 </template>
 

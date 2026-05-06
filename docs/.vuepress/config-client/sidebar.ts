@@ -253,6 +253,10 @@ export default {
                     icon: '/images/nesbot-carbon.webp',
                 },
                 {
+                    path: '/els-for-libraries/doctrine-orm/',
+                    icon: '/images/php-logo.webp',
+                },
+                {
                     path: '/els-for-libraries/dompdf/',
                     icon: '/images/dompdf-logo.webp',
                 },
@@ -287,6 +291,10 @@ export default {
                 {
                     path: '/els-for-libraries/league-commonmark/',
                     icon: '/images/league-commonmark-logo.webp',
+                },
+                {
+                    path: '/els-for-libraries/league-flysystem/',
+                    icon: '/images/php-logo.webp',
                 },
                 {
                     path: '/els-for-libraries/livewire/',

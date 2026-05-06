@@ -119,6 +119,9 @@ This allows Composer to fall back to Packagist for packages not available in the
 | CVE-2023-33495    | Medium   | <4.4.12                             | 3.9.15-p1+tuxcare |
 | CVE-2026-29069    | Medium   | >=4.0.0, <4.17.0                    | 3.9.15-p2+tuxcare |
 | CVE-2026-28783    | Medium   | >=4.0.0, <4.17.0                    | 3.9.15-p2+tuxcare |
+| CVE-2026-27127    | High     | >=3.0.0, <4.17.1                    | 3.9.15-p3+tuxcare |
+| CVE-2026-32267    | High     | >=3.0.0, <4.17.1                    | 3.9.15-p3+tuxcare |
+| CVE-2025-68437    | Medium   | >=3.0.0, <4.17.1                    | 3.9.15-p3+tuxcare |
 
 ## What's Next?
 
