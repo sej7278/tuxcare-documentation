@@ -18,9 +18,11 @@ Endless Lifecycle Support (ELS) for MongoDB driver from TuxCare provides securit
 
 <ELSSteps>
 
-1. **Navigate to the project root directory**
+1. **Create or update the .npmrc file**
 
-   Example structure:
+   Navigate to the root directory of your MongoDB Driver project and create a `.npmrc` file or update it if it already exists.
+
+   **Example:**
 
    ```text
    my-mongodb-project/
@@ -32,7 +34,7 @@ Endless Lifecycle Support (ELS) for MongoDB driver from TuxCare provides securit
 
 2. **Configure the npm registry**
 
-   Create or update the `.npmrc` file in your project root:
+   Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
    ```text
    registry=https://registry.npmjs.org/
@@ -89,7 +91,7 @@ Endless Lifecycle Support (ELS) for MongoDB driver from TuxCare provides securit
      }
      ```
 
-4. **Clean and install**
+4. **Refresh the project dependencies**
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
@@ -117,13 +119,21 @@ Endless Lifecycle Support (ELS) for MongoDB driver from TuxCare provides securit
 
 </ELSSteps>
 
+## Resolved CVEs
+
+Fixes for the following vulnerabilities are available in ELS for MongoDB from TuxCare versions:
+
+| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
+| :------------: | :------: |:--------:|:------------------:| :----------------: |
+| GHSA-mh5c-679w-hh4r | Direct   | High     | mongodb           | < 3.1.13          |
+
+If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
+
 ## What's Next?
 
 <WhatsNext hide-title>
 
-* ![](/images/eye.webp) [CVE tracker](https://tuxcare.com/cve-tracker/) — Track vulnerability fixes and updates
-* ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes) — Patched versions and changelogs
-* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/products) — Full list of product parts covered by ELS
+* ![](/images/eye.webp) [CVE tracker](https://tuxcare.com/cve-tracker/?q=mongodb-driver) — Track vulnerability fixes and updates
 * ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/mongodb/) — Vulnerability Exploitability eXchange feed
 * ![](/images/unlock-alt.webp) [SBOM](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:mongodb-driver) — Software Bill of Materials (Nexus, credentials required)
 * ![](/images/wrench.webp) [Managing the ELS repository](/els-for-libraries/managing-els-repository/) — Update to newer versions

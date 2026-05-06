@@ -20,9 +20,11 @@ The versions **2.6.11**, **2.6.14**, and **2.7.16** are supported by TuxCare for
 
 <ELSSteps>
 
-1. **Navigate to the project root directory**
+1. **Create or update the .npmrc file**
 
-   Example structure:
+   Navigate to the root directory of your Vue project and create a `.npmrc` file or update it if it already exists.
+
+   **Example:**
 
    ```text
    my-vue-project/
@@ -34,7 +36,7 @@ The versions **2.6.11**, **2.6.14**, and **2.7.16** are supported by TuxCare for
 
 2. **Configure the npm registry**
 
-   Create or update the `.npmrc` file in your project root:
+   Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
    ```text
    registry=https://registry.npmjs.org/
@@ -109,7 +111,7 @@ The versions **2.6.11**, **2.6.14**, and **2.7.16** are supported by TuxCare for
 
    </TableTabs>
 
-4. **Clean and install**
+4. **Refresh the project dependencies**
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 

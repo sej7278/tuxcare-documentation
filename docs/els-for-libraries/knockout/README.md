@@ -18,9 +18,11 @@ Endless Lifecycle Support (ELS) for Knockout from TuxCare provides security fixe
 
 <ELSSteps>
 
-1. **Navigate to the project root directory**
+1. **Create or update the .npmrc file**
 
-   Example structure:
+   Navigate to the root directory of your Knockout project and create a `.npmrc` file or update it if it already exists.
+
+   **Example:**
 
    ```text
    my-knockout-project/
@@ -32,7 +34,7 @@ Endless Lifecycle Support (ELS) for Knockout from TuxCare provides security fixe
 
 2. **Configure the npm registry**
 
-   Create or update the `.npmrc` file in your project root:
+   Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
    ```text
    registry=https://registry.npmjs.org/
@@ -123,7 +125,7 @@ Endless Lifecycle Support (ELS) for Knockout from TuxCare provides security fixe
      }
      ```
 
-4. **Clean and install**
+4. **Refresh the project dependencies**
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 

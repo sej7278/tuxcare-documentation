@@ -18,9 +18,11 @@ Endless Lifecycle Support (ELS) for MySQL2 from TuxCare provides security fixes 
 
 <ELSSteps>
 
-1. **Navigate to the project root directory**
+1. **Create or update the .npmrc file**
 
-   Example structure:
+   Navigate to the root directory of your MySQL2 project and create a `.npmrc` file or update it if it already exists.
+
+   **Example:**
 
    ```text
    my-mysql2-project/
@@ -32,7 +34,7 @@ Endless Lifecycle Support (ELS) for MySQL2 from TuxCare provides security fixes 
 
 2. **Configure the npm registry**
 
-   Create or update the `.npmrc` file in your project root:
+   Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
    ```text
    registry=https://registry.npmjs.org/
@@ -89,7 +91,7 @@ Endless Lifecycle Support (ELS) for MySQL2 from TuxCare provides security fixes 
      }
      ```
 
-4. **Clean and install**
+4. **Refresh the project dependencies**
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
@@ -117,13 +119,24 @@ Endless Lifecycle Support (ELS) for MySQL2 from TuxCare provides security fixes 
 
 </ELSSteps>
 
+## Resolved CVEs
+
+Fixes for the following vulnerabilities are available in ELS for MySQL2 from TuxCare versions:
+
+| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
+| :------------: | :------: |:--------:|:------------------:| :----------------: |
+| CVE-2024-21512 | Direct   | High     | mysql2            | < 3.9.8           |
+| CVE-2024-21511 | Direct   | Critical | mysql2            | < 3.9.7           |
+| CVE-2024-21508 | Direct   | Critical | mysql2            | < 3.9.4           |
+
+If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
+
 ## What's Next?
 
 <WhatsNext hide-title>
 
 * ![](/images/eye.webp) [CVE tracker](https://tuxcare.com/cve-tracker/?q=mysql2) — Track vulnerability fixes and updates
 * ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?q=mysql2) — Patched versions and changelogs
-* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/products?product=MySQL2) — Full list of product parts covered by ELS
 * ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/mysql2/) — Vulnerability Exploitability eXchange feed
 * ![](/images/unlock-alt.webp) [SBOM](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:mysql2) — Software Bill of Materials (Nexus, credentials required)
 * ![](/images/wrench.webp) [Managing the ELS repository](/els-for-libraries/managing-els-repository/) — Update to newer versions

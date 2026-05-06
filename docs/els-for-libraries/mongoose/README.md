@@ -18,9 +18,11 @@ Endless Lifecycle Support (ELS) for Mongoose from TuxCare provides security fixe
 
 <ELSSteps>
 
-1. **Navigate to the project root directory**
+1. **Create or update the .npmrc file**
 
-   Example structure:
+   Navigate to the root directory of your Mongoose project and create a `.npmrc` file or update it if it already exists.
+
+   **Example:**
 
    ```text
    my-mongoose-project/
@@ -32,7 +34,7 @@ Endless Lifecycle Support (ELS) for Mongoose from TuxCare provides security fixe
 
 2. **Configure the npm registry**
 
-   Create or update the `.npmrc` file in your project root:
+   Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
    ```text
    registry=https://registry.npmjs.org/
@@ -123,7 +125,7 @@ Endless Lifecycle Support (ELS) for Mongoose from TuxCare provides security fixe
      }
      ```
 
-4. **Clean and install**
+4. **Refresh the project dependencies**
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
@@ -151,13 +153,48 @@ Endless Lifecycle Support (ELS) for Mongoose from TuxCare provides security fixe
 
 </ELSSteps>
 
+## Resolved CVEs
+
+Fixes for the following vulnerabilities are available in ELS for Mongoose from TuxCare versions:
+
+<TableTabs label="Choose Mongoose version: " >
+
+  <template #Mongoose_5.13.23>
+
+| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
+| :------------: | :------: |:--------:|:------------------:|:-------------------:|
+| CVE-2025-23061 | Direct   | Critical | mongoose           | < 8.9.5            |
+| CVE-2024-53900 | Direct   | Critical | mongoose           | < 6.13.5, ≥ 7.0.1 < 7.8.3, ≥ 8.0.1 < 8.8.3 |
+
+  </template>
+
+  <template #Mongoose_6.12.2>
+
+| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
+| :------------: | :------: |:--------:|:------------------:|:-------------------:|
+| CVE-2025-23061 | Direct   | Critical | mongoose           | < 8.9.5            |
+| CVE-2024-53900 | Direct   | Critical | mongoose           | < 6.13.5, ≥ 7.0.1 < 7.8.3, ≥ 8.0.1 < 8.8.3 |
+
+  </template>
+
+  <template #Mongoose_7.8.8>
+
+| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
+| :------------: | :------: |:--------:|:------------------:|:-------------------:|
+| CVE-2025-23061 | Direct   | Critical | mongoose           | < 8.9.5            |
+
+  </template>
+
+</TableTabs>
+
+If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
+
 ## What's Next?
 
 <WhatsNext hide-title>
 
 * ![](/images/eye.webp) [CVE tracker](https://tuxcare.com/cve-tracker/?q=mongoose) — Track vulnerability fixes and updates
 * ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?q=mongoose) — Patched versions and changelogs
-* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/products?product=Mongoose) — Full list of product parts covered by ELS
 * ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/mongoose/) — Vulnerability Exploitability eXchange feed
 * ![](/images/unlock-alt.webp) [SBOM](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:mongoose) — Software Bill of Materials (Nexus, credentials required)
 * ![](/images/wrench.webp) [Managing the ELS repository](/els-for-libraries/managing-els-repository/) — Update to newer versions

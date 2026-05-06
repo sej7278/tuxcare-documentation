@@ -18,9 +18,11 @@ Endless Lifecycle Support (ELS) for YUI from TuxCare provides security fixes for
 
 <ELSSteps>
 
-1. **Navigate to the project root directory**
+1. **Create or update the .npmrc file**
 
-   Example structure:
+   Navigate to the root directory of your YUI project and create a `.npmrc` file or update it if it already exists.
+
+   **Example:**
 
    ```text
    my-yui-project/
@@ -32,7 +34,7 @@ Endless Lifecycle Support (ELS) for YUI from TuxCare provides security fixes for
 
 2. **Configure the npm registry**
 
-   Create or update the `.npmrc` file in your project root:
+   Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
    ```text
    registry=https://registry.npmjs.org/
@@ -80,7 +82,7 @@ Endless Lifecycle Support (ELS) for YUI from TuxCare provides security fixes for
 
    </TableTabs>
 
-4. **Clean and install**
+4. **Refresh the project dependencies**
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
@@ -108,13 +110,46 @@ Endless Lifecycle Support (ELS) for YUI from TuxCare provides security fixes for
 
 </ELSSteps>
 
+## Resolved CVEs
+
+Fixes for the following vulnerabilities are available in ELS for YUI from TuxCare versions:
+
+<TableTabs label="Choose YUI version: " >
+
+<template #yui_2.9.0>
+
+|    CVE ID     | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
+|:-------------:|:--------:|:--------:|:------------------:|:-------------------:|
+| CVE-2012-5881 | Direct   | Medium   | yui                | >= 2.4.0 <= 2.9.0  |
+
+</template>
+
+<template #yui_3.18.1>
+
+|    CVE ID     | CVE Type  | Severity | Affected Libraries | Vulnerable Versions |
+|:-------------:|:---------:|:--------:|:------------------:|:-------------------:|
+| CVE-2018-3728 | Transitive | High     | hoek               | < 4.2.0, >= 5.0.0 < 5.0.3 |
+| CVE-2020-36604 | Transitive | High     | hoek               | < 8.5.1, >= 9.0 < 9.0.3 |
+| CVE-2017-16138 | Transitive | High     | mime               | < 1.4.1, >= 2.0.1 < 2.0.3 |
+| GHSA-xc7v-wxcw-j472 | Transitive | High     | tunnel-agent       | < 0.6.0 |
+| CVE-2022-24999 | Transitive | High     | qs                 | - |
+| CVE-2017-1000048 | Transitive | High     | qs                 | - |
+| CVE-2022-29167 | Transitive | High     | hawk               | < 9.0.1 |
+| CVE-2016-2515 | Transitive | High     | hawk               | 3.1.2, 4.1.0 |
+| CVE-2025-7783 | Transitive | Critical | form-data          | - |
+
+</template>
+
+</TableTabs>
+
+If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
+
 ## What's Next?
 
 <WhatsNext hide-title>
 
-* ![](/images/eye.webp) [CVE tracker](https://tuxcare.com/cve-tracker/?product=YUI) — Track vulnerability fixes and updates
-* ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?product=YUI) — Patched versions and changelogs
-* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/products?product=YUI) — Full list of product parts covered by ELS
+* ![](/images/eye.webp) [CVE tracker](https://tuxcare.com/cve-tracker/?q=yui) — Track vulnerability fixes and updates
+* ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?q=yui) — Patched versions and changelogs
 * ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/yui/) — Vulnerability Exploitability eXchange feed
 * ![](/images/unlock-alt.webp) [SBOM](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:yui) — Software Bill of Materials (Nexus, credentials required)
 * ![](/images/wrench.webp) [Managing the ELS repository](/els-for-libraries/managing-els-repository/) — Update to newer versions

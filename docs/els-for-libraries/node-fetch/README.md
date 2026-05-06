@@ -18,9 +18,11 @@ Endless Lifecycle Support (ELS) for node-fetch from TuxCare provides security fi
 
 <ELSSteps>
 
-1. **Navigate to the project root directory**
+1. **Create or update the .npmrc file**
 
-   Example structure:
+   Navigate to the root directory of your node-fetch project and create a `.npmrc` file or update it if it already exists.
+
+   **Example:**
 
    ```text
    my-node-fetch-project/
@@ -32,7 +34,7 @@ Endless Lifecycle Support (ELS) for node-fetch from TuxCare provides security fi
 
 2. **Configure the npm registry**
 
-   Create or update the `.npmrc` file in your project root:
+   Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
    ```text
    registry=https://registry.npmjs.org/
@@ -123,7 +125,7 @@ Endless Lifecycle Support (ELS) for node-fetch from TuxCare provides security fi
      }
      ```
 
-4. **Clean and install**
+4. **Refresh the project dependencies**
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
@@ -151,13 +153,46 @@ Endless Lifecycle Support (ELS) for node-fetch from TuxCare provides security fi
 
 </ELSSteps>
 
+## Resolved CVEs
+
+Fixes for the following vulnerabilities are available in ELS for node-fetch from TuxCare versions:
+
+<TableTabs label="Choose node-fetch version: " >
+
+<template #node-fetch_1.6.3>
+
+| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
+| :------------: | :------: |:--------:|:------------------:| :----------------: |
+| CVE-2022-0235  | Direct   | High     | node-fetch         | < 2.6.7, >= 3.0.0 < 3.1.1 |
+
+  </template>
+
+<template #node-fetch_1.7.3>
+
+| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
+| :------------: | :------: |:--------:|:------------------:| :----------------: |
+| CVE-2022-0235  | Direct   | High     | node-fetch         | < 2.6.7, >= 3.0.0 < 3.1.1 |
+
+  </template>
+
+<template #node-fetch_2.6.1>
+
+| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
+| :------------: | :------: |:--------:|:------------------:| :----------------: |
+| CVE-2022-0235  | Direct   | High     | node-fetch         | < 2.6.7, >= 3.0.0 < 3.1.1 |
+
+  </template>
+
+</TableTabs>
+
+If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
+
 ## What's Next?
 
 <WhatsNext hide-title>
 
 * ![](/images/eye.webp) [CVE tracker](https://tuxcare.com/cve-tracker/?product=node-fetch) — Track vulnerability fixes and updates
 * ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?product=node-fetch) — Patched versions and changelogs
-* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/products?product=node-fetch) — Full list of product parts covered by ELS
 * ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/node-fetch/) — Vulnerability Exploitability eXchange feed
 * ![](/images/unlock-alt.webp) [SBOM](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:node-fetch) — Software Bill of Materials (Nexus, credentials required)
 * ![](/images/wrench.webp) [Managing the ELS repository](/els-for-libraries/managing-els-repository/) — Update to newer versions

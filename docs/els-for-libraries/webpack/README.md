@@ -18,9 +18,11 @@ Endless Lifecycle Support (ELS) for webpack from TuxCare provides security fixes
 
 <ELSSteps>
 
-1. **Navigate to the project root directory**
+1. **Create or update the .npmrc file**
 
-   Example structure:
+   Navigate to the root directory of your webpack project and create a `.npmrc` file or update it if it already exists.
+
+   **Example:**
 
    ```text
    my-webpack-project/
@@ -32,7 +34,7 @@ Endless Lifecycle Support (ELS) for webpack from TuxCare provides security fixes
 
 2. **Configure the npm registry**
 
-   Create or update the `.npmrc` file in your project root:
+   Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
    ```text
    registry=https://registry.npmjs.org/
@@ -110,7 +112,7 @@ Endless Lifecycle Support (ELS) for webpack from TuxCare provides security fixes
      }
      ```
 
-4. **Clean and install**
+4. **Refresh the project dependencies**
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
@@ -138,13 +140,39 @@ Endless Lifecycle Support (ELS) for webpack from TuxCare provides security fixes
 
 </ELSSteps>
 
+## Resolved CVEs
+
+Fixes for the following vulnerabilities are available in ELS for webpack from TuxCare versions:
+
+<TableTabs label="Choose webpack version: " >
+
+<template #webpack_5.55.0>
+
+| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
+| :------------: | :------: |:--------:|:------------------:| :----------------: |
+| CVE-2023-28154 | Direct   | Critical | webpack           | > 5.0.0 < 5.76.0  |
+| CVE-2024-43788 | Direct   | Medium   | webpack           | < 5.94.0           |
+
+  </template>
+
+<template #webpack_5.76.1>
+
+| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
+| :------------: | :------: |:--------:|:------------------:| :----------------: |
+| CVE-2024-43788 | Direct   | Medium   | webpack           | < 5.94.0           |
+
+  </template>
+
+</TableTabs>
+
+If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
+
 ## What's Next?
 
 <WhatsNext hide-title>
 
 * ![](/images/eye.webp) [CVE tracker](https://tuxcare.com/cve-tracker/?product=webpack) — Track vulnerability fixes and updates
 * ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?product=webpack) — Patched versions and changelogs
-* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/products?product=webpack) — Full list of product parts covered by ELS
 * ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/webpack/) — Vulnerability Exploitability eXchange feed
 * ![](/images/unlock-alt.webp) [SBOM](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:webpack) — Software Bill of Materials (Nexus, credentials required)
 * ![](/images/wrench.webp) [Managing the ELS repository](/els-for-libraries/managing-els-repository/) — Update to newer versions

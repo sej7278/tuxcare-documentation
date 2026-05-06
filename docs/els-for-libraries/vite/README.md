@@ -18,9 +18,11 @@ Endless Lifecycle Support (ELS) for Vite from TuxCare provides security fixes fo
 
 <ELSSteps>
 
-1. **Navigate to the project root directory**
+1. **Create or update the .npmrc file**
 
-   Example structure:
+   Navigate to the root directory of your Vite project and create a `.npmrc` file or update it if it already exists.
+
+   **Example:**
 
    ```text
    my-vite-project/
@@ -32,7 +34,7 @@ Endless Lifecycle Support (ELS) for Vite from TuxCare provides security fixes fo
 
 2. **Configure the npm registry**
 
-   Create or update the `.npmrc` file in your project root:
+   Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
    ```text
    registry=https://registry.npmjs.org/
@@ -89,7 +91,7 @@ Endless Lifecycle Support (ELS) for Vite from TuxCare provides security fixes fo
      }
      ```
 
-4. **Clean and install**
+4. **Refresh the project dependencies**
 
    Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
@@ -117,13 +119,29 @@ Endless Lifecycle Support (ELS) for Vite from TuxCare provides security fixes fo
 
 </ELSSteps>
 
+## Resolved CVEs
+
+Fixes for the following vulnerabilities are available in ELS for Vite from TuxCare versions:
+
+| CVE ID         | CVE Type | Severity | Affected Libraries | Vulnerable Versions |
+| :------------: | :------: |:--------:|:------------------:| :----------------: |
+| CVE-2025-24010 | Direct   | Medium   | vite               | < 4.5.5, >= 5.0.0 < 5.4.12, >= 6.0.0 < 6.0.9 |
+| CVE-2025-31125 | Direct   | High     | vite               | < 4.5.11, >= 5.0.0 < 5.4.16, >= 6.0.0 < 6.0.13, >= 6.1.0 < 6.1.3, >= 6.2.0 < 6.2.4 |
+| CVE-2025-30208 | Direct   | High     | vite               | < 4.5.10, >= 5.0.0 < 5.4.15, >= 6.0.0 < 6.0.12, >= 6.1.0 < 6.1.2, >= 6.2.0 < 6.2.3 |
+| CVE-2025-32395 | Direct   | Medium   | vite               | < 6.2.6, < 6.1.5, < 6.0.15, < 5.4.18, < 4.5.13 |
+| CVE-2025-46565 | Direct   | Medium   | vite               | < 4.5.14, >= 5.0.0 < 5.4.19, >= 6.0.0 < 6.1.6, >= 6.2.0 < 6.2.7, >= 6.3.0 < 6.3.4 |
+| CVE-2025-31486 | Direct   | Medium   | vite               | > 6.0.0 |
+| CVE-2025-58751 | Direct   | Low      | vite               | < 5.4.20, >= 6.0.0 < 6.3.6, >= 7.0.0 < 7.0.7, >= 7.1.0 < 7.1.5 |
+| CVE-2025-58752 | Direct   | Low      | vite               | < 5.4.20, >= 6.0.0 < 6.3.6, >= 7.0.0 < 7.0.7, >= 7.1.0 < 7.1.5 |
+
+If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
+
 ## What's Next?
 
 <WhatsNext hide-title>
 
 * ![](/images/eye.webp) [CVE tracker](https://tuxcare.com/cve-tracker/?q=vite) — Track vulnerability fixes and updates
 * ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?product=Vite) — Patched versions and changelogs
-* ![](/images/clipboard-notes.webp) [Supported components](https://tuxcare.com/cve-tracker/products?product=Vite) — Full list of product parts covered by ELS
 * ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/vite/) — Vulnerability Exploitability eXchange feed
 * ![](/images/unlock-alt.webp) [SBOM](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:vite) — Software Bill of Materials (Nexus, credentials required)
 * ![](/images/wrench.webp) [Managing the ELS repository](/els-for-libraries/managing-els-repository/) — Update to newer versions
