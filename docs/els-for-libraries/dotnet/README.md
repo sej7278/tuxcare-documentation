@@ -7,17 +7,20 @@ NuGet is the standard package manager for .NET, used to deliver the reusable com
 ## Supported NuGet packages
 
 * .NET 6, 8, 10
-* Microsoft.Owin 3.1.0
-* Microsoft.Owin.Security.Cookies 3.1.0
-* log4net 1.2.15
+* AutoMapper 2.2.2, 3.3.2, 4.2.2, 5.2.1, 6.2.3, 7.0.2, 8.1.2, 9.0.1, 10.1.2, 11.0.2, 12.0.2, 13.0.2, 14.0.1
+* log4net 1.2.15, 1.2.16
 * Microsoft.Azure.Storage.DataMovement 1.2.0, 1.2.1
 * Microsoft.Data.SqlClient 1.1.4, 1.1.5
+* Microsoft.Owin 3.1.0, 3.1.1
 * MimeKit 3.6.1, 3.6.2
 * Newtonsoft.Json 4.5.11, 4.5.12, 6.0.8, 6.0.9, 8.0.3, 8.0.4, 9.0.1, 9.0.2, 10.0.3, 10.0.4, 11.0.2, 11.0.3, 12.0.3, 12.0.4
 * NHibernate 4.1.2.4001
-* Refit 6.3.2
-* RestSharp 108.0.3, 110.2.0, 111.4.1
+* Refit 6.3.2, 6.3.3
+* RestSharp 108.0.3, 108.0.4, 110.2.0, 110.2.1, 111.4.1, 111.4.2
 * SharpZipLib 0.86.0, 0.86.1
+* SixLabors.ImageSharp 1.0.5
+* System.Formats.Asn1 5.0.1, 7.0.1
+* System.Text.Json 7.0.5
 
 Other versions upon request.
 
@@ -220,22 +223,40 @@ dotnet nuget add source "https://nexus.repo.tuxcare.com/repository/<els_dotnet_c
 ```
 
 
+## Vulnerability Exploitability eXchange (VEX)
+
+VEX is a machine-readable format that tells you if a known vulnerability is actually exploitable in your product. It reduces false positives, helps prioritize real risks.
+
+TuxCare provides VEX for .NET ELS versions: [security.tuxcare.com/vex/cyclonedx/els_lang_dotnet/](https://security.tuxcare.com/vex/cyclonedx/els_lang_dotnet/).
+
+Per-package, per-version CycloneDX VEX documents are available at `els_lang_dotnet/<package>/<version>/vex.json`, alongside a top-level aggregated `vex.json` signed via `vex.json.asc`.
+
 ## Resolved CVEs
 
 | CVE ID | Severity | Affected Package | Affected Versions | Safe Versions |
 | :----: | :------: | :--------------: | :---------------: | :-----------: |
+| CVE-2026-32933 | High | AutoMapper | < 15.1.1; 16.0.0 ≤ v < 16.1.1 | See Nexus |
 | CVE-2018-1285 | Critical | log4net | < 2.0.10 | See Nexus |
 | CVE-2024-35252 | High | Microsoft.Azure.Storage.DataMovement | < 2.0.0 | See Nexus |
 | CVE-2024-0056 | High | Microsoft.Data.SqlClient | < 2.1.7 | See Nexus |
+| CVE-2020-1045 | High | Microsoft.Owin | ASP.NET Core 2.1 ≤ v ≤ 2.1.21; 3.1 ≤ v < 3.1.8 | See Nexus |
+| CVE-2022-29117 | High | Microsoft.Owin | .NET 5.0, 6.0.0; .NET Core 3.1 (specific releases) | See Nexus |
 | CVE-2024-38095 | High | MimeKit | >= 3.0.0, < 4.7.1 | See Nexus |
+| GHSA-gmc6-fwg3-75m5 | High | MimeKit | >= 3.0.0, < 4.7.1 | See Nexus |
 | CVE-2024-39677 | Medium | NHibernate | < 5.4.9 | See Nexus |
 | CVE-2024-21907 | High | Newtonsoft.Json | < 13.0.1 | See Nexus |
 | GHSA-5crp-9r3c-p9vr | High | Newtonsoft.Json | < 13.0.1 | See Nexus |
 | CVE-2024-51501 | Critical | Refit | < 7.2.22 | See Nexus |
 | CVE-2024-45302 | High | RestSharp | >= 107.0.0, < 112.0.0 | See Nexus |
+| GHSA-4rr6-2v9v-wcpc | Medium | RestSharp | >= 107.0.0-preview.1, < 112.0.0 | See Nexus |
 | CVE-2021-32840 | Critical | SharpZipLib | < 1.3.3 | See Nexus |
 | CVE-2021-32841 | Medium | SharpZipLib | >= 1.3.0, < 1.3.3 | See Nexus |
 | CVE-2021-32842 | Medium | SharpZipLib | >= 1.0.0, < 1.3.3 | See Nexus |
+| CVE-2024-27929 | High | SixLabors.ImageSharp | < 2.1.7; 3.1.0 ≤ v < 3.1.3 | See Nexus |
+| CVE-2025-27598 | High | SixLabors.ImageSharp | < 2.1.10; 3.0.0 ≤ v < 3.1.7 | See Nexus |
+| CVE-2025-54575 | Medium | SixLabors.ImageSharp | < 2.1.11; 3.0.0 ≤ v < 3.1.11 | See Nexus |
+| CVE-2024-38095 | High | System.Formats.Asn1 | 5.0.0-pre ≤ v < 6.0.1; 7.0.0-pre ≤ v < 8.0.1 | See Nexus |
+| CVE-2024-30105 | High | System.Text.Json | 7.0.0 ≤ v < 8.0.4 | See Nexus |
 
 <script setup>
 

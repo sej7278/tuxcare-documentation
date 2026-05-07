@@ -273,6 +273,10 @@ export default {
                     icon: '/images/feed-me.webp',
                 },
                 {
+                    path: '/els-for-libraries/doctrine-orm/',
+                    icon: '/images/orm.webp',
+                },
+                {
                     path: '/els-for-libraries/drupal/',
                     icon: '/images/drupal.webp',
                 },
@@ -338,6 +342,10 @@ export default {
                     icon: '/images/angularjs-logo.webp',
                 },
                 {
+                    path: '/els-for-libraries/astro/',
+                    icon: '/images/astro-logo.webp',
+                },
+                {
                     path: '/els-for-libraries/bootstrap/',
                     icon: '/images/bootstrap-logo.webp',
                 },
@@ -370,16 +378,16 @@ export default {
                     icon: '/images/jsonwebtoken-logo.webp',
                 },
                 {
+                    path: '/els-for-libraries/karma/',
+                    icon: '/images/karma-logo.webp',
+                },
+                {
                     path: '/els-for-libraries/knockout/',
                     icon: '/images/knockout-logo.webp',
                 },
                 {
                     path: '/els-for-libraries/koa/',
                     icon: '/images/koa-logo.webp',
-                },
-                {
-                    path: '/els-for-libraries/karma/',
-                    icon: '/images/karma-logo.webp',
                 },
                 {
                     path: '/els-for-libraries/lodash/',
@@ -426,10 +434,6 @@ export default {
                     icon: '/images/react-logo.webp',
                 },
                 {
-                    path: '/els-for-libraries/react-dom/',
-                    icon: '/images/react-logo.webp',
-                },
-                {
                     path: '/els-for-libraries/react-pdf/',
                     icon: '/images/react-logo.webp',
                 },
@@ -458,20 +462,20 @@ export default {
                     icon: '/images/vite-logo.webp',
                 },
                 {
-                    path: '/els-for-libraries/vuetify/',
-                    icon: '/images/vuetify-logo.webp',
-                },
-                {
                     path: '/els-for-libraries/vue/',
                     icon: '/images/vue-logo.webp',
                 },
                 {
-                    path: '/els-for-libraries/webpack-dev-server/',
-                    icon: '/images/webpack-dev-server.webp',
+                    path: '/els-for-libraries/vuetify/',
+                    icon: '/images/vuetify-logo.webp',
                 },
                 {
                     path: '/els-for-libraries/webpack/',
                     icon: '/images/webpack-logo.webp',
+                },
+                {
+                    path: '/els-for-libraries/webpack-dev-server/',
+                    icon: '/images/webpack-dev-server.webp',
                 },
                 {
                     path: '/els-for-libraries/yui/',

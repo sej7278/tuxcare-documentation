@@ -6,20 +6,21 @@ Endless Lifecycle Support (ELS) for AngularJS from TuxCare provides security fix
 
 * AngularJS 1.4.4, 1.5.11, 1.6.10, 1.7.9, 1.8.2, 1.8.3
 
-## Connection to ELS for AngularJS Repository
+## Installation
 
-This guide outlines the steps needed to integrate the TuxCare ELS for AngularJS repository.
+<ELSPrerequisites>
 
-## Step 1: Get Token
+* **npm** package manager installed
+* TuxCare registry token — contact [sales@tuxcare.com](mailto:sales@tuxcare.com)
+* To browse available artifacts, visit TuxCare [Nexus](https://nexus.repo.tuxcare.com/#browse/browse:els_angularjs) and click Sign in in the top right corner. You may need to refresh the page after logging in.
 
-You need a token in order to use TuxCare ELS AngularJS repository. Anonymous access is disabled. To receive the token, please contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
+</ELSPrerequisites>
 
-## Step 2: Set Up ELS for AngularJS
+<ELSSteps>
 
-TuxCare provides ELS for AngularJS as an NPM package, hosted on a secure internal registry. Follow the steps below to add it to your project and get started.
+1. **Create or update the .npmrc file**
 
-1. Navigate to the root directory of your AngularJS project.
-2. Create a `.npmrc` file or update it if it already exists.
+   Navigate to the root directory of your AngularJS project and create a `.npmrc` file or update it if it already exists.
 
    **Example:**
 
@@ -31,7 +32,9 @@ TuxCare provides ELS for AngularJS as an NPM package, hosted on a secure interna
    └── package-lock.json
    ```
 
-3. Use an editor of your choice (e.g., VS Code) to add the following registry address line:
+2. **Configure the npm registry**
+
+   Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
    ```text
    registry=https://registry.npmjs.org/
@@ -40,12 +43,14 @@ TuxCare provides ELS for AngularJS as an NPM package, hosted on a secure interna
    ```
 
    :::warning
-   Replace ${TOKEN} with the token you received from [sales@tuxcare.com](mailto:sales@tuxcare.com).
+   Replace `${TOKEN}` with the token you received from [sales@tuxcare.com](mailto:sales@tuxcare.com).
    :::
 
-4. Manually update your `package.json` file by replacing your AngularJS dependencies with the TuxCare packages.
+3. **Update dependencies**
 
-      <TableTabs label="Choose AngularJS version: " >
+   Manually update your `package.json` file by replacing AngularJS dependencies with TuxCare-maintained packages.
+
+     <TableTabs label="Choose AngularJS version: " >
 
       <template #AngularJS_1.4.4>
 
@@ -127,54 +132,33 @@ TuxCare provides ELS for AngularJS as an NPM package, hosted on a secure interna
 
      </TableTabs>
 
-5. You need to remove the `node_modules` directory and the `package-lock.json` file, and also clear the `npm cache` before installing the patched packages. Use the following commands:
+4. **Refresh the project dependencies**
+
+   Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
    ```text
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
-6. Run the following command to install ELS for AngularJS dependencies (token for the TuxCare repository will be automatically picked up from your `.npmrc` file):
+   Install dependencies:
 
    ```text
    npm install
    ```
 
-## Step 3: Verify Installation
+   The token for the TuxCare repository is automatically picked up from your `.npmrc` file.
 
-1. To confirm the TuxCare AngularJS repository is set up correctly, use npm to list the project's dependencies:
+5. **Verify the setup**
+
+   Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
    ```text
    npm list
    ```
 
-2. After reviewing the dependencies, run your application to ensure everything works correctly.
+   After reviewing the dependencies, run your application to ensure everything works correctly. The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS for AngularJS repository.
 
-The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS for AngularJS repository.
-
-## Vulnerability Exploitability eXchange (VEX)
-
-VEX is a machine-readable format that tells you if a known vulnerability is actually exploitable in your product. It reduces false positives, helps prioritize real risks.
-
-TuxCare provides VEX for AngularJS ELS versions: [security.tuxcare.com/vex/cyclonedx/els_lang_javascript/angular/](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/angular/).
-
-## Software Bill of Materials (SBOM)
-
-For each published ELS package and version, TuxCare generates SBOM files. Those artifacts are published to TuxCare Nexus.
-
-You can browse SBOM files for AngularJS here:
-
-[https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:angularjs](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:angularjs)
-
-Use the credentials you received for TuxCare ELS ([Step 1: Get Token](#step-1:-get-token)) to access Nexus.
-
-## How to Upgrade to a Newer Version of TuxCare Packages
-
-If you have already installed a package with a `tuxcare.1` suffix and want to upgrade to a newer release (for example, `tuxcare.3`), remove node_modules, clear the npm cache to avoid conflicts, and then run the installation command:
-
-  ```text
-  rm -rf node_modules package-lock.json && npm cache clean --force
-  npm install
-  ```
+</ELSSteps>
 
 ## Resolved CVEs
 
@@ -203,4 +187,14 @@ Fixes for the following vulnerabilities are available in ELS for AngularJS from 
 | CVE-2019-14863 |  Direct  |  Medium  |      AngularJS     |       <=1.4.14      |
 
 If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
+
+## What's Next?
+
+<WhatsNext hide-title>
+
+* ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/angular/) — Vulnerability Exploitability eXchange feed
+* ![](/images/unlock-alt.webp) [SBOM](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:angularjs) — Software Bill of Materials (Nexus, credentials required)
+* ![](/images/wrench.webp) [Managing the ELS repository](/els-for-libraries/managing-els-repository/) — Update to newer versions
+
+</WhatsNext>
 

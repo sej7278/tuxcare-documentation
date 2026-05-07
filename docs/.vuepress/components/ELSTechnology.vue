@@ -552,6 +552,11 @@ const techData = [
         link: "./javascript-libraries/",
       },
       {
+        name: "Astro",
+        versions: "0.26.1 | 1.9.2 | 2.10.15",
+        link: "./astro/",
+      },
+      {
         name: "axios",
         versions: "0.18.1 | 0.27.2",
         link: "./javascript-libraries/",
@@ -1569,6 +1574,11 @@ const techData = [
         link: "./craftcms-feed-me/",
       },
       {
+        name: "Doctrine ORM",
+        versions: "2.8.3",
+        link: "./doctrine-orm/",
+      },
+      {
         name: "DomPDF",
         versions: "0.8.x | 1.2.x | 3.1.0",
         link: "./dompdf/",
@@ -1655,18 +1665,13 @@ const techData = [
         link: "./dotnet/",
       },
       {
-        name: "Microsoft.Owin",
-        versions: "3.1.0",
-        link: "./dotnet/",
-      },
-      {
-        name: "Microsoft.Owin.Security.Cookies",
-        versions: "3.1.0",
+        name: "AutoMapper",
+        versions: "2.2.2 | 3.3.2 | 4.2.2 | 5.2.1 | 6.2.3 | 7.0.2 | 8.1.2 | 9.0.1 | 10.1.2 | 11.0.2 | 12.0.2 | 13.0.2 | 14.0.1",
         link: "./dotnet/",
       },
       {
         name: "log4net",
-        versions: "1.2.15",
+        versions: "1.2.15 | 1.2.16",
         link: "./dotnet/",
       },
       {
@@ -1677,6 +1682,11 @@ const techData = [
       {
         name: "Microsoft.Data.SqlClient",
         versions: "1.1.4 | 1.1.5",
+        link: "./dotnet/",
+      },
+      {
+        name: "Microsoft.Owin",
+        versions: "3.1.0 | 3.1.1",
         link: "./dotnet/",
       },
       {
@@ -1696,17 +1706,32 @@ const techData = [
       },
       {
         name: "Refit",
-        versions: "6.3.2",
+        versions: "6.3.2 | 6.3.3",
         link: "./dotnet/",
       },
       {
         name: "RestSharp",
-        versions: "108.0.3 | 110.2.0 | 111.4.1",
+        versions: "108.0.3 | 108.0.4 | 110.2.0 | 110.2.1 | 111.4.1 | 111.4.2",
         link: "./dotnet/",
       },
       {
         name: "SharpZipLib",
         versions: "0.86.0 | 0.86.1",
+        link: "./dotnet/",
+      },
+      {
+        name: "SixLabors.ImageSharp",
+        versions: "1.0.5",
+        link: "./dotnet/",
+      },
+      {
+        name: "System.Formats.Asn1",
+        versions: "5.0.1 | 7.0.1",
+        link: "./dotnet/",
+      },
+      {
+        name: "System.Text.Json",
+        versions: "7.0.5",
         link: "./dotnet/",
       },
     ],

@@ -60,7 +60,7 @@ Other versions upon request.
    Install the TuxCare-maintained Browsershot release that matches your project:
 
    <CodeTabs :tabs="[
-     { title: 'Composer CLI', content: `composer require spatie/browsershot:3.61.0-p1+tuxcare` },
+     { title: 'Composer CLI', content: `composer require spatie/browsershot:3.61.0-p2+tuxcare` },
      { title: 'composer.json', content: pkgjson }
    ]" />
 
@@ -181,7 +181,7 @@ const cli =
 const pkgjson =
 `{
     "require": {
-        "spatie/browsershot": "3.61.0-p1+tuxcare"
+        "spatie/browsershot": "3.61.0-p2+tuxcare"
     }
 }`
 
