@@ -31,7 +31,7 @@ Endless Lifecycle Support (ELS) for Libraries from TuxCare provides security fix
 * **extend** 3.0.0
 * **fast-xml-parser** 4.5.3
 * **follow-redirects** 0.0.3, 1.15.11
-* **form-data** 0.0.8, 0.1.4, 0.2.0, 1.0.0-rc3, 2.3.3
+* **form-data** 0.0.8, 0.1.4, 0.2.0, 1.0.0-rc3, 1.0.1, 2.0.0, 2.1.4, 2.3.3
 * **formidable** 2.1.2, 2.1.5
 * **forwarded** 0.1.0
 * **fresh** 0.2.4, 0.3.0, 0.5.2
@@ -93,7 +93,7 @@ Endless Lifecycle Support (ELS) for Libraries from TuxCare provides security fix
 * **ssr-window** 4.0.2
 * **stringstream** 0.0.4, 0.0.5
 * **swiper** 11.2.10
-* **tar** 1.0.3, 2.1.1, 2.2.2, 4.4.19, 6.0.2, 6.2.1
+* **tar** 1.0.3, 2.1.1, 2.2.1, 2.2.2, 4.4.19, 6.0.2, 6.2.1
 * **terser** 3.17.0, 4.6.3, 4.6.10, 4.8.1, 5.3.0, 5.5.1
 * **tinymce** 6.8.6
 * **tmp** 0.0.30, 0.0.33, 0.1.0, 0.2.1

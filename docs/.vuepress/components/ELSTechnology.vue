@@ -703,7 +703,7 @@ const techData = [
       },
       {
         name: "Form-Data",
-        versions: "0.0.8 | 0.1.4 | 0.2.0 | 1.0.0-rc3 | 2.3.3",
+        versions: "0.0.8 | 0.1.4 | 0.2.0 | 1.0.0-rc3 | 1.0.1 | 2.0.0 | 2.1.4 | 2.3.3",
         link: "./javascript-libraries/",
       },
       {
@@ -1128,7 +1128,7 @@ const techData = [
       },
       {
         name: "tar",
-        versions: "1.0.3 | 2.1.1 | 2.2.2 | 4.4.19 | 6.0.2 | 6.2.1",
+        versions: "1.0.3 | 2.1.1 | 2.2.1 | 2.2.2 | 4.4.19 | 6.0.2 | 6.2.1",
         link: "./javascript-libraries/",
       },
       {
@@ -1188,7 +1188,7 @@ const techData = [
       },
       {
         name: "Vite",
-        versions: "4.5.5 | 5.4.14",
+        versions: "2.9.18 | 3.2.11 | 4.5.14 | 4.5.5 | 5.4.14",
         link: "./vite/",
       },
       {
