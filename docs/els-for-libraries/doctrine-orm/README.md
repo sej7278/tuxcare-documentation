@@ -104,11 +104,19 @@ it usually means your project requires a package version that is not yet availab
 
 This allows Composer to fall back to Packagist for packages not available in the TuxCare repository, while still preferring TuxCare patches when available.
 
+## Resolved CVEs in Doctrine ORM
+
+Fixes for the following vulnerabilities are available in ELS for Doctrine ORM from TuxCare:
+
+| CVE ID              | Severity | Vulnerable versions | Fixed in version    |
+|---------------------|----------|---------------------|---------------------|
+| GHSA-vjrg-wpm8-rhrw | Medium   | < 2.20.2, < 3.3.3   | 2.8.3-p1+tuxcare    |
+
 ## What's Next?
 
 <WhatsNext hide-title>
 
-* ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_php/) — Vulnerability Exploitability eXchange feed
+* ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_php/doctrine/orm/) — Vulnerability Exploitability eXchange feed
 * ![](/images/eye.webp) [CVE Tracker](https://tuxcare.com/cve-tracker/) — Track vulnerability fixes and updates
 * ![](/images/wrench.webp) [Managing the ELS repository](/els-for-libraries/managing-els-repository/) — Upgrade to a newer version
 
