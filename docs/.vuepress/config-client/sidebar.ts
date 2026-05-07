@@ -253,10 +253,6 @@ export default {
                     icon: '/images/nesbot-carbon.webp',
                 },
                 {
-                    path: '/els-for-libraries/doctrine-orm/',
-                    icon: '/images/php-logo.webp',
-                },
-                {
                     path: '/els-for-libraries/dompdf/',
                     icon: '/images/dompdf-logo.webp',
                 },
