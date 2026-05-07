@@ -50,7 +50,7 @@ Endless Lifecycle Support (ELS) for AngularJS from TuxCare provides security fix
 
    Manually update your `package.json` file by replacing AngularJS dependencies with TuxCare-maintained packages.
 
-      <TableTabs label="Choose AngularJS version: " >
+     <TableTabs label="Choose AngularJS version: " >
 
       <template #AngularJS_1.4.4>
 

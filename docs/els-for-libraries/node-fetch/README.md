@@ -56,7 +56,7 @@ Endless Lifecycle Support (ELS) for node-fetch from TuxCare provides security fi
 
      <TableTabs label="Choose node-fetch version: " >
 
-     <template #node-fetch_1.6.3>
+      <template #node-fetch_1.6.3>
 
       ```text
       "dependencies": {
@@ -69,7 +69,7 @@ Endless Lifecycle Support (ELS) for node-fetch from TuxCare provides security fi
 
       </template>
 
-     <template #node-fetch_1.7.3>
+      <template #node-fetch_1.7.3>
 
       ```text
       "dependencies": {
@@ -82,7 +82,7 @@ Endless Lifecycle Support (ELS) for node-fetch from TuxCare provides security fi
 
       </template>
 
-     <template #node-fetch_2.6.1>
+      <template #node-fetch_2.6.1>
 
       ```text
       "dependencies": {
@@ -96,7 +96,7 @@ Endless Lifecycle Support (ELS) for node-fetch from TuxCare provides security fi
       </template>
 
      </TableTabs>
-  
+
    * **Option 2: TuxCare Patcher (Automated)**
 
      Install the Patcher globally and run it. The TuxCare Patcher automatically detects the node-fetch version in your `package.json` and updates your `dependencies` and `overrides` to use the corresponding TuxCare `@els-js/*` packages.

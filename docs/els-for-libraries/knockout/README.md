@@ -56,46 +56,46 @@ Endless Lifecycle Support (ELS) for Knockout from TuxCare provides security fixe
 
      <TableTabs label="Choose Knockout version: " >
 
-       <template #knockout_2.3.0>
+      <template #knockout_2.3.0>
 
-       ```text
-       "dependencies": {
-         "knockout": "npm:@els-js/knockout@>=2.3.0-tuxcare.1"
-       },
-       "overrides": {
-         "knockout@2.3.0": "npm:@els-js/knockout@>=2.3.0-tuxcare.1"
-       }
-       ```
+      ```text
+      "dependencies": {
+        "knockout": "npm:@els-js/knockout@>=2.3.0-tuxcare.1"
+      },
+      "overrides": {
+        "knockout@2.3.0": "npm:@els-js/knockout@>=2.3.0-tuxcare.1"
+      }
+      ```
 
-       </template>
+      </template>
 
-       <template #knockout_3.2.0>
+      <template #knockout_3.2.0>
 
-       ```text
-       "dependencies": {
-         "knockout": "npm:@els-js/knockout@>=3.2.0-tuxcare.1"
-       },
-       "overrides": {
-         "knockout@3.2.0": "npm:@els-js/knockout@>=3.2.0-tuxcare.1"
-       }
-       ```
+      ```text
+      "dependencies": {
+        "knockout": "npm:@els-js/knockout@>=3.2.0-tuxcare.1"
+      },
+      "overrides": {
+        "knockout@3.2.0": "npm:@els-js/knockout@>=3.2.0-tuxcare.1"
+      }
+      ```
 
-       </template>
+      </template>
 
-       <template #knockout_3.4.2>
+      <template #knockout_3.4.2>
 
-       ```text
-       "dependencies": {
-         "knockout": "npm:@els-js/knockout@>=3.4.2-tuxcare.1"
-       },
-       "overrides": {
-         "knockout@3.4.2": "npm:@els-js/knockout@>=3.4.2-tuxcare.1"
-       }
-       ```
+      ```text
+      "dependencies": {
+        "knockout": "npm:@els-js/knockout@>=3.4.2-tuxcare.1"
+      },
+      "overrides": {
+        "knockout@3.4.2": "npm:@els-js/knockout@>=3.4.2-tuxcare.1"
+      }
+      ```
 
-       </template>
+      </template>
 
-      </TableTabs>
+     </TableTabs>
 
    * **Option 2: TuxCare Patcher (Automated)**
 

@@ -50,52 +50,52 @@ Endless Lifecycle Support (ELS) for Nuxt from TuxCare provides security fixes fo
 
    Update your `package.json` file to add the following overrides for the TuxCare packages:
 
-   <TableTabs label="Choose Nuxt version: " >
+     <TableTabs label="Choose Nuxt version: " >
 
-    <template #nuxt_2.18.1>
+      <template #nuxt_2.18.1>
 
-    ```text
-    "overrides": {
-      "braces@2.3.2": "npm:@els-js/braces@>=2.3.2-tuxcare.1",
-      "braces@3.0.3": "npm:@els-js/braces@>=3.0.3-tuxcare.1",
-      "cookie@0.3.1": "npm:@els-js/cookie@>=0.3.1-tuxcare.1",
-      "devalue@2.0.1": "npm:@els-js/devalue@>=2.0.1-tuxcare.1",
-      "ip@2.0.1": "npm:@els-js/ip@>=2.0.1-tuxcare.1",
-      "lodash.template@4.5.0": "npm:@els-js/lodash.template@>=4.5.0-tuxcare.1",
-      "parse-git-config@3.0.0": "npm:@els-js/parse-git-config@>=3.0.0-tuxcare.1",
-      "postcss@7.0.39": "npm:@els-js/postcss@>=7.0.39-tuxcare.1",
-      "tmp@0.0.33": "npm:@els-js/tmp@>=0.0.33-tuxcare.1",
-      "vue@2.7.16": "npm:@els-js/vue@>=2.7.16-tuxcare.1",
-      "vue-template-compiler@2.7.16": "npm:@els-js/vue-template-compiler@>=2.7.16-tuxcare.1"
-    }
-    ```
+      ```text
+      "overrides": {
+        "braces@2.3.2": "npm:@els-js/braces@>=2.3.2-tuxcare.1",
+        "braces@3.0.3": "npm:@els-js/braces@>=3.0.3-tuxcare.1",
+        "cookie@0.3.1": "npm:@els-js/cookie@>=0.3.1-tuxcare.1",
+        "devalue@2.0.1": "npm:@els-js/devalue@>=2.0.1-tuxcare.1",
+        "ip@2.0.1": "npm:@els-js/ip@>=2.0.1-tuxcare.1",
+        "lodash.template@4.5.0": "npm:@els-js/lodash.template@>=4.5.0-tuxcare.1",
+        "parse-git-config@3.0.0": "npm:@els-js/parse-git-config@>=3.0.0-tuxcare.1",
+        "postcss@7.0.39": "npm:@els-js/postcss@>=7.0.39-tuxcare.1",
+        "tmp@0.0.33": "npm:@els-js/tmp@>=0.0.33-tuxcare.1",
+        "vue@2.7.16": "npm:@els-js/vue@>=2.7.16-tuxcare.1",
+        "vue-template-compiler@2.7.16": "npm:@els-js/vue-template-compiler@>=2.7.16-tuxcare.1"
+      }
+      ```
 
-    </template>
+      </template>
 
-    <template #nuxt_0.10.7>
+      <template #nuxt_0.10.7>
 
-    ```text
-    "overrides": {
-      "ajv@4.11.8": "npm:@els-js/ajv@>=4.11.8-tuxcare.1",
-      "ajv@6.14.0": "npm:@els-js/ajv@>=6.14.0-tuxcare.1",
-      "color-string@0.3.0": "npm:@els-js/color-string@>=0.3.0-tuxcare.1",
-      "deep-extend@0.4.2": "npm:@els-js/deep-extend@>=0.4.2-tuxcare.1",
-      "is-svg@2.1.0": "npm:@els-js/is-svg@>=2.1.0-tuxcare.1",
-      "js-yaml@3.7.0": "npm:@els-js/js-yaml@>=3.7.0-tuxcare.1",
-      "mime@1.3.0": "npm:@els-js/mime@>=1.3.0-tuxcare.1",
-      "postcss@5.2.18": "npm:@els-js/postcss@>=5.2.18-tuxcare.1",
-      "serialize-javascript@1.9.1": "npm:@els-js/serialize-javascript@>=1.9.1-tuxcare.1",
-      "ssri@5.3.0": "npm:@els-js/ssri@>=5.3.0-tuxcare.1",
-      "webpack-dev-middleware@1.12.2": "npm:@els-js/webpack-dev-middleware@>=1.12.2-tuxcare.1",
-      "webpack-dev-middleware@2.0.6": "npm:@els-js/webpack-dev-middleware@>=2.0.6-tuxcare.1",
-      "ws@4.1.0": "npm:@els-js/ws@>=4.1.0-tuxcare.1",
-      "yargs-parser@4.2.1": "npm:@els-js/yargs-parser@>=4.2.1-tuxcare.1"
-    }
-    ```
+      ```text
+      "overrides": {
+        "ajv@4.11.8": "npm:@els-js/ajv@>=4.11.8-tuxcare.1",
+        "ajv@6.14.0": "npm:@els-js/ajv@>=6.14.0-tuxcare.1",
+        "color-string@0.3.0": "npm:@els-js/color-string@>=0.3.0-tuxcare.1",
+        "deep-extend@0.4.2": "npm:@els-js/deep-extend@>=0.4.2-tuxcare.1",
+        "is-svg@2.1.0": "npm:@els-js/is-svg@>=2.1.0-tuxcare.1",
+        "js-yaml@3.7.0": "npm:@els-js/js-yaml@>=3.7.0-tuxcare.1",
+        "mime@1.3.0": "npm:@els-js/mime@>=1.3.0-tuxcare.1",
+        "postcss@5.2.18": "npm:@els-js/postcss@>=5.2.18-tuxcare.1",
+        "serialize-javascript@1.9.1": "npm:@els-js/serialize-javascript@>=1.9.1-tuxcare.1",
+        "ssri@5.3.0": "npm:@els-js/ssri@>=5.3.0-tuxcare.1",
+        "webpack-dev-middleware@1.12.2": "npm:@els-js/webpack-dev-middleware@>=1.12.2-tuxcare.1",
+        "webpack-dev-middleware@2.0.6": "npm:@els-js/webpack-dev-middleware@>=2.0.6-tuxcare.1",
+        "ws@4.1.0": "npm:@els-js/ws@>=4.1.0-tuxcare.1",
+        "yargs-parser@4.2.1": "npm:@els-js/yargs-parser@>=4.2.1-tuxcare.1"
+      }
+      ```
 
-    </template>
+      </template>
 
-   </TableTabs>
+     </TableTabs>
 
 4. **Refresh the project dependencies**
 

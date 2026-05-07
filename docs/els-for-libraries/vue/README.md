@@ -56,60 +56,60 @@ The versions **2.6.11**, **2.6.14**, and **2.7.16** are supported by TuxCare for
    For exact available patched versions, check your Nexus access first. The snippets below are examples. The `>=` range with `-tuxcare.1` resolves to the latest TuxCare build for that upstream Vue version.
    :::
 
-   <TableTabs label="Choose version: " >
+     <TableTabs label="Choose version: " >
 
-   <template #2.7.16>
+      <template #2.7.16>
 
-   ```text
-   "dependencies": {
-     "vue": "npm:@els-vue/vue@>=2.7.16-tuxcare.1",
-     "@vue/server-renderer": "npm:@els-vue/vue-server-renderer@>=2.7.16-tuxcare.1",
-     "vue-template-compiler": "npm:@els-vue/vue-template-compiler@>=2.7.16-tuxcare.1"
-   },
-   "overrides": {
-     "vue@2.7.16": "npm:@els-vue/vue@>=2.7.16-tuxcare.1",
-     "@vue/server-renderer@2.7.16": "npm:@els-vue/vue-server-renderer@>=2.7.16-tuxcare.1",
-     "vue-template-compiler@2.7.16": "npm:@els-vue/vue-template-compiler@>=2.7.16-tuxcare.1"
-   }
-   ```
+      ```text
+      "dependencies": {
+        "vue": "npm:@els-vue/vue@>=2.7.16-tuxcare.1",
+        "@vue/server-renderer": "npm:@els-vue/vue-server-renderer@>=2.7.16-tuxcare.1",
+        "vue-template-compiler": "npm:@els-vue/vue-template-compiler@>=2.7.16-tuxcare.1"
+      },
+      "overrides": {
+        "vue@2.7.16": "npm:@els-vue/vue@>=2.7.16-tuxcare.1",
+        "@vue/server-renderer@2.7.16": "npm:@els-vue/vue-server-renderer@>=2.7.16-tuxcare.1",
+        "vue-template-compiler@2.7.16": "npm:@els-vue/vue-template-compiler@>=2.7.16-tuxcare.1"
+      }
+      ```
 
-   </template>
+      </template>
 
-   <template #2.6.14>
+      <template #2.6.14>
 
-   ```text
-   "dependencies": {
-     "vue": "npm:@els-vue/vue@>=2.6.14-tuxcare.1",
-     "@vue/server-renderer": "npm:@els-vue/vue-server-renderer@>=2.6.14-tuxcare.1",
-     "vue-template-compiler": "npm:@els-vue/vue-template-compiler@>=2.6.14-tuxcare.1"
-   },
-   "overrides": {
-     "vue@2.6.14": "npm:@els-vue/vue@>=2.6.14-tuxcare.1",
-     "@vue/server-renderer@2.6.14": "npm:@els-vue/vue-server-renderer@>=2.6.14-tuxcare.1",
-     "vue-template-compiler@2.6.14": "npm:@els-vue/vue-template-compiler@>=2.6.14-tuxcare.1"
-   }
-   ```
+      ```text
+      "dependencies": {
+        "vue": "npm:@els-vue/vue@>=2.6.14-tuxcare.1",
+        "@vue/server-renderer": "npm:@els-vue/vue-server-renderer@>=2.6.14-tuxcare.1",
+        "vue-template-compiler": "npm:@els-vue/vue-template-compiler@>=2.6.14-tuxcare.1"
+      },
+      "overrides": {
+        "vue@2.6.14": "npm:@els-vue/vue@>=2.6.14-tuxcare.1",
+        "@vue/server-renderer@2.6.14": "npm:@els-vue/vue-server-renderer@>=2.6.14-tuxcare.1",
+        "vue-template-compiler@2.6.14": "npm:@els-vue/vue-template-compiler@>=2.6.14-tuxcare.1"
+      }
+      ```
 
-   </template>
+      </template>
 
-   <template #2.6.11>
+      <template #2.6.11>
 
-   ```text
-   "dependencies": {
-     "vue": "npm:@els-vue/vue@>=2.6.11-tuxcare.1",
-     "@vue/server-renderer": "npm:@els-vue/vue-server-renderer@>=2.6.11-tuxcare.1",
-     "vue-template-compiler": "npm:@els-vue/vue-template-compiler@>=2.6.11-tuxcare.1"
-   },
-   "overrides": {
-     "vue@2.6.11": "npm:@els-vue/vue@>=2.6.11-tuxcare.1",
-     "@vue/server-renderer@2.6.11": "npm:@els-vue/vue-server-renderer@>=2.6.11-tuxcare.1",
-     "vue-template-compiler@2.6.11": "npm:@els-vue/vue-template-compiler@>=2.6.11-tuxcare.1"
-   }
-   ```
+      ```text
+      "dependencies": {
+        "vue": "npm:@els-vue/vue@>=2.6.11-tuxcare.1",
+        "@vue/server-renderer": "npm:@els-vue/vue-server-renderer@>=2.6.11-tuxcare.1",
+        "vue-template-compiler": "npm:@els-vue/vue-template-compiler@>=2.6.11-tuxcare.1"
+      },
+      "overrides": {
+        "vue@2.6.11": "npm:@els-vue/vue@>=2.6.11-tuxcare.1",
+        "@vue/server-renderer@2.6.11": "npm:@els-vue/vue-server-renderer@>=2.6.11-tuxcare.1",
+        "vue-template-compiler@2.6.11": "npm:@els-vue/vue-template-compiler@>=2.6.11-tuxcare.1"
+      }
+      ```
 
-   </template>
+      </template>
 
-   </TableTabs>
+     </TableTabs>
 
 4. **Refresh the project dependencies**
 

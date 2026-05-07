@@ -58,31 +58,31 @@ Endless Lifecycle Support (ELS) for karma from TuxCare provides security fixes f
 
       <template #karma_4.1.0>
 
-       ```text
-       "dependencies": {
-         "karma": "npm:@els-js/karma@>=4.1.0-tuxcare.1"
-       },
-       "overrides": {
-         "karma@4.1.0": "npm:@els-js/karma@>=4.1.0-tuxcare.1"
-       }
-       ```
+      ```text
+      "dependencies": {
+        "karma": "npm:@els-js/karma@>=4.1.0-tuxcare.1"
+      },
+      "overrides": {
+        "karma@4.1.0": "npm:@els-js/karma@>=4.1.0-tuxcare.1"
+      }
+      ```
 
-       </template>
+      </template>
 
-       <template #karma_5.0.9>
+      <template #karma_5.0.9>
 
-       ```text
-       "dependencies": {
-         "karma": "npm:@els-js/karma@>=5.0.9-tuxcare.1"
-       },
-       "overrides": {
-         "karma@5.0.9": "npm:@els-js/karma@>=5.0.9-tuxcare.1"
-       }
-       ```
+      ```text
+      "dependencies": {
+        "karma": "npm:@els-js/karma@>=5.0.9-tuxcare.1"
+      },
+      "overrides": {
+        "karma@5.0.9": "npm:@els-js/karma@>=5.0.9-tuxcare.1"
+      }
+      ```
 
-       </template>
+      </template>
 
-      </TableTabs>
+     </TableTabs>
 
    * **Option 2: TuxCare Patcher (Automated)**
 
