@@ -50,36 +50,36 @@ Endless Lifecycle Support (ELS) for Next.js from TuxCare provides security fixes
 
    Update your `package.json` file to replace Next.js dependencies with TuxCare-maintained packages. Choose your Next.js version below and add the `dependencies` and `overrides` entries shown.
 
-    <TableTabs label="Choose Next.js version: " >
+     <TableTabs label="Choose Next.js version: " >
 
-    <template #next_12.3.7>
-  
-    ```text
-    "dependencies": {
-      "next": "npm:@els-js/next@>=12.3.7-tuxcare.1"
-    },
-    "overrides": {
-      "next@12.3.7": "npm:@els-js/next@>=12.3.7-tuxcare.1"
-    }
-    ```
-  
+      <template #next_12.3.7>
+
+      ```text
+      "dependencies": {
+        "next": "npm:@els-js/next@>=12.3.7-tuxcare.1"
+      },
+      "overrides": {
+        "next@12.3.7": "npm:@els-js/next@>=12.3.7-tuxcare.1"
+      }
+      ```
+
       </template>
-  
-    <template #next_13.5.11>
 
-    ```text
-    "dependencies": {
-      "next": "npm:@els-js/next@>=13.5.11-tuxcare.1"
-    },
-    "overrides": {
-      "next@13.5.11": "npm:@els-js/next@>=13.5.11-tuxcare.1"
-    }
-    ```
+      <template #next_13.5.11>
 
-    </template>
+      ```text
+      "dependencies": {
+        "next": "npm:@els-js/next@>=13.5.11-tuxcare.1"
+      },
+      "overrides": {
+        "next@13.5.11": "npm:@els-js/next@>=13.5.11-tuxcare.1"
+      }
+      ```
 
-    <template #next_14.2.35>
-  
+      </template>
+
+      <template #next_14.2.35>
+
       ```text
       "dependencies": {
         "next": "npm:@els-js/next@>=14.2.35-tuxcare.1"
@@ -88,11 +88,11 @@ Endless Lifecycle Support (ELS) for Next.js from TuxCare provides security fixes
         "next@14.2.35": "npm:@els-js/next@>=14.2.35-tuxcare.1"
       }
       ```
-  
+
       </template>
 
       <template #next_16.0.6>
-  
+
       ```text
       "dependencies": {
         "next": "npm:@els-js/next@>=16.0.6-tuxcare.1"
@@ -101,10 +101,10 @@ Endless Lifecycle Support (ELS) for Next.js from TuxCare provides security fixes
         "next@16.0.6": "npm:@els-js/next@>=16.0.6-tuxcare.1"
       }
       ```
-  
+
       </template>
 
-   </TableTabs>
+     </TableTabs>
 
 4. **Refresh the project dependencies**
 

@@ -56,72 +56,72 @@ Endless Lifecycle Support (ELS) for Svelte from TuxCare provides security fixes 
 
      <TableTabs label="Choose Svelte version: " >
 
-       <template #svelte_0.3.0>
+      <template #svelte_0.3.0>
 
-       ```text
-       "dependencies": {
-         "svelte": "npm:@els-js/svelte@>=0.3.0-tuxcare.1"
-       },
-       "overrides": {
-         "svelte@0.3.0": "npm:@els-js/svelte@>=0.3.0-tuxcare.1"
-       }
-       ```
+      ```text
+      "dependencies": {
+        "svelte": "npm:@els-js/svelte@>=0.3.0-tuxcare.1"
+      },
+      "overrides": {
+        "svelte@0.3.0": "npm:@els-js/svelte@>=0.3.0-tuxcare.1"
+      }
+      ```
 
-       </template>
+      </template>
 
-       <template #svelte_1.64.1>
+      <template #svelte_1.64.1>
 
-       ```text
-       "dependencies": {
-         "svelte": "npm:@els-js/svelte@>=1.64.1-tuxcare.1"
-       },
-       "overrides": {
-         "svelte@1.64.1": "npm:@els-js/svelte@>=1.64.1-tuxcare.1"
-       }
-       ```
+      ```text
+      "dependencies": {
+        "svelte": "npm:@els-js/svelte@>=1.64.1-tuxcare.1"
+      },
+      "overrides": {
+        "svelte@1.64.1": "npm:@els-js/svelte@>=1.64.1-tuxcare.1"
+      }
+      ```
 
-       </template>
+      </template>
 
-       <template #svelte_2.16.1>
+      <template #svelte_2.16.1>
 
-       ```text
-       "dependencies": {
-         "svelte": "npm:@els-js/svelte@>=2.16.1-tuxcare.1"
-       },
-       "overrides": {
-         "svelte@2.16.1": "npm:@els-js/svelte@>=2.16.1-tuxcare.1"
-       }
-       ```
+      ```text
+      "dependencies": {
+        "svelte": "npm:@els-js/svelte@>=2.16.1-tuxcare.1"
+      },
+      "overrides": {
+        "svelte@2.16.1": "npm:@els-js/svelte@>=2.16.1-tuxcare.1"
+      }
+      ```
 
-       </template>
+      </template>
 
-       <template #svelte_3.59.2>
+      <template #svelte_3.59.2>
 
-       ```text
-       "dependencies": {
-         "svelte": "npm:@els-js/svelte@>=3.59.2-tuxcare.1"
-       },
-       "overrides": {
-         "svelte@3.59.2": "npm:@els-js/svelte@>=3.59.2-tuxcare.1"
-       }
-       ```
+      ```text
+      "dependencies": {
+        "svelte": "npm:@els-js/svelte@>=3.59.2-tuxcare.1"
+      },
+      "overrides": {
+        "svelte@3.59.2": "npm:@els-js/svelte@>=3.59.2-tuxcare.1"
+      }
+      ```
 
-       </template>
+      </template>
 
-       <template #svelte_4.2.20>
+      <template #svelte_4.2.20>
 
-       ```text
-       "dependencies": {
-         "svelte": "npm:@els-js/svelte@>=4.2.20-tuxcare.1"
-       },
-       "overrides": {
-         "svelte@4.2.20": "npm:@els-js/svelte@>=4.2.20-tuxcare.1"
-       }
-       ```
+      ```text
+      "dependencies": {
+        "svelte": "npm:@els-js/svelte@>=4.2.20-tuxcare.1"
+      },
+      "overrides": {
+        "svelte@4.2.20": "npm:@els-js/svelte@>=4.2.20-tuxcare.1"
+      }
+      ```
 
-       </template>
+      </template>
 
-      </TableTabs>
+     </TableTabs>
 
    * **Option 2: TuxCare Patcher (Automated)**
 

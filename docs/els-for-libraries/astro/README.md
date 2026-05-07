@@ -6,20 +6,21 @@ Endless Lifecycle Support (ELS) for Astro from TuxCare provides security fixes f
 
 * Astro 0.26.1, 1.9.2, 2.10.15
 
-## Connection to ELS for Astro Library
+## Installation
 
-This guide outlines the steps needed to integrate the TuxCare ELS for the Astro library.
+<ELSPrerequisites>
 
-## Step 1: Get Token
+* **npm** package manager installed
+* TuxCare registry token — contact [sales@tuxcare.com](mailto:sales@tuxcare.com)
+* To browse available artifacts, visit TuxCare [Nexus](https://nexus.repo.tuxcare.com/#browse/browse:els_js) and click Sign in in the top right corner. You may need to refresh the page after logging in.
 
-You need a token in order to use TuxCare ELS Astro library. Anonymous access is disabled. To receive the token, please contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
+</ELSPrerequisites>
 
-## Step 2: Set Up ELS for Astro
+<ELSSteps>
 
-TuxCare provides ELS for Astro as an NPM package, hosted on a secure internal registry. Follow the steps below to add it to your project and get started.
+1. **Create or update the .npmrc file**
 
-1. Navigate to the root directory of your Astro project.
-2. Create a `.npmrc` file or update it if it already exists.
+   Navigate to the root directory of your Astro project and create a `.npmrc` file or update it if it already exists.
 
    **Example:**
 
@@ -31,7 +32,9 @@ TuxCare provides ELS for Astro as an NPM package, hosted on a secure internal re
    └── package-lock.json
    ```
 
-3. Use an editor of your choice (e.g., VS Code) to add the following registry address line:
+2. **Configure the npm registry**
+
+   Use an editor of your choice (e.g., VS Code) to add the following registry address lines to the `.npmrc` file:
 
    ```text
    registry=https://registry.npmjs.org/
@@ -40,102 +43,115 @@ TuxCare provides ELS for Astro as an NPM package, hosted on a secure internal re
    ```
 
    :::warning
-   Replace ${TOKEN} with the token you received from [sales@tuxcare.com](mailto:sales@tuxcare.com).
+   Replace `${TOKEN}` with the token you received from [sales@tuxcare.com](mailto:sales@tuxcare.com).
    :::
 
-4. Update your `package.json` file to replace your Astro dependencies with the TuxCare packages. Choose your Astro version below and add the `dependencies` and `overrides` entries shown.
+3. **Update dependencies**
 
-    <TableTabs label="Choose Astro version: " >
+   Update your `package.json` file to replace Astro dependencies with TuxCare-maintained packages. You can do this in two ways:
 
-    <template #astro_0.26.1>
+   * **Option 1: Manual update**
 
-    ```text
-    "dependencies": {
-      "astro": "npm:@els-js/astro@>=0.26.1-tuxcare.1"
-    },
-    "overrides": {
-      "astro@0.26.1": "npm:@els-js/astro@>=0.26.1-tuxcare.1"
-    }
-    ```
+     Manually update your `package.json` file by replacing your Astro dependencies with the TuxCare packages. This method gives you full control over which packages to update.
 
-    </template>
+     <TableTabs label="Choose Astro version: " >
 
-    <template #astro_1.9.2>
+      <template #astro_0.26.1>
 
-    ```text
-    "dependencies": {
-      "astro": "npm:@els-js/astro@>=1.9.2-tuxcare.1"
-    },
-    "overrides": {
-      "astro@1.9.2": "npm:@els-js/astro@>=1.9.2-tuxcare.1"
-    }
-    ```
+      ```text
+      "dependencies": {
+        "astro": "npm:@els-js/astro@>=0.26.1-tuxcare.1"
+      },
+      "overrides": {
+        "astro@0.26.1": "npm:@els-js/astro@>=0.26.1-tuxcare.1"
+      }
+      ```
 
-    </template>
+      </template>
 
-    <template #astro_2.10.15>
+      <template #astro_1.9.2>
 
-    ```text
-    "dependencies": {
-      "astro": "npm:@els-js/astro@>=2.10.15-tuxcare.1"
-    },
-    "overrides": {
-      "astro@2.10.15": "npm:@els-js/astro@>=2.10.15-tuxcare.1"
-    }
-    ```
+      ```text
+      "dependencies": {
+        "astro": "npm:@els-js/astro@>=1.9.2-tuxcare.1"
+      },
+      "overrides": {
+        "astro@1.9.2": "npm:@els-js/astro@>=1.9.2-tuxcare.1"
+      }
+      ```
 
-    </template>
+      </template>
 
-    </TableTabs>
+      <template #astro_2.10.15>
 
-5. You need to remove the `node_modules` directory and the `package-lock.json` file, and also clear the `npm cache` before installing the patched packages. Use the following commands:
+      ```text
+      "dependencies": {
+        "astro": "npm:@els-js/astro@>=2.10.15-tuxcare.1"
+      },
+      "overrides": {
+        "astro@2.10.15": "npm:@els-js/astro@>=2.10.15-tuxcare.1"
+      }
+      ```
+
+      </template>
+
+     </TableTabs>
+
+   * **Option 2: TuxCare Patcher (Automated)**
+
+     Install the Patcher globally and run it. The TuxCare Patcher automatically detects the Astro version in your `package.json` and updates your `dependencies` and `overrides` to use the corresponding TuxCare `@els-js/*` packages.
+
+     ```text
+     npm install -g @els-js/tuxcare-patcher --userconfig ./.npmrc
+     tuxcare-patch-js
+     ```
+
+     The patcher will update your `package.json`, for example, from:
+
+     ```text
+     "dependencies": {
+       "astro": "^2.10.15"
+     }
+     ```
+
+     to:
+
+     ```text
+     "dependencies": {
+       "astro": "npm:@els-js/astro@>=2.10.15-tuxcare.1"
+     },
+     "overrides": {
+       "astro@2.10.15": "npm:@els-js/astro@>=2.10.15-tuxcare.1"
+     }
+     ```
+
+4. **Refresh the project dependencies**
+
+   Remove `node_modules`, `package-lock.json`, and clear the npm cache:
 
    ```text
    rm -rf node_modules package-lock.json && npm cache clean --force
    ```
 
-6. Run the following command to install the ELS version of the Astro library (token for the TuxCare repository will be automatically picked up from your `.npmrc` file):
+   Install dependencies:
 
    ```text
    npm install
    ```
 
-## Step 3: Verify Installation
+   The token for the TuxCare repository is automatically picked up from your `.npmrc` file.
 
-1. To confirm the TuxCare Astro library is set up correctly, use npm to list the project's dependencies:
+5. **Verify the setup**
+
+   Use npm to list the project's dependencies and confirm TuxCare packages are resolved correctly:
 
    ```text
    npm list
    ```
 
-2. After reviewing the dependencies, run your application to ensure everything works correctly.
+   After reviewing the dependencies, run your application to ensure everything works correctly. The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS for Astro repository.
 
-The `npm` tool should be able to identify and resolve dependencies from the TuxCare ELS for Astro repository.
-
-## Vulnerability Exploitability eXchange (VEX)
-
-VEX is a machine-readable format that tells you if a known vulnerability is actually exploitable in your product. It reduces false positives, helps prioritize real risks.
-
-TuxCare provides VEX for Astro ELS versions: [security.tuxcare.com/vex/cyclonedx/els_lang_javascript/astro/](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/astro/).
-
-## Software Bill of Materials (SBOM)
-
-For each published ELS package and version, TuxCare generates SBOM files. Those artifacts are published to TuxCare Nexus.
-
-You can browse SBOM files for Astro here:
-
-[https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:astro](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:astro)
-
-Use the credentials you received for TuxCare ELS ([Step 1: Get Token](#step-1:-get-token)) to access Nexus.
-
-## How to Upgrade to a Newer Version of TuxCare Packages
-
-If you have already installed a package with a `tuxcare.1` suffix and want to upgrade to a newer release (for example, `tuxcare.3`), remove node_modules, clear the npm cache to avoid conflicts, and then run the installation command:
-
-  ```text
-  rm -rf node_modules package-lock.json && npm cache clean --force
-  npm install
-  ```
+</ELSSteps>
 
 ## Resolved CVEs
 
@@ -198,3 +214,15 @@ Fixes for the following vulnerabilities are available in ELS for Astro from TuxC
 </TableTabs>
 
 If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@tuxcare.com](mailto:sales@tuxcare.com).
+
+## What's Next?
+
+<WhatsNext hide-title>
+
+* ![](/images/eye.webp) [CVE tracker](https://tuxcare.com/cve-tracker/?q=astro) — Track vulnerability fixes and updates
+* ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?q=astro) — Patched versions and changelogs
+* ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/astro/) — Vulnerability Exploitability eXchange feed
+* ![](/images/unlock-alt.webp) [SBOM](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:astro) — Software Bill of Materials (Nexus, credentials required)
+* ![](/images/wrench.webp) [Managing the ELS repository](/els-for-libraries/managing-els-repository/) — Update to newer versions
+
+</WhatsNext>

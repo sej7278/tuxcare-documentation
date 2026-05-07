@@ -52,9 +52,9 @@ TuxCare publishes patched **transitive** dependencies for supported Ember.js ver
 
    Update your `package.json` so the transitive versions for your Ember.js version resolve to TuxCare packages. You can do this in two ways:
 
-   <TableTabs label="Choose Ember.js version: " >
+     <TableTabs label="Choose Ember.js version: " >
 
-   <template #ember_0.2.7>
+      <template #ember_0.2.7>
 
       ```text
       "dependencies": {
@@ -133,169 +133,169 @@ TuxCare publishes patched **transitive** dependencies for supported Ember.js ver
       }
       ```
 
-    </template>
+      </template>
 
-    <template #ember_2.18.2>
+      <template #ember_2.18.2>
 
-    * **Option 1: Manual update**
+      * **Option 1: Manual update**
 
-      ```text
-      "dependencies": {
-        "terser": "npm:@els-js/terser@>=3.17.0-tuxcare.1",
-        "rollup": "npm:@els-js/rollup@>=0.41.6-tuxcare.1",
-        "printf": "npm:@els-js/printf@>=0.5.3-tuxcare.1",
-        "markdown-it": "npm:@els-js/markdown-it@>=8.4.2-tuxcare.1",
-        "clean-css": "npm:@els-js/clean-css@>=3.4.28-tuxcare.1"
-      },
-      "overrides": {
-        "terser@3.17.0": "npm:@els-js/terser@>=3.17.0-tuxcare.1",
-        "rollup@0.41.6": "npm:@els-js/rollup@>=0.41.6-tuxcare.1",
-        "printf@0.5.3": "npm:@els-js/printf@>=0.5.3-tuxcare.1",
-        "markdown-it@8.4.2": "npm:@els-js/markdown-it@>=8.4.2-tuxcare.1",
-        "clean-css@3.4.28": "npm:@els-js/clean-css@>=3.4.28-tuxcare.1"
-      }
-      ```
+        ```text
+        "dependencies": {
+          "terser": "npm:@els-js/terser@>=3.17.0-tuxcare.1",
+          "rollup": "npm:@els-js/rollup@>=0.41.6-tuxcare.1",
+          "printf": "npm:@els-js/printf@>=0.5.3-tuxcare.1",
+          "markdown-it": "npm:@els-js/markdown-it@>=8.4.2-tuxcare.1",
+          "clean-css": "npm:@els-js/clean-css@>=3.4.28-tuxcare.1"
+        },
+        "overrides": {
+          "terser@3.17.0": "npm:@els-js/terser@>=3.17.0-tuxcare.1",
+          "rollup@0.41.6": "npm:@els-js/rollup@>=0.41.6-tuxcare.1",
+          "printf@0.5.3": "npm:@els-js/printf@>=0.5.3-tuxcare.1",
+          "markdown-it@8.4.2": "npm:@els-js/markdown-it@>=8.4.2-tuxcare.1",
+          "clean-css@3.4.28": "npm:@els-js/clean-css@>=3.4.28-tuxcare.1"
+        }
+        ```
 
-    * **Option 2: TuxCare Patcher (Automated)**
+      * **Option 2: TuxCare Patcher (Automated)**
 
-      ```text
-      npm install -g @els-js/tuxcare-patcher --userconfig ./.npmrc
-      tuxcare-patch-js
-      ```
+        ```text
+        npm install -g @els-js/tuxcare-patcher --userconfig ./.npmrc
+        tuxcare-patch-js
+        ```
 
-      The patcher will update your `package.json`, for example, from:
+        The patcher will update your `package.json`, for example, from:
 
-      ```text
-      "dependencies": {
-        "terser": "3.17.0",
-        "rollup": "0.41.6",
-        "printf": "0.5.3",
-        "markdown-it": "8.4.2",
-        "clean-css": "3.4.28"
-      }
-      ```
+        ```text
+        "dependencies": {
+          "terser": "3.17.0",
+          "rollup": "0.41.6",
+          "printf": "0.5.3",
+          "markdown-it": "8.4.2",
+          "clean-css": "3.4.28"
+        }
+        ```
 
-      to:
+        to:
 
-      ```text
-      "dependencies": {
-        "terser": "npm:@els-js/terser@>=3.17.0-tuxcare.1",
-        "rollup": "npm:@els-js/rollup@>=0.41.6-tuxcare.1",
-        "printf": "npm:@els-js/printf@>=0.5.3-tuxcare.1",
-        "markdown-it": "npm:@els-js/markdown-it@>=8.4.2-tuxcare.1",
-        "clean-css": "npm:@els-js/clean-css@>=3.4.28-tuxcare.1"
-      },
-      "overrides": {
-        "terser@3.17.0": "npm:@els-js/terser@>=3.17.0-tuxcare.1",
-        "rollup@0.41.6": "npm:@els-js/rollup@>=0.41.6-tuxcare.1",
-        "printf@0.5.3": "npm:@els-js/printf@>=0.5.3-tuxcare.1",
-        "markdown-it@8.4.2": "npm:@els-js/markdown-it@>=8.4.2-tuxcare.1",
-        "clean-css@3.4.28": "npm:@els-js/clean-css@>=3.4.28-tuxcare.1"
-      }
-      ```
+        ```text
+        "dependencies": {
+          "terser": "npm:@els-js/terser@>=3.17.0-tuxcare.1",
+          "rollup": "npm:@els-js/rollup@>=0.41.6-tuxcare.1",
+          "printf": "npm:@els-js/printf@>=0.5.3-tuxcare.1",
+          "markdown-it": "npm:@els-js/markdown-it@>=8.4.2-tuxcare.1",
+          "clean-css": "npm:@els-js/clean-css@>=3.4.28-tuxcare.1"
+        },
+        "overrides": {
+          "terser@3.17.0": "npm:@els-js/terser@>=3.17.0-tuxcare.1",
+          "rollup@0.41.6": "npm:@els-js/rollup@>=0.41.6-tuxcare.1",
+          "printf@0.5.3": "npm:@els-js/printf@>=0.5.3-tuxcare.1",
+          "markdown-it@8.4.2": "npm:@els-js/markdown-it@>=8.4.2-tuxcare.1",
+          "clean-css@3.4.28": "npm:@els-js/clean-css@>=3.4.28-tuxcare.1"
+        }
+        ```
 
-    </template>
+      </template>
 
-    <template #ember_3.28.6>
+      <template #ember_3.28.6>
 
-    * **Option 1: Manual update**
+      * **Option 1: Manual update**
 
-      ```text
-      "dependencies": {
-        "rollup": "npm:@els-js/rollup@>=0.57.1-tuxcare.1",
-        "markdown-it": "npm:@els-js/markdown-it@>=13.0.2-tuxcare.1",
-        "diff": "npm:@els-js/diff@>=7.0.0-tuxcare.1"
-      },
-      "overrides": {
-        "rollup@0.57.1": "npm:@els-js/rollup@>=0.57.1-tuxcare.1",
-        "markdown-it@13.0.2": "npm:@els-js/markdown-it@>=13.0.2-tuxcare.1",
-        "diff@7.0.0": "npm:@els-js/diff@>=7.0.0-tuxcare.1"
-      }
-      ```
+        ```text
+        "dependencies": {
+          "rollup": "npm:@els-js/rollup@>=0.57.1-tuxcare.1",
+          "markdown-it": "npm:@els-js/markdown-it@>=13.0.2-tuxcare.1",
+          "diff": "npm:@els-js/diff@>=7.0.0-tuxcare.1"
+        },
+        "overrides": {
+          "rollup@0.57.1": "npm:@els-js/rollup@>=0.57.1-tuxcare.1",
+          "markdown-it@13.0.2": "npm:@els-js/markdown-it@>=13.0.2-tuxcare.1",
+          "diff@7.0.0": "npm:@els-js/diff@>=7.0.0-tuxcare.1"
+        }
+        ```
 
-    * **Option 2: TuxCare Patcher (Automated)**
+      * **Option 2: TuxCare Patcher (Automated)**
 
-      Install the Patcher globally and run it. The TuxCare Patcher updates your `package.json` so these library versions use the corresponding TuxCare `@els-js/*` packages.
+        Install the Patcher globally and run it. The TuxCare Patcher updates your `package.json` so these library versions use the corresponding TuxCare `@els-js/*` packages.
 
-      ```text
-      npm install -g @els-js/tuxcare-patcher --userconfig ./.npmrc
-      tuxcare-patch-js
-      ```
+        ```text
+        npm install -g @els-js/tuxcare-patcher --userconfig ./.npmrc
+        tuxcare-patch-js
+        ```
 
-      The patcher will update your `package.json`, for example, from:
+        The patcher will update your `package.json`, for example, from:
 
-      ```text
-      "dependencies": {
-        "rollup": "0.57.1",
-        "markdown-it": "13.0.2",
-        "diff": "7.0.0"
-      }
-      ```
+        ```text
+        "dependencies": {
+          "rollup": "0.57.1",
+          "markdown-it": "13.0.2",
+          "diff": "7.0.0"
+        }
+        ```
 
-      to:
+        to:
 
-      ```text
-      "dependencies": {
-        "rollup": "npm:@els-js/rollup@>=0.57.1-tuxcare.1",
-        "markdown-it": "npm:@els-js/markdown-it@>=13.0.2-tuxcare.1",
-        "diff": "npm:@els-js/diff@>=7.0.0-tuxcare.1"
-      },
-      "overrides": {
-        "rollup@0.57.1": "npm:@els-js/rollup@>=0.57.1-tuxcare.1",
-        "markdown-it@13.0.2": "npm:@els-js/markdown-it@>=13.0.2-tuxcare.1",
-        "diff@7.0.0": "npm:@els-js/diff@>=7.0.0-tuxcare.1"
-      }
-      ```
+        ```text
+        "dependencies": {
+          "rollup": "npm:@els-js/rollup@>=0.57.1-tuxcare.1",
+          "markdown-it": "npm:@els-js/markdown-it@>=13.0.2-tuxcare.1",
+          "diff": "npm:@els-js/diff@>=7.0.0-tuxcare.1"
+        },
+        "overrides": {
+          "rollup@0.57.1": "npm:@els-js/rollup@>=0.57.1-tuxcare.1",
+          "markdown-it@13.0.2": "npm:@els-js/markdown-it@>=13.0.2-tuxcare.1",
+          "diff@7.0.0": "npm:@els-js/diff@>=7.0.0-tuxcare.1"
+        }
+        ```
 
-    </template>
+      </template>
 
-    <template #ember_4.12.13>
+      <template #ember_4.12.13>
 
-    * **Option 1: Manual update**
+      * **Option 1: Manual update**
 
-      ```text
-      "dependencies": {
-        "@babel/runtime": "npm:@els-js/babel-runtime@>=7.12.18-tuxcare.1",
-        "tmp": "npm:@els-js/tmp@>=0.0.28-tuxcare.1"
-      },
-      "overrides": {
-        "@babel/runtime@7.12.18": "npm:@els-js/babel-runtime@>=7.12.18-tuxcare.1",
-        "tmp@0.0.28": "npm:@els-js/tmp@>=0.0.28-tuxcare.1"
-      }
-      ```
+        ```text
+        "dependencies": {
+          "@babel/runtime": "npm:@els-js/babel-runtime@>=7.12.18-tuxcare.1",
+          "tmp": "npm:@els-js/tmp@>=0.0.28-tuxcare.1"
+        },
+        "overrides": {
+          "@babel/runtime@7.12.18": "npm:@els-js/babel-runtime@>=7.12.18-tuxcare.1",
+          "tmp@0.0.28": "npm:@els-js/tmp@>=0.0.28-tuxcare.1"
+        }
+        ```
 
-    * **Option 2: TuxCare Patcher (Automated)**
+      * **Option 2: TuxCare Patcher (Automated)**
 
-      ```text
-      npm install -g @els-js/tuxcare-patcher --userconfig ./.npmrc
-      tuxcare-patch-js
-      ```
+        ```text
+        npm install -g @els-js/tuxcare-patcher --userconfig ./.npmrc
+        tuxcare-patch-js
+        ```
 
-      The patcher will update your `package.json`, for example, from:
+        The patcher will update your `package.json`, for example, from:
 
-      ```text
-      "dependencies": {
-        "@babel/runtime": "7.12.18",
-        "tmp": "0.0.28"
-      }
-      ```
+        ```text
+        "dependencies": {
+          "@babel/runtime": "7.12.18",
+          "tmp": "0.0.28"
+        }
+        ```
 
-      to:
+        to:
 
-      ```text
-      "dependencies": {
-        "@babel/runtime": "npm:@els-js/babel-runtime@>=7.12.18-tuxcare.1",
-        "tmp": "npm:@els-js/tmp@>=0.0.28-tuxcare.1"
-      },
-      "overrides": {
-        "@babel/runtime@7.12.18": "npm:@els-js/babel-runtime@>=7.12.18-tuxcare.1",
-        "tmp@0.0.28": "npm:@els-js/tmp@>=0.0.28-tuxcare.1"
-      }
-      ```
+        ```text
+        "dependencies": {
+          "@babel/runtime": "npm:@els-js/babel-runtime@>=7.12.18-tuxcare.1",
+          "tmp": "npm:@els-js/tmp@>=0.0.28-tuxcare.1"
+        },
+        "overrides": {
+          "@babel/runtime@7.12.18": "npm:@els-js/babel-runtime@>=7.12.18-tuxcare.1",
+          "tmp@0.0.28": "npm:@els-js/tmp@>=0.0.28-tuxcare.1"
+        }
+        ```
 
-    </template>
+      </template>
 
-   </TableTabs>
+     </TableTabs>
 
 4. **Refresh the project dependencies**
 

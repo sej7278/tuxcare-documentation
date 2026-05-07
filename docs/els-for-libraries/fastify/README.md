@@ -54,7 +54,7 @@ Endless Lifecycle Support (ELS) for fastify from TuxCare provides security fixes
 
       Manually update your `package.json` file by replacing your fastify dependencies with the TuxCare packages. This method gives you full control over which packages to update.
 
-      <TableTabs label="Choose fastify version: " >
+     <TableTabs label="Choose fastify version: " >
 
       <template #fastify_3.29.5>
 
@@ -82,7 +82,7 @@ Endless Lifecycle Support (ELS) for fastify from TuxCare provides security fixes
 
       </template>
 
-      </TableTabs>
+     </TableTabs>
 
     * **Option 2: TuxCare Patcher (Automated)**
 

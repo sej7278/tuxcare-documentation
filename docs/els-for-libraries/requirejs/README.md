@@ -54,7 +54,7 @@ Endless Lifecycle Support (ELS) for RequireJS from TuxCare provides security fix
 
      Manually update your `package.json` file by replacing your RequireJS dependencies with the TuxCare packages. This method gives you full control over which packages to update.
 
-    <TableTabs label="Choose RequireJS version: " >
+     <TableTabs label="Choose RequireJS version: " >
 
       <template #requirejs_2.1.22>
 
@@ -82,7 +82,7 @@ Endless Lifecycle Support (ELS) for RequireJS from TuxCare provides security fix
 
       </template>
 
-    </TableTabs>
+     </TableTabs>
 
    * **Option 2: TuxCare Patcher (Automated)**
 
@@ -155,7 +155,7 @@ If you are interested in the TuxCare Endless Lifecycle Support, contact [sales@t
 <WhatsNext hide-title>
 
 * ![](/images/eye.webp) [CVE tracker](https://tuxcare.com/cve-tracker/?q=requirejs) — Track vulnerability fixes and updates
-* ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?product=RequireJS) — Patched versions and changelogs
+* ![](/images/shield.webp) [Available fixes](https://tuxcare.com/cve-tracker/fixes?q=requirejs) — Patched versions and changelogs
 * ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_javascript/requirejs/) — Vulnerability Exploitability eXchange feed
 * ![](/images/unlock-alt.webp) [SBOM](https://nexus.repo.tuxcare.com/#browse/browse:els-js-sbom:requirejs) — Software Bill of Materials (Nexus, credentials required)
 * ![](/images/wrench.webp) [Managing the ELS repository](/els-for-libraries/managing-els-repository/) — Update to newer versions

@@ -52,53 +52,53 @@ Endless Lifecycle Support (ELS) for LoopBack from TuxCare provides security fixe
 
      <TableTabs label="Choose LoopBack version: " >
 
-     <template #LoopBack_1.10.0>
+      <template #LoopBack_1.10.0>
 
-     ```text
-     "dependencies": {
-       "loopback": "npm:@els-js/loopback@>=1.10.0-tuxcare.1"
-     },
-     "overrides": {
-        "loopback@1.10.0": "npm:@els-js/loopback@>=1.10.0-tuxcare.1",
-        "aws-sdk": "npm:@els-js/aws-sdk@>=2.0.5-tuxcare.1",
-        "base64-url": "npm:@els-js/base64-url@>=1.2.1-tuxcare.1",
-        "basic-auth-connect": "npm:@els-js/basic-auth-connect@>=1.0.0-tuxcare.1",
-        "body-parser": "npm:@els-js/body-parser@>=1.13.3-tuxcare.1",
-        "cookie": "npm:@els-js/cookie@>=0.1.3-tuxcare.1",
-        "debug": "npm:@els-js/debug@>=2.2.0-tuxcare.1",
-        "ejs": "npm:@els-js/ejs@>=1.0.0-tuxcare.1",
-        "follow-redirects": "npm:@els-js/follow-redirects@>=0.0.3-tuxcare.1",
-        "form-data": "npm:@els-js/form-data@>=0.1.4-tuxcare.1",
-        "fresh": "npm:@els-js/fresh@>=0.3.0-tuxcare.1",
-        "hawk": "npm:@els-js/hawk@>=1.1.1-tuxcare.1",
-        "hoek": "npm:@els-js/hoek@>=0.9.1-tuxcare.1",
-        "mime": "npm:@els-js/mime@>=1.3.4-tuxcare.1",
-        "minimist": "npm:@els-js/minimist@>=0.0.8-tuxcare.1",
-        "ms": "npm:@els-js/ms@>=0.7.1-tuxcare.1",
-        "negotiator": "npm:@els-js/negotiator@>=0.5.3-tuxcare.1",
-        "on-headers": "npm:@els-js/on-headers@>=1.0.2-tuxcare.1",
-        "qs": "npm:@els-js/qs@>=4.0.0-tuxcare.1",
-        "tunnel-agent": "npm:@els-js/tunnel-agent@>=0.4.3-tuxcare.1",
-        "underscore": "npm:@els-js/underscore@>=1.6.0-tuxcare.1",
-        "underscore.string": "npm:@els-js/underscore.string@>=2.3.3-tuxcare.1",
-        "xml2js": "npm:@els-js/xml2js@>=0.2.6-tuxcare.1"
-     }
-     ```
+      ```text
+      "dependencies": {
+        "loopback": "npm:@els-js/loopback@>=1.10.0-tuxcare.1"
+      },
+      "overrides": {
+         "loopback@1.10.0": "npm:@els-js/loopback@>=1.10.0-tuxcare.1",
+         "aws-sdk": "npm:@els-js/aws-sdk@>=2.0.5-tuxcare.1",
+         "base64-url": "npm:@els-js/base64-url@>=1.2.1-tuxcare.1",
+         "basic-auth-connect": "npm:@els-js/basic-auth-connect@>=1.0.0-tuxcare.1",
+         "body-parser": "npm:@els-js/body-parser@>=1.13.3-tuxcare.1",
+         "cookie": "npm:@els-js/cookie@>=0.1.3-tuxcare.1",
+         "debug": "npm:@els-js/debug@>=2.2.0-tuxcare.1",
+         "ejs": "npm:@els-js/ejs@>=1.0.0-tuxcare.1",
+         "follow-redirects": "npm:@els-js/follow-redirects@>=0.0.3-tuxcare.1",
+         "form-data": "npm:@els-js/form-data@>=0.1.4-tuxcare.1",
+         "fresh": "npm:@els-js/fresh@>=0.3.0-tuxcare.1",
+         "hawk": "npm:@els-js/hawk@>=1.1.1-tuxcare.1",
+         "hoek": "npm:@els-js/hoek@>=0.9.1-tuxcare.1",
+         "mime": "npm:@els-js/mime@>=1.3.4-tuxcare.1",
+         "minimist": "npm:@els-js/minimist@>=0.0.8-tuxcare.1",
+         "ms": "npm:@els-js/ms@>=0.7.1-tuxcare.1",
+         "negotiator": "npm:@els-js/negotiator@>=0.5.3-tuxcare.1",
+         "on-headers": "npm:@els-js/on-headers@>=1.0.2-tuxcare.1",
+         "qs": "npm:@els-js/qs@>=4.0.0-tuxcare.1",
+         "tunnel-agent": "npm:@els-js/tunnel-agent@>=0.4.3-tuxcare.1",
+         "underscore": "npm:@els-js/underscore@>=1.6.0-tuxcare.1",
+         "underscore.string": "npm:@els-js/underscore.string@>=2.3.3-tuxcare.1",
+         "xml2js": "npm:@els-js/xml2js@>=0.2.6-tuxcare.1"
+      }
+      ```
 
-     </template>
+      </template>
 
-     <template #LoopBack_2.42.0>
+      <template #LoopBack_2.42.0>
 
-     ```text
-     "dependencies": {
-       "loopback": "npm:@els-js/loopback@>=2.42.0-tuxcare.1"
-     },
-     "overrides": {
-       "loopback@2.42.0": "npm:@els-js/loopback@>=2.42.0-tuxcare.1"
-     }
-     ```
+      ```text
+      "dependencies": {
+        "loopback": "npm:@els-js/loopback@>=2.42.0-tuxcare.1"
+      },
+      "overrides": {
+        "loopback@2.42.0": "npm:@els-js/loopback@>=2.42.0-tuxcare.1"
+      }
+      ```
 
-     </template>
+      </template>
 
      </TableTabs>
 
