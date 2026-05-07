@@ -294,7 +294,7 @@ export default {
                 },
                 {
                     path: '/els-for-libraries/league-flysystem/',
-                    icon: '/images/php-logo.webp',
+                    icon: '/images/flysystem.webp',
                 },
                 {
                     path: '/els-for-libraries/livewire/',

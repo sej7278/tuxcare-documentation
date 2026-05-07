@@ -1609,6 +1609,11 @@ const techData = [
         link: "./league-commonmark/",
       },
       {
+        name: "League Flysystem",
+        versions: "1.0.70 | 1.1.10",
+        link: "./league-flysystem/",
+      },
+      {
         name: "Livewire",
         versions: "3.x",
         link: "./livewire/",

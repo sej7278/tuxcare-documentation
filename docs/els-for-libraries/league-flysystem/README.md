@@ -4,7 +4,7 @@ Endless Lifecycle Support (ELS) for League Flysystem from TuxCare provides secur
 
 ## Supported Versions
 
-* **League Flysystem** 1.1.10
+* **League Flysystem** 1.0.70, 1.1.10
 
 Other versions upon request.
 
@@ -110,11 +110,19 @@ Fixes for the following vulnerabilities are available in ELS for League Flysyste
 
 <TableTabs label="Choose a version: " >
 
+<template #League_Flysystem_1.0.70>
+
+| CVE ID         | Severity | Vulnerable versions       | Fixed in version    |
+|----------------|----------|---------------------------|---------------------|
+| CVE-2021-32708 | Critical | < 1.1.4, >= 2.0.0, < 2.1.1| 1.0.70-p1+tuxcare   |
+
+</template>
+
 <template #League_Flysystem_1.1.10>
 
 | CVE ID         | Severity | Vulnerable versions       | Fixed in version    |
 |----------------|----------|---------------------------|---------------------|
-| CVE-2021-32708 | Critical | < 1.1.4, >= 2.0.0, < 2.1.1| 1.1.10-p1+tuxcare   |
+| CVE-2021-32708 | High     | < 1.1.4, >= 2.0.0, < 2.1.1| 1.1.10-p1+tuxcare   |
 
 </template>
 
