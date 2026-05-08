@@ -306,6 +306,11 @@ div[class*="language-"]
   background linear-gradient(to right, rgba(40, 44, 52, 0) 0%, var(--code-bg-color, #282c34) 55%)
   z-index 5
   border-top-right-radius 6px
+  opacity 1
+  transition opacity 0.15s ease
+
+div[class*="language-"].hide-fade .code-fade-mask
+  opacity 0
 
 @media (max-width: $mobileBreakpoint)
   .content:not(.custom)

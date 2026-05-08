@@ -6,7 +6,7 @@
       </button>
     </div>
 
-    <div class="tab-content code-block-wrapper">
+    <div class="tab-content code-block-wrapper" ref="wrapperRef">
       <button class="copy-button" @click="copyCode" aria-label="Copy code">
         <img v-if="!copied" src="/images/copy.webp" width="16" height="16" alt="Copy" />
         <svg v-else xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -14,7 +14,7 @@
         </svg>
       </button>
 
-      <pre><code ref="codeRef" class="language-bash">{{ tabs[activeTab].content }}</code></pre>
+      <pre ref="preRef"><code ref="codeRef" class="language-bash">{{ tabs[activeTab].content }}</code></pre>
       <span class="code-fade-mask" aria-hidden="true"></span>
     </div>
   </div>
@@ -38,10 +38,24 @@ export default {
   watch: {
     activeTab() {
       this.highlight()
+      this.$nextTick(this.updateFade)
     }
   },
   mounted() {
     this.highlight()
+    this.$nextTick(this.updateFade)
+    if (typeof window !== 'undefined') {
+      const pre = this.$refs.preRef
+      if (pre) pre.addEventListener('scroll', this.updateFade, { passive: true })
+      window.addEventListener('resize', this.updateFade)
+    }
+  },
+  beforeUnmount() {
+    if (typeof window !== 'undefined') {
+      const pre = this.$refs.preRef
+      if (pre) pre.removeEventListener('scroll', this.updateFade)
+      window.removeEventListener('resize', this.updateFade)
+    }
   },
   methods: {
     highlight() {
@@ -50,6 +64,13 @@ export default {
           window.hljs.highlightElement(this.$refs.codeRef)
         }
       })
+    },
+    updateFade() {
+      const pre = this.$refs.preRef
+      const wrapper = this.$refs.wrapperRef
+      if (!pre || !wrapper) return
+      const canScrollRight = pre.scrollLeft + pre.clientWidth < pre.scrollWidth - 2
+      wrapper.classList.toggle('hide-fade', !canScrollRight)
     },
     copyCode() {
       const text = this.tabs[this.activeTab].content
@@ -115,6 +136,12 @@ export default {
   pointer-events: none;
   background: linear-gradient(to right, rgba(45, 45, 45, 0) 0%, #2d2d2d 55%);
   z-index: 5;
+  opacity: 1;
+  transition: opacity 0.15s ease;
+}
+
+.code-block-wrapper.hide-fade .code-fade-mask {
+  opacity: 0;
 }
 
 pre {
