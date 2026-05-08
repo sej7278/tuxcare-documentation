@@ -276,9 +276,10 @@ badge[type="danger"]
 // the copy button, and fade the trailing edge into the block background so
 // truncated content is visually obvious. Users can scroll horizontally to read it.
 //
-// Gap is enforced by a filler on <code>::after rather than padding-right on
-// <pre>, because WebKit does not include padding-right in the scrollable
-// area, which leaves the trailing characters under the button at scroll-end.
+// The gap is enforced via padding-right on the inline <code> element; with
+// `white-space: pre` on the parent <pre>, the inline padding extends the
+// line and is included in the pre's scrollable width, so the gap is reliably
+// visible at scroll-end across browsers.
 div[class*="language-"]
   position relative
 
@@ -286,10 +287,8 @@ div[class*="language-"]
     scrollbar-width thin                   // Firefox
     scrollbar-color #aaa transparent       // Firefox
 
-  > pre > code::after
-    content ''
-    display inline-block
-    width 4.5rem
+  > pre > code
+    padding-right 4.5rem
 
   > pre::-webkit-scrollbar
     height 8px
