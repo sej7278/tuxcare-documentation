@@ -15,6 +15,7 @@
       </button>
 
       <pre><code ref="codeRef" class="language-bash">{{ tabs[activeTab].content }}</code></pre>
+      <span class="code-fade-mask" aria-hidden="true"></span>
     </div>
   </div>
 </template>
@@ -105,6 +106,17 @@ export default {
   overflow: hidden;
 }
 
+.code-fade-mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 60px;
+  pointer-events: none;
+  background: linear-gradient(to right, rgba(45, 45, 45, 0) 0%, #2d2d2d 70%);
+  z-index: 5;
+}
+
 pre {
   margin: 0;
   background-color: transparent;
@@ -115,6 +127,7 @@ pre {
   line-height: 1.5;
   box-shadow: none;
   overflow-x: auto;
+  padding-right: 3rem;
   scrollbar-width: thin;              /* Firefox */
   scrollbar-color: #666 transparent;  /* Firefox */
 }

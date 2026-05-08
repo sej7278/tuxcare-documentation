@@ -272,6 +272,27 @@ badge[type="danger"]
   &:hover img
     opacity 1
 
+// Reserve a gutter on the right of long code lines so they don't run under
+// the copy button, and fade the trailing edge into the block background so
+// truncated content is visually obvious. Users can scroll horizontally to read it.
+div[class*="language-"]
+  position relative
+
+  > pre
+    padding-right 3rem
+
+.code-fade-mask
+  position absolute
+  top 0
+  right 0
+  bottom 0
+  width 60px
+  pointer-events none
+  background linear-gradient(to right, rgba(40, 44, 52, 0) 0%, var(--code-bg-color, #282c34) 70%)
+  z-index 5
+  border-top-right-radius 6px
+  border-bottom-right-radius 6px
+
 @media (max-width: $mobileBreakpoint)
   .content:not(.custom)
     width 100%
