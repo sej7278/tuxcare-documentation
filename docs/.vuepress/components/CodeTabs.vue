@@ -15,6 +15,7 @@
       </button>
 
       <pre><code ref="codeRef" class="language-bash">{{ tabs[activeTab].content }}</code></pre>
+      <span class="code-fade-mask" aria-hidden="true"></span>
     </div>
   </div>
 </template>
@@ -105,6 +106,17 @@ export default {
   overflow: hidden;
 }
 
+.code-fade-mask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 14px; /* clear the horizontal scrollbar so it stays visible */
+  width: 90px;
+  pointer-events: none;
+  background: linear-gradient(to right, rgba(45, 45, 45, 0) 0%, #2d2d2d 55%);
+  z-index: 5;
+}
+
 pre {
   margin: 0;
   background-color: transparent;
@@ -115,13 +127,14 @@ pre {
   line-height: 1.5;
   box-shadow: none;
   overflow-x: auto;
+  padding-right: 4.5rem;
   scrollbar-width: thin;              /* Firefox */
-  scrollbar-color: #666 transparent;  /* Firefox */
+  scrollbar-color: #aaa transparent;  /* Firefox */
 }
 
 /* WebKit browsers (Chrome, Edge, Safari) */
 pre::-webkit-scrollbar {
-  height: 6px;
+  height: 8px;
 }
 
 pre::-webkit-scrollbar-track {
@@ -129,8 +142,12 @@ pre::-webkit-scrollbar-track {
 }
 
 pre::-webkit-scrollbar-thumb {
-  background-color: #666;
+  background-color: #aaa;
   border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+  background-color: #ccc;
 }
 
 code {

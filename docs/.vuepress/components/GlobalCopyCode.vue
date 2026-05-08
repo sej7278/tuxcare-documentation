@@ -39,6 +39,13 @@ function injectCopyButtons() {
 
     wrapper.style.position = "relative";
     wrapper.appendChild(btn);
+
+    if (!wrapper.querySelector(".code-fade-mask")) {
+      const mask = document.createElement("span");
+      mask.className = "code-fade-mask";
+      mask.setAttribute("aria-hidden", "true");
+      wrapper.appendChild(mask);
+    }
   });
 }
 
