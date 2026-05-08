@@ -6,6 +6,7 @@ Endless Lifecycle Support (ELS) for Laravel from TuxCare provides security fixes
 
 * **Laravel** 5.4.36, 5.5.50, 5.6.40, 5.7.29, 5.8.38, 8, 10, 11
 * **Illuminate View** 5.4.36
+* **Illuminate Database** 5.4.36
 
 Other versions upon request.
 
@@ -71,11 +72,20 @@ Other versions upon request.
 
    </template>
 
-   <template #Illuminate>
+   <template #Illuminate_View>
 
    <CodeTabs :tabs="[
      { title: 'Composer CLI', content: `composer require illuminate/view:5.4.36-p1+tuxcare` },
      { title: 'composer.json', content: illuminatejson }
+   ]" />
+
+   </template>
+
+   <template #Illuminate_Database>
+
+   <CodeTabs :tabs="[
+     { title: 'Composer CLI', content: `composer require illuminate/database:5.4.36-p2+tuxcare` },
+     { title: 'composer.json', content: illuminateDbJson }
    ]" />
 
    </template>
@@ -259,6 +269,14 @@ Fixes for the following vulnerabilities are available in ELS for Laravel from Tu
 
 </template>
 
+<template #Illuminate_Database_5.4.36>
+
+| CVE ID              | Severity | Vulnerable versions           | Fixed in version    |
+|---------------------|----------|-------------------------------|---------------------|
+| GHSA-x7p5-p2c9-phvg | High     | < 6.20.14, < 7.30.4, < 8.24.0 | 5.4.36-p2+tuxcare   |
+
+</template>
+
 </TableTabs>
 
 ## What's Next?
@@ -314,6 +332,13 @@ const illuminatejson =
 `{
     "require": {
         "illuminate/view": "5.4.36-p1+tuxcare"
+    }
+}`
+
+const illuminateDbJson =
+`{
+    "require": {
+        "illuminate/database": "5.4.36-p2+tuxcare"
     }
 }`
 

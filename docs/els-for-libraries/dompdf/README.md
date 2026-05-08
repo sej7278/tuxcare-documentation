@@ -118,10 +118,10 @@ Fixes for the following vulnerabilities are available in ELS for Dompdf from Tux
 | CVE-2023-23924 | Critical | < 2.0.2             | 0.8.6-p1+tuxcare    |
 | CVE-2022-41343 | High     | < 2.0.1             | 0.8.6-p1+tuxcare    |
 | CVE-2022-28368 | Critical | < 1.2.1             | 0.8.6-p1+tuxcare    |
-| CVE-2022-0085  | Medium   | < 2.0.0             | 0.8.6-p1+tuxcare    |
+| CVE-2022-0085  | Low      | < 2.0.0             | 0.8.6-p1+tuxcare    |
 | CVE-2021-3902  | Critical | < 2.0.0             | 0.8.6-p1+tuxcare    |
 | CVE-2021-3838  | Critical | < 2.0.0             | 0.8.6-p1+tuxcare    |
-| CVE-2021-2400  | Critical | < 2.0.0             | 0.8.6-p1+tuxcare    |
+| CVE-2022-2400  | Medium   | < 2.0.0             | 0.8.6-p1+tuxcare    |
 
 </template>
 
@@ -132,10 +132,10 @@ Fixes for the following vulnerabilities are available in ELS for Dompdf from Tux
 | CVE-2023-50262 | High     | < 2.0.3             | 1.2.2-p1+tuxcare    |
 | CVE-2023-23924 | Critical | < 2.0.2             | 1.2.2-p1+tuxcare    |
 | CVE-2022-41343 | High     | < 2.0.1             | 1.2.2-p1+tuxcare    |
-| CVE-2022-0085  | Medium   | < 2.0.0             | 1.2.2-p1+tuxcare    |
+| CVE-2022-0085  | Low      | < 2.0.0             | 1.2.2-p1+tuxcare    |
 | CVE-2021-3902  | Critical | < 2.0.0             | 1.2.2-p1+tuxcare    |
 | CVE-2021-3838  | Critical | < 2.0.0             | 1.2.2-p1+tuxcare    |
-| CVE-2021-2400  | Critical | < 2.0.0             | 1.2.2-p1+tuxcare    |
+| CVE-2022-2400  | Medium   | < 2.0.0             | 1.2.2-p1+tuxcare    |
 
 </template>
 

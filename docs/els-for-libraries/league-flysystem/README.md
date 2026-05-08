@@ -1,10 +1,10 @@
-# Zend Framework 1
+# League Flysystem
 
-Endless Lifecycle Support (ELS) for Zend Framework 1 from TuxCare provides security fixes for Zend Framework 1 versions that have reached their end-of-life. This allows you to continue running your applications without vulnerability concerns, even after official support has ended.
+Endless Lifecycle Support (ELS) for League Flysystem from TuxCare provides security fixes for Flysystem versions that have reached their end-of-life. This allows you to continue running your applications without vulnerability concerns, even after official support has ended.
 
 ## Supported Versions
 
-* **Zend Framework 1** 1.12.10
+* **League Flysystem** 1.0.70, 1.1.10
 
 Other versions upon request.
 
@@ -55,13 +55,13 @@ Other versions upon request.
      { title: 'composer.json', content: composerjson }
    ]" />
 
-4. Install Zend Framework 1
+4. Install League Flysystem
 
-   Install the TuxCare-maintained Zend Framework 1 release that matches your project:
+   Install the TuxCare-maintained Flysystem release that matches your project:
 
    <CodeTabs :tabs="[
-     { title: 'Composer CLI', content: `composer require zendframework/zendframework1:1.12.10-p1+tuxcare` },
-     { title: 'composer.json', content: zf1json }
+     { title: 'Composer CLI', content: `composer require league/flysystem:1.1.10-p1+tuxcare` },
+     { title: 'composer.json', content: pkgjson }
    ]" />
 
    **Check the exact version listed in your TuxCare Nexus account to ensure you receive the most recent patched release.**
@@ -104,27 +104,25 @@ it usually means your project requires a package version that is not yet availab
 
 This allows Composer to fall back to Packagist for packages not available in the TuxCare repository, while still preferring TuxCare patches when available.
 
-## Resolved CVEs in Zend Framework 1
+## Resolved CVEs in League Flysystem
 
-Fixes for the following vulnerabilities are available in ELS for Zend Framework 1 from TuxCare:
+Fixes for the following vulnerabilities are available in ELS for League Flysystem from TuxCare:
 
-<TableTabs label="Choose Zend Framework 1 version: ">
+<TableTabs label="Choose a version: " >
 
-<template #Zend_Framework_1.12>
+<template #League_Flysystem_1.0.70>
 
-| CVE ID              | Severity | Vulnerable versions | Fixed in version       |
-|---------------------|----------|---------------------|------------------------|
-| CVE-2016-6233       | Critical | 1.12.10             | 1.12.10-p1+tuxcare    |
-| CVE-2016-4861       | Critical | 1.12.10             | 1.12.10-p1+tuxcare    |
-| CVE-2015-7695       | Critical | 1.12.10             | 1.12.10-p1+tuxcare    |
-| CVE-2015-5723       | High     | 1.12.10             | 1.12.10-p1+tuxcare    |
-| CVE-2015-5161       | Medium   | 1.12.10             | 1.12.10-p1+tuxcare    |
-| CVE-2015-3154       | Medium   | 1.12.10             | 1.12.10-p1+tuxcare    |
-| GHSA-gff2-p6vm-3p8g | Medium   | 1.12.10             | 1.12.10-p1+tuxcare    |
-| GHSA-6fqw-j3vm-7f66 | Medium   | 1.12.10             | 1.12.10-p2+tuxcare    |
-| GHSA-848f-mph5-9pm9 | Medium   | 1.12.10             | 1.12.10-p2+tuxcare    |
-| GHSA-8xhv-gqm4-3w99 | Medium   | 1.12.10             | 1.12.10-p2+tuxcare    |
-| GHSA-v42g-7q2x-cw32 | Medium   | 1.12.10             | 1.12.10-p2+tuxcare    |
+| CVE ID         | Severity | Vulnerable versions       | Fixed in version    |
+|----------------|----------|---------------------------|---------------------|
+| CVE-2021-32708 | Critical | < 1.1.4, >= 2.0.0, < 2.1.1| 1.0.70-p1+tuxcare   |
+
+</template>
+
+<template #League_Flysystem_1.1.10>
+
+| CVE ID         | Severity | Vulnerable versions       | Fixed in version    |
+|----------------|----------|---------------------------|---------------------|
+| CVE-2021-32708 | High     | < 1.1.4, >= 2.0.0, < 2.1.1| 1.1.10-p1+tuxcare   |
 
 </template>
 
@@ -134,7 +132,7 @@ Fixes for the following vulnerabilities are available in ELS for Zend Framework 
 
 <WhatsNext hide-title>
 
-* ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_php/zendframework/zendframework1/) — Vulnerability Exploitability eXchange feed
+* ![](/images/shield-alert.webp) [VEX feed](https://security.tuxcare.com/vex/cyclonedx/els_lang_php/league/flysystem/) — Vulnerability Exploitability eXchange feed
 * ![](/images/eye.webp) [CVE Tracker](https://tuxcare.com/cve-tracker/) — Track vulnerability fixes and updates
 * ![](/images/wrench.webp) [Managing the ELS repository](/els-for-libraries/managing-els-repository/) — Upgrade to a newer version
 
@@ -170,10 +168,10 @@ const composerjson =
 const cli =
 `composer config repositories.tuxcare '{"type":"composer","url":"https://nexus.repo.tuxcare.com/repository/els_php/","options":{"http":{"verify":true}}}' --json`
 
-const zf1json =
+const pkgjson =
 `{
     "require": {
-        "zendframework/zendframework1": "1.12.10-p1+tuxcare"
+        "league/flysystem": "1.1.10-p1+tuxcare"
     }
 }`
 

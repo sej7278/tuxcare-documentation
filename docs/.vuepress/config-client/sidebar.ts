@@ -293,6 +293,10 @@ export default {
                     icon: '/images/league-commonmark-logo.webp',
                 },
                 {
+                    path: '/els-for-libraries/league-flysystem/',
+                    icon: '/images/flysystem.webp',
+                },
+                {
                     path: '/els-for-libraries/livewire/',
                     icon: '/images/livewire-logo.webp',
                 },
