@@ -154,7 +154,6 @@ pre {
   line-height: 1.5;
   box-shadow: none;
   overflow-x: auto;
-  padding-right: 4.5rem;
   scrollbar-width: thin;              /* Firefox */
   scrollbar-color: #aaa transparent;  /* Firefox */
 }
@@ -182,6 +181,16 @@ code {
   background: none;
   display: block;
   white-space: pre;
+}
+
+/* Reserve space at the end of the code so the trailing characters never
+   sit under the copy button. Using a filler element on <code> instead of
+   padding-right on <pre> because WebKit clips padding-right from the
+   scrollable area, leaving no visible gap when scrolled to the end. */
+pre > code::after {
+  content: '';
+  display: inline-block;
+  width: 4.5rem;
 }
 
 .copy-button {
