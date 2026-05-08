@@ -275,13 +275,20 @@ badge[type="danger"]
 // Reserve a gutter on the right of long code lines so they don't run under
 // the copy button, and fade the trailing edge into the block background so
 // truncated content is visually obvious. Users can scroll horizontally to read it.
+//
+// The gap is enforced via padding-right on the inline <code> element; with
+// `white-space: pre` on the parent <pre>, the inline padding extends the
+// line and is included in the pre's scrollable width, so the gap is reliably
+// visible at scroll-end across browsers.
 div[class*="language-"]
   position relative
 
   > pre
-    padding-right 4.5rem
     scrollbar-width thin                   // Firefox
     scrollbar-color #aaa transparent       // Firefox
+
+  > pre > code
+    padding-right 4.5rem
 
   > pre::-webkit-scrollbar
     height 8px
@@ -306,6 +313,11 @@ div[class*="language-"]
   background linear-gradient(to right, rgba(40, 44, 52, 0) 0%, var(--code-bg-color, #282c34) 55%)
   z-index 5
   border-top-right-radius 6px
+  opacity 1
+  transition opacity 0.15s ease
+
+div[class*="language-"].hide-fade .code-fade-mask
+  opacity 0
 
 @media (max-width: $mobileBreakpoint)
   .content:not(.custom)

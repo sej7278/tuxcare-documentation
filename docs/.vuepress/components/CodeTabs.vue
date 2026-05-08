@@ -6,7 +6,7 @@
       </button>
     </div>
 
-    <div class="tab-content code-block-wrapper">
+    <div class="tab-content code-block-wrapper" ref="wrapperRef">
       <button class="copy-button" @click="copyCode" aria-label="Copy code">
         <img v-if="!copied" src="/images/copy.webp" width="16" height="16" alt="Copy" />
         <svg v-else xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -14,7 +14,7 @@
         </svg>
       </button>
 
-      <pre><code ref="codeRef" class="language-bash">{{ tabs[activeTab].content }}</code></pre>
+      <pre ref="preRef"><code ref="codeRef" class="language-bash">{{ tabs[activeTab].content }}</code></pre>
       <span class="code-fade-mask" aria-hidden="true"></span>
     </div>
   </div>
@@ -38,10 +38,24 @@ export default {
   watch: {
     activeTab() {
       this.highlight()
+      this.$nextTick(this.updateFade)
     }
   },
   mounted() {
     this.highlight()
+    this.$nextTick(this.updateFade)
+    if (typeof window !== 'undefined') {
+      const pre = this.$refs.preRef
+      if (pre) pre.addEventListener('scroll', this.updateFade, { passive: true })
+      window.addEventListener('resize', this.updateFade)
+    }
+  },
+  beforeUnmount() {
+    if (typeof window !== 'undefined') {
+      const pre = this.$refs.preRef
+      if (pre) pre.removeEventListener('scroll', this.updateFade)
+      window.removeEventListener('resize', this.updateFade)
+    }
   },
   methods: {
     highlight() {
@@ -50,6 +64,13 @@ export default {
           window.hljs.highlightElement(this.$refs.codeRef)
         }
       })
+    },
+    updateFade() {
+      const pre = this.$refs.preRef
+      const wrapper = this.$refs.wrapperRef
+      if (!pre || !wrapper) return
+      const canScrollRight = pre.scrollLeft + pre.clientWidth < pre.scrollWidth - 2
+      wrapper.classList.toggle('hide-fade', !canScrollRight)
     },
     copyCode() {
       const text = this.tabs[this.activeTab].content
@@ -110,11 +131,19 @@ export default {
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 14px; /* clear the horizontal scrollbar so it stays visible */
+  /* Wrapper has 12 px padding-bottom, scrollbar is 8 px; clear both with
+     a small buffer so the mask never overlaps the scrollbar. */
+  bottom: 24px;
   width: 90px;
   pointer-events: none;
   background: linear-gradient(to right, rgba(45, 45, 45, 0) 0%, #2d2d2d 55%);
   z-index: 5;
+  opacity: 1;
+  transition: opacity 0.15s ease;
+}
+
+.code-block-wrapper.hide-fade .code-fade-mask {
+  opacity: 0;
 }
 
 pre {
@@ -127,7 +156,6 @@ pre {
   line-height: 1.5;
   box-shadow: none;
   overflow-x: auto;
-  padding-right: 4.5rem;
   scrollbar-width: thin;              /* Firefox */
   scrollbar-color: #aaa transparent;  /* Firefox */
 }
@@ -155,6 +183,16 @@ code {
   background: none;
   display: block;
   white-space: pre;
+}
+
+/* Reserve space at the end of the code so the trailing characters never
+   sit under the copy button. Using a filler element on <code> instead of
+   padding-right on <pre> because WebKit clips padding-right from the
+   scrollable area, leaving no visible gap when scrolled to the end. */
+pre > code::after {
+  content: '';
+  display: inline-block;
+  width: 4.5rem;
 }
 
 .copy-button {
