@@ -84,7 +84,7 @@ Other versions upon request.
    <template #Illuminate_Database>
 
    <CodeTabs :tabs="[
-     { title: 'Composer CLI', content: `composer require illuminate/database:5.4.36-p1+tuxcare` },
+     { title: 'Composer CLI', content: `composer require illuminate/database:5.4.36-p2+tuxcare` },
      { title: 'composer.json', content: illuminateDbJson }
    ]" />
 
@@ -269,6 +269,14 @@ Fixes for the following vulnerabilities are available in ELS for Laravel from Tu
 
 </template>
 
+<template #Illuminate_Database_5.4.36>
+
+| CVE ID              | Severity | Vulnerable versions           | Fixed in version    |
+|---------------------|----------|-------------------------------|---------------------|
+| GHSA-x7p5-p2c9-phvg | High     | < 6.20.14, < 7.30.4, < 8.24.0 | 5.4.36-p2+tuxcare   |
+
+</template>
+
 </TableTabs>
 
 ## What's Next?
@@ -330,7 +338,7 @@ const illuminatejson =
 const illuminateDbJson =
 `{
     "require": {
-        "illuminate/database": "5.4.36-p1+tuxcare"
+        "illuminate/database": "5.4.36-p2+tuxcare"
     }
 }`
 
