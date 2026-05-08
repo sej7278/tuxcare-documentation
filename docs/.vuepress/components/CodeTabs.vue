@@ -131,7 +131,9 @@ export default {
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 14px; /* clear the horizontal scrollbar so it stays visible */
+  /* Wrapper has 12 px padding-bottom, scrollbar is 8 px; clear both with
+     a small buffer so the mask never overlaps the scrollbar. */
+  bottom: 24px;
   width: 90px;
   pointer-events: none;
   background: linear-gradient(to right, rgba(45, 45, 45, 0) 0%, #2d2d2d 55%);
